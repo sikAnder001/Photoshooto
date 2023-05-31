@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageBack"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:padding="@dimen/_3sdp"
+            app:layout_constraintBottom_toBottomOf="@id/tvEventSetupTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvEventSetupTitle"
+            app:srcCompat="@drawable/ic_back_arrow" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEventSetupTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_12sdp"
+            android:text="@string/event_set_up"
+            android:textColor="@color/text_054871"
+            android:textSize="@dimen/_18ssp"
+            app:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEventSetupTitle">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="@dimen/_15sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageStand"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_180sdp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toStartOf="@id/linearUserOrder"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/linearUserOrder"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@id/imageStand"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageStand"
+                    app:layout_constraintTop_toTopOf="@id/imageStand">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvUserCountLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="@string/no_of_users"
+                        android:textColor="@color/text_054871"
+                        android:textSize="@dimen/_9ssp"
+                        app:fontFamily="@font/poppins_regular"
+                        app:layout_constraintStart_toStartOf="@id/linearUserCount"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/linearUserCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@drawable/btn_back_users"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/_7sdp"
+                        android:paddingVertical="@dimen/_3sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvUserCountLabel">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardViewUserMinus"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_margin="@dimen/_3sdp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:cardElevation="@dimen/_3sdp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/_3sdp"
+                                app:srcCompat="@drawable/ic_minus" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_10sdp"
+                            android:layout_marginVertical="@dimen/_3sdp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:cardElevation="@dimen/_3sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvUserCount"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:includeFontPadding="false"
+                                android:paddingHorizontal="@dimen/_2sdp"
+                                android:paddingVertical="@dimen/_2sdp"
+                                android:text="@string/zero"
+                                android:textColor="@color/text_F0481B"
+                                android:textSize="@dimen/_9ssp"
+                                app:fontFamily="@font/poppins_semi_bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/recyclerViewGeneratedQr" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardViewUserPlus"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_margin="@dimen/_3sdp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:cardElevation="@dimen/_3sdp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/_3sdp"
+                                app:srcCompat="@drawable/ic_plus_simple" />
+
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvStandCountLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:includeFontPadding="false"
+                        android:text="@string/no_of_standee"
+                        android:textColor="@color/text_054871"
+                        android:textSize="@dimen/_9ssp"
+                        app:fontFamily="@font/poppins_regular"
+                        app:layout_constraintStart_toStartOf="@id/linearUserCount"
+                        app:layout_constraintTop_toBottomOf="@id/linearUserCount" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/linearStandCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:background="@drawable/btn_back_users"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/_7sdp"
+                        android:paddingVertical="@dimen/_3sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvStandCountLabel">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardViewStandeeMinus"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_margin="@dimen/_3sdp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:cardElevation="@dimen/_3sdp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/_3sdp"
+                                app:srcCompat="@drawable/ic_minus" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_10sdp"
+                            android:layout_marginVertical="@dimen/_3sdp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:cardElevation="@dimen/_3sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvStandeeCount"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:includeFontPadding="false"
+                                android:paddingHorizontal="@dimen/_2sdp"
+                                android:paddingVertical="@dimen/_2sdp"
+                                android:text="@string/zero"
+                                android:textColor="@color/text_F0481B"
+                                android:textSize="@dimen/_9ssp"
+                                app:fontFamily="@font/poppins_semi_bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/recyclerViewGeneratedQr" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardViewStandeePlus"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_margin="@dimen/_3sdp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:cardElevation="@dimen/_3sdp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/_3sdp"
+                                app:srcCompat="@drawable/ic_plus_simple" />
+
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSetupStandType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@string/elite_stand"
+                    android:textColor="@color/text_054871"
+                    android:textSize="@dimen/_11ssp"
+                    app:fontFamily="@font/poppins_regular"
+                    app:layout_constraintEnd_toEndOf="@id/imageStand"
+                    app:layout_constraintStart_toStartOf="@id/imageStand"
+                    app:layout_constraintTop_toBottomOf="@id/imageStand" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEventSetupSummary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:includeFontPadding="false"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:paddingVertical="@dimen/_7sdp"
+                    android:text="@string/event_summary"
+                    android:textColor="@color/text_054871"
+                    android:textSize="@dimen/_15ssp"
+                    app:fontFamily="@font/poppins_medium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvSetupStandType" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_7sdp"
+                    app:cardElevation="@dimen/_5sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvEventSetupSummary">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_10sdp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvLabelEventType"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:includeFontPadding="false"
+                            android:text="@string/event_type"
+                            android:textColor="@color/text_054871"
+                            android:textSize="@dimen/_12ssp"
+                            app:fontFamily="@font/poppins_medium"
+                            app:layout_constraintEnd_toStartOf="@id/tvLabelSelectedFolder"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvValueEventType"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center_vertical"
+                            android:includeFontPadding="false"
+                            android:text="Wedding"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="@id/tvLabelEventType"
+                            app:layout_constraintStart_toStartOf="@id/tvLabelEventType"
+                            app:layout_constraintTop_toBottomOf="@id/tvLabelEventType" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvLabelSelectedFolder"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:includeFontPadding="false"
+                            android:text="@string/selected_folder"
+                            android:textColor="@color/text_054871"
+                            android:textSize="@dimen/_12ssp"
+                            app:fontFamily="@font/poppins_medium"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvLabelEventType"
+                            app:layout_constraintTop_toTopOf="@id/tvLabelEventType" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvValueSelectedFolder"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center_vertical"
+                            android:includeFontPadding="false"
+                            android:text="Ram's Wedding"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="@id/tvLabelSelectedFolder"
+                            app:layout_constraintStart_toStartOf="@id/tvLabelSelectedFolder"
+                            app:layout_constraintTop_toBottomOf="@id/tvLabelSelectedFolder" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvLabelEventStartDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:includeFontPadding="false"
+                            android:text="@string/event_start_date"
+                            android:textColor="@color/text_054871"
+                            android:textSize="@dimen/_12ssp"
+                            app:fontFamily="@font/poppins_medium"
+                            app:layout_constraintEnd_toStartOf="@id/tvLabelEventEndDate"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvValueEventType" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvValueEventStartDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center_vertical"
+                            android:includeFontPadding="false"
+                            android:text="02/02/2022"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="@id/tvLabelEventStartDate"
+                            app:layout_constraintStart_toStartOf="@id/tvLabelEventStartDate"
+                            app:layout_constraintTop_toBottomOf="@id/tvLabelEventStartDate" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvLabelEventEndDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:includeFontPadding="false"
+                            android:text="@string/event_end_date"
+                            android:textColor="@color/text_054871"
+                            android:textSize="@dimen/_12ssp"
+                            app:fontFamily="@font/poppins_medium"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvLabelEventStartDate"
+                            app:layout_constraintTop_toTopOf="@id/tvLabelEventStartDate" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvValueEventEndDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center_vertical"
+                            android:includeFontPadding="false"
+                            android:text="05/02/2022"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="@id/tvLabelEventEndDate"
+                            app:layout_constraintStart_toStartOf="@id/tvLabelEventEndDate"
+                            app:layout_constraintTop_toBottomOf="@id/tvLabelEventEndDate" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvLabelEventStartTime"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:includeFontPadding="false"
+                            android:text="@string/event_start_time"
+                            android:textColor="@color/text_054871"
+                            android:textSize="@dimen/_12ssp"
+                            app:fontFamily="@font/poppins_medium"
+                            app:layout_constraintEnd_toStartOf="@id/tvLabelEventEndTime"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvValueEventStartDate" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvValueEventStartTime"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center_vertical"
+                            android:includeFontPadding="false"
+                            android:text="07:00 AM"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="@id/tvLabelEventStartTime"
+                            app:layout_constraintStart_toStartOf="@id/tvLabelEventStartTime"
+                            app:layout_constraintTop_toBottomOf="@id/tvLabelEventStartTime" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvLabelEventEndTime"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:includeFontPadding="false"
+                            android:text="@string/event_end_time"
+                            android:textColor="@color/text_054871"
+                            android:textSize="@dimen/_12ssp"
+                            app:fontFamily="@font/poppins_medium"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvLabelEventStartTime"
+                            app:layout_constraintTop_toTopOf="@id/tvLabelEventStartTime" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvValueEventEndTime"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center_vertical"
+                            android:includeFontPadding="false"
+                            android:text="11:00 PM"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="@id/tvLabelEventEndTime"
+                            app:layout_constraintStart_toStartOf="@id/tvLabelEventEndTime"
+                            app:layout_constraintTop_toBottomOf="@id/tvLabelEventEndTime" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvLabelEventDuration"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:includeFontPadding="false"
+                            android:text="@string/event_duration"
+                            android:textColor="@color/text_054871"
+                            android:textSize="@dimen/_12ssp"
+                            app:fontFamily="@font/poppins_medium"
+                            app:layout_constraintEnd_toStartOf="@id/tvLabelEventQrCodes"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvValueEventStartTime" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvValueEventDuration"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center_vertical"
+                            android:includeFontPadding="false"
+                            android:text="24Hr 45Min"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="@id/tvLabelEventDuration"
+                            app:layout_constraintStart_toStartOf="@id/tvLabelEventDuration"
+                            app:layout_constraintTop_toBottomOf="@id/tvLabelEventDuration" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvLabelEventQrCodes"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:includeFontPadding="false"
+                            android:text="@string/event_qr_codes"
+                            android:textColor="@color/text_054871"
+                            android:textSize="@dimen/_12ssp"
+                            app:fontFamily="@font/poppins_medium"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvLabelEventDuration"
+                            app:layout_constraintTop_toTopOf="@id/tvLabelEventDuration" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvValueEventQrCodes"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center_vertical"
+                            android:includeFontPadding="false"
+                            android:text="Premium(3)"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="@id/tvLabelEventQrCodes"
+                            app:layout_constraintStart_toStartOf="@id/tvLabelEventQrCodes"
+                            app:layout_constraintTop_toBottomOf="@id/tvLabelEventQrCodes" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvLabelClientName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:includeFontPadding="false"
+                            android:text="@string/client_name"
+                            android:textColor="@color/text_054871"
+                            android:textSize="@dimen/_12ssp"
+                            app:fontFamily="@font/poppins_medium"
+                            app:layout_constraintEnd_toStartOf="@id/tvLabelClientNumber"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvValueEventDuration" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvValueClientName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center_vertical"
+                            android:includeFontPadding="false"
+                            android:text="ABC XYZ"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="@id/tvLabelClientName"
+                            app:layout_constraintStart_toStartOf="@id/tvLabelClientName"
+                            app:layout_constraintTop_toBottomOf="@id/tvLabelClientName" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvLabelClientNumber"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:includeFontPadding="false"
+                            android:text="@string/client_number"
+                            android:textColor="@color/text_054871"
+                            android:textSize="@dimen/_12ssp"
+                            app:fontFamily="@font/poppins_medium"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvLabelClientName"
+                            app:layout_constraintTop_toTopOf="@id/tvLabelClientName" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvValueClientNumber"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center_vertical"
+                            android:includeFontPadding="false"
+                            android:text="+91 1234567890"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="@id/tvLabelClientNumber"
+                            app:layout_constraintStart_toStartOf="@id/tvLabelClientNumber"
+                            app:layout_constraintTop_toBottomOf="@id/tvLabelClientNumber" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvLabelLocation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:includeFontPadding="false"
+                            android:text="@string/location"
+                            android:textColor="@color/text_054871"
+                            android:textSize="@dimen/_12ssp"
+                            app:fontFamily="@font/poppins_medium"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvValueClientNumber" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvValueLocation"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center_vertical"
+                            android:includeFontPadding="false"
+                            android:text=" Surat, Gujarat."
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvLabelLocation"
+                            app:layout_constraintTop_toTopOf="@id/tvLabelLocation" />
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageEdit"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:padding="@dimen/_3sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_edit" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnProceed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:background="@drawable/btn_back_red"
+                    android:includeFontPadding="false"
+                    android:paddingHorizontal="@dimen/_40sdp"
+                    android:paddingVertical="@dimen/_7ssp"
+                    android:text="@string/label_proceed"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    app:fontFamily="@font/poppins_semi_bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cardViewDetails" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/progressBarCommon"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp80"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/green_loading" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

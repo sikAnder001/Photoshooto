@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_layout_corner_rounded_consult"
+    android:minWidth="260dp"
+    android:minHeight="150dp"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/title_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="false"
+        android:text="@string/exit_text"
+        android:textAppearance="@style/sp16_blue_style"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/btnNo"
+        android:layout_width="@dimen/dp80"
+        android:layout_height="@dimen/dp28"
+        android:background="@drawable/btn_white_blue_border"
+        android:gravity="center"
+        android:text="@string/no"
+        android:textAppearance="@style/sp18_blue_txt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_txt"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <TextView
+        android:id="@+id/btnYes"
+        android:layout_width="@dimen/dp80"
+        android:layout_height="@dimen/dp28"
+        android:background="@drawable/bluebutton_ripple"
+        android:gravity="center"
+        android:text="@string/yes"
+        android:textAppearance="@style/sp18_white_txt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_txt"
+        app:layout_constraintVertical_bias="0.7" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

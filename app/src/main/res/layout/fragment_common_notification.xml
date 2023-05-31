@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.dashboard.ui.notifications.NotificationsFragment">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp10"
+            android:background="@drawable/edittext_bg"
+            android:ems="10"
+            android:iconifiedByDefault="false"
+            android:inputType="textPersonName"
+            android:queryBackground="@color/white"
+            android:textColorHint="@color/black"
+            app:iconifiedByDefault="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryBackground="@android:color/transparent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:scrollbars="vertical"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/searchView"
+            app:layout_constraintTop_toBottomOf="@+id/searchView"
+            tools:itemCount="5"
+            tools:listitem="@layout/notifi_item" />
+        />
+
+
+        <TextView
+            android:id="@+id/tv_no_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp10"
+            android:gravity="center"
+            android:text="@string/no_notification_yet"
+            android:textColor="@color/grey1"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintStart_toStartOf="@+id/searchView"
+            app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/notificationImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp10"
+            android:src="@drawable/ic_push_notifications"
+            app:layout_constraintStart_toStartOf="@+id/tv_no_notification"
+            app:layout_constraintTop_toBottomOf="@+id/tv_no_notification"
+            tools:ignore="MissingConstraints" />
+
+
+        <TextView
+            android:id="@+id/tv_notify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp10"
+            android:gravity="center"
+            android:text="@string/we_will_notify_you_when_something_arrives"
+            android:textColor="@color/grey1"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintStart_toStartOf="@+id/notificationImage"
+            app:layout_constraintTop_toBottomOf="@+id/notificationImage" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

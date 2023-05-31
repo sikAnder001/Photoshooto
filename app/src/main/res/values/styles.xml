@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <!--//API 29 and above (While Pasting the code delete this comment)-->
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="DatePickerTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/blue_clr</item>
+        <item name="colorPrimaryDark">@color/btn_green</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/Widget.MaterialComponents.Button
+        </item>
+        <item name="android:buttonBarNegativeButtonStyle">
+            @style/Widget.MaterialComponents.Button.TextButton
+        </item>
+        <item name="android:buttonBarNeutralButtonStyle">@style/Widget.MaterialComponents.Button
+        </item>
+    </style>
+
+    <style name="ThemeLauncher" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="AppFullScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <!--        <item name="android:windowFullscreen">true</item>-->
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="your_memori">
+        <item name="android:textSize">16.52sp</item>
+        <item name="android:textColor">@color/blue_clr</item>
+        <item name="fontFamily">@font/arial_rounded_mt</item>
+    </style>
+
+    <style name="your_memories_small">
+        <item name="android:textSize">8.62sp</item>
+        <item name="android:textColor">@color/blue_clr</item>
+        <item name="fontFamily">@font/arial_rounded_mt</item>
+    </style>
+
+    <style name="photoshooto_large">
+        <item name="android:textSize">48dp</item>
+        <item name="android:textColor">@color/orange_clr</item>
+        <item name="android:shadowColor">#40000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">4</item>
+        <item name="android:shadowRadius">4</item>
+        <item name="android:fontFamily">@font/arial_rounded_mt</item>
+    </style>
+
+    <style name="photoshooto_small">
+        <item name="android:textSize">@dimen/sp26</item>
+        <item name="android:textColor">@color/orange_clr</item>
+        <item name="android:shadowColor">#40000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">4</item>
+        <item name="android:shadowRadius">4</item>
+        <item name="android:fontFamily">@font/arial_rounded_mt</item>
+    </style>
+
+    <style name="skip_for_no">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">@dimen/sp12</item>
+        <item name="android:textColor">@color/grey_clr</item>
+    </style>
+
+    <style name="scan_qr_cod">
+        <item name="android:textSize">@dimen/sp24</item>
+        <item name="android:textColor">@color/orange_clr</item>
+        <item name="fontFamily">@font/poppins_semi_bold</item>
+    </style>
+
+    <style name="sp14_txt_style">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textColor">@color/blue_clr</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp24_blue_style">
+        <item name="android:textSize">@dimen/sp24</item>
+        <item name="android:textColor">@color/blue_clr</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp14_thickbluew_style">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textColor">@color/thick_gray_clr</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp10_thickbluew_style">
+        <item name="android:textSize">@dimen/sp10</item>
+        <item name="android:textColor">@color/grey_clr1</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp16_thickbluew_style">
+        <item name="android:textSize">@dimen/sp16</item>
+        <item name="android:textColor">@color/thick_gray_clr</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp14_grey_clr2_txt">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textColor">@color/grey_clr2</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp12_grey_clr2_txt">
+        <item name="android:textSize">@dimen/sp12</item>
+        <item name="android:textColor">@color/grey_clr2</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp12_black_clr_txt">
+        <item name="android:textSize">@dimen/sp12</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp10_grey_clr2_txt">
+        <item name="android:textSize">@dimen/sp10</item>
+        <item name="android:textColor">@color/grey_clr2</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp18_white_txt">
+        <item name="android:textSize">@dimen/sp18</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp18_blue_txt">
+        <item name="android:textSize">@dimen/sp18</item>
+        <item name="android:textColor">@color/blue_clr</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp14_white_txt">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp20_blue_txt">
+        <item name="android:textSize">@dimen/sp20</item>
+        <item name="android:textColor">@color/blue_clr</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp18_orange_txt">
+        <item name="android:textSize">@dimen/sp18</item>
+        <item name="android:textColor">@color/orange_clr</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp16_orange_txt">
+        <item name="android:textSize">@dimen/sp16</item>
+        <item name="android:textColor">@color/orange_clr</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp14_orange_txt">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textColor">@color/orange_clr</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp10_orange_txt">
+        <item name="android:textSize">@dimen/sp10</item>
+        <item name="android:textColor">@color/orange_clr</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp16_txt_style">
+        <item name="android:textSize">@dimen/sp16</item>
+        <item name="android:textColor">@color/grey_clr1</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="ps_medium">
+        <item name="android:textSize">@dimen/sp32</item>
+        <item name="android:textColor">@color/orange_clr</item>
+        <item name="fontFamily">@font/arial_rounded_mt</item>
+    </style>
+
+    <style name="sp10_txt_style">
+        <item name="android:textSize">10.36sp</item>
+        <item name="android:textColor">@color/blue_clr</item>
+        <item name="fontFamily">@font/arial_rounded_mt</item>
+    </style>
+
+    <style name="sp16_blue_style">
+        <item name="android:textSize">@dimen/sp16</item>
+        <item name="android:textColor">@color/blue_clr</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp16_white_style">
+        <item name="android:textSize">@dimen/sp16</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp16_white_bold_style">
+        <item name="android:textSize">@dimen/sp16</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/poppins_semi_bold</item>
+    </style>
+
+    <style name="sp14_white_style">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp14_blue_style">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textColor">@color/blue_clr</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp14_blue_style_mid">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textColor">@color/colorBlueText</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp14_grey_style_mid">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textColor">@color/grey_tv</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp14_purple_style_mid">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textColor">@color/colorpurple</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp14_purple2_style_mid">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textColor">@color/colorPurpleText</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp12_blue_style">
+        <item name="android:textSize">@dimen/sp12</item>
+        <item name="android:textColor">@color/blue_clr</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp14_green_style">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textColor">@color/green_status</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp12_green_style">
+        <item name="android:textSize">@dimen/sp12</item>
+        <item name="android:textColor">@color/green_status</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+
+    <style name="sp24_blue_poppins">
+        <item name="android:textSize">@dimen/sp24</item>
+        <item name="android:textColor">@color/blue_clr</item>
+        <item name="fontFamily">@font/poppins_semi_bold</item>
+    </style>
+
+    <style name="sp24_orange_poppins">
+        <item name="android:textSize">@dimen/sp24</item>
+        <item name="android:textColor">@color/orange_clr</item>
+        <item name="fontFamily">@font/poppins_semi_bold</item>
+    </style>
+
+    <style name="sp14_black_clr2_txt">
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+
+    <style name="sp18_bold_blue_txt">
+        <item name="android:textSize">@dimen/sp18</item>
+        <item name="android:textColor">@color/blue_clr</item>
+        <item name="fontFamily">@font/poppins_semi_bold</item>
+    </style>
+
+    <style name="sp12_orange_txt">
+        <item name="android:textSize">@dimen/sp12</item>
+        <item name="android:textColor">@color/orange_clr</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="sp16_black_style">
+        <item name="android:textSize">@dimen/sp16</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="SpinnerTheme">
+        <item name="colorAccent">@color/orange_clr</item>
+        <item name="colorControlNormal">@color/orange_clr</item>
+    </style>
+
+    <style name="black_text">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="black_text_semi_bold">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/poppins_semi_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="sp16_black_text_semi_bold">
+        <item name="android:textSize">@dimen/sp16</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/poppins_semi_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="black_text_bold">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="black_text_medium">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="tab_text_appearance_reason" parent="TextAppearance.Design.Tab">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="white_text">
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/MyCustomTextAppearance</item>
+    </style>
+
+    <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="sp16_orange_txt_style">
+        <item name="android:textSize">@dimen/sp16</item>
+        <item name="android:textColor">@color/orange_clr</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="bottomSheetPositiveButton" parent="Widget.AppCompat.Button">
+        <item name="minHeight">56dp</item>
+        <item name="android:gravity">center|center_horizontal|center_vertical</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">@dimen/layout_margin_quarter</item>
+        <item name="cornerSizeTopLeft">@dimen/layout_margin_quarter</item>
+        <item name="cornerSizeBottomRight">@dimen/layout_margin_quarter</item>
+        <item name="cornerSizeBottomLeft">@dimen/layout_margin_quarter</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundColor">@color/orange_clr</item>
+        <item name="android:layout_margin">@dimen/layout_margin_full</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="TabLayoutStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="LandingPageTabLayoutStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">@dimen/sp12</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">@color/gray_tv</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheet</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+    </style>
+
+    <style name="CustomBottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/CustomShapeAppearanceBottomSheetDialog</item>
+    </style>
+
+    <style name="CustomShapeAppearanceBottomSheetDialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">8dp</item>
+        <item name="cornerSizeTopLeft">8dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <style name="RoundedBottomSheetDialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/RoundedBottomSheetModalStyle</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="colorPrimary">@color/orange_clr</item>
+    </style>
+
+    <style name="RoundedBottomSheetModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_card</item>
+    </style>
+
+    <style name="TransparentBottomSheetDialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/TransparentBottomSheetModalStyle</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="colorPrimary">@color/orange_clr</item>
+    </style>
+
+    <style name="TransparentBottomSheetModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="BottomSheetDialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/bottomSheetBackground</item>
+    </style>
+
+    <style name="RadioButtonStyle" parent="AppTheme">
+        <item name="colorControlNormal">@color/grey24</item>
+        <item name="colorAccent">@color/orange_clr</item>
+        <item name="android:textColorSecondary">@color/black</item>
+    </style>
+
+    <style name="bottomSheetBackground" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+    </style>
+
+    <style name="CustomChipChoice" parent="@style/Widget.MaterialComponents.Chip.Choice">
+        <item name="chipMinHeight">24dp</item>
+        <item name="chipIconSize">15dp</item>
+        <item name="chipMinTouchTargetSize">30dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body2_Thin
+        </item>
+    </style>
+
+    <style name="TextAppearance.MaterialComponents.Body2_Thin" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="DialogSlideAnim" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowMinWidthMajor">50%</item>
+        <item name="android:windowMinWidthMinor">50%</item>
+    </style>
+
+    <style name="full_screen_dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="tvStyleBold">
+        <item name="android:fontFamily">@font/poppins_600</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/blue_clr</item>
+        <item name="android:textSize">@dimen/sp16</item>
+    </style>
+
+    <style name="tvStyleRegular">
+        <item name="android:fontFamily">@font/poppins_400</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/blue_clr</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+
+
+    <style name="tvFontRegular">
+        <item name="android:fontFamily">@font/poppins_400</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="tvFontSemiBold">
+        <item name="android:fontFamily">@font/poppins_500</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="tvFontBold">
+        <item name="android:fontFamily">@font/poppins_600</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="tvFont300">
+        <item name="android:fontFamily">@font/poppins_300</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="NumberPickerStyle">
+        <item name="colorControlNormal">@color/blue_clr</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="edtStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:fontFamily">@font/poppins_400</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="background">@drawable/edit_text_selected</item>
+        <item name="android:background">@drawable/edit_text_selected</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <style name="shapeableImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="shapeableImageViewBig" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_circle_background_color" format="color" />
+    </declare-styleable>
+
+
+    <style name="btnStyle" parent="Widget.AppCompat.Button">
+        <item name="android:fontFamily">@font/poppins_400</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">20sp</item>
+        <item name="android:layout_marginBottom">20sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="background">@drawable/button_background_primary</item>
+        <item name="android:background">@drawable/button_background_primary</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="btnStyleSmall" parent="Widget.AppCompat.Button">
+        <item name="android:fontFamily">@font/poppins_400</item>
+        <item name="textAllCaps">false</item>
+        <item name="backgroundTint">@color/orange_clr</item>
+        <item name="android:background">@drawable/button_bg</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="sp16_txt_style_grey">
+        <item name="android:textSize">@dimen/sp16</item>
+        <item name="android:textColor">@color/grey_clr2</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+
+    <style name="tab_selectedtextapperance">
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="fontFamily">@font/poppins_semi_bold</item>
+    </style>
+
+    <style name="mytheme" parent="android:style/Theme.Translucent">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.photographersScreens.photographerAuth.fragments.FragmentPhotographerSignup">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_BackSignup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp27"
+                android:layout_marginTop="@dimen/dp10"
+                android:drawablePadding="@dimen/dp15"
+                android:includeFontPadding="false"
+                android:text="@string/signup"
+                android:textAppearance="@style/sp24_blue_style"
+                app:drawableStartCompat="@drawable/ic_arrow_back_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/basicLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp30"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_BackSignup">
+
+                <TextView
+                    android:id="@+id/appCompatTextView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp27"
+                    android:drawablePadding="@dimen/dp10"
+                    android:includeFontPadding="false"
+                    android:text="@string/name"
+                    android:textAppearance="@style/sp16_blue_style"
+                    app:drawableStartCompat="@drawable/ic_user"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp50"
+                    android:layout_marginHorizontal="@dimen/dp27"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:background="@drawable/ic_edittext_bg"
+                    android:hint="@string/enter_your_name"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingHorizontal="@dimen/dp10"
+                    android:textAppearance="@style/sp14_grey_clr2_txt"
+                    app:layout_constraintStart_toStartOf="@id/appCompatTextView4"
+                    app:layout_constraintTop_toBottomOf="@id/appCompatTextView4" />
+
+                <TextView
+                    android:id="@+id/errorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:text="@string/enter_your_name"
+                    android:textColor="@color/primaryRedColor"
+                    android:textSize="@dimen/sp14"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/appCompatTextView4"
+                    app:layout_constraintTop_toBottomOf="@id/edit_name" />
+
+                <TextView
+                    android:id="@+id/email_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:drawablePadding="@dimen/dp10"
+                    android:includeFontPadding="false"
+                    android:text="@string/email_id"
+                    android:textAppearance="@style/sp16_blue_style"
+                    app:drawableStartCompat="@drawable/ic_email_blue"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/errorName"
+                    app:layout_constraintTop_toBottomOf="@id/errorName" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp50"
+                    android:layout_marginHorizontal="@dimen/dp27"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:background="@drawable/ic_edittext_bg"
+                    android:hint="@string/enter_email_id"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:paddingHorizontal="@dimen/dp10"
+                    android:textAppearance="@style/sp14_grey_clr2_txt"
+                    app:layout_constraintStart_toStartOf="@id/email_txt"
+                    app:layout_constraintTop_toBottomOf="@id/email_txt" />
+
+                <TextView
+                    android:id="@+id/error_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:text="@string/enter_email_id"
+                    android:textColor="@color/primaryRedColor"
+                    android:textSize="@dimen/sp14"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/email_txt"
+                    app:layout_constraintTop_toBottomOf="@id/edit_email" />
+
+                <TextView
+                    android:id="@+id/contact_num_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:drawablePadding="@dimen/dp10"
+                    android:includeFontPadding="false"
+                    android:text="@string/contact_no"
+                    android:textAppearance="@style/sp16_blue_style"
+                    app:drawableStartCompat="@drawable/ic_phone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/error_email"
+                    app:layout_constraintTop_toBottomOf="@id/error_email" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp50"
+                    android:layout_marginHorizontal="@dimen/dp27"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:background="@drawable/ic_edittext_bg"
+                    android:digits="0123456789"
+                    android:hint="@string/enter_mobile_empid"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:paddingHorizontal="@dimen/dp10"
+                    android:textAppearance="@style/sp14_grey_clr2_txt"
+                    app:layout_constraintStart_toStartOf="@id/contact_num_txt"
+                    app:layout_constraintTop_toBottomOf="@id/contact_num_txt" />
+
+                <TextView
+                    android:id="@+id/error_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:text="@string/enter_mobile_empid"
+                    android:textColor="@color/primaryRedColor"
+                    android:textSize="@dimen/sp14"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/contact_num_txt"
+                    app:layout_constraintTop_toBottomOf="@id/edit_phone" />
+
+                <TextView
+                    android:id="@+id/gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:drawablePadding="@dimen/dp10"
+                    android:includeFontPadding="false"
+                    android:text="@string/gender"
+                    android:textAppearance="@style/sp14_blue_style"
+                    android:visibility="gone"
+                    app:drawableStartCompat="@drawable/gender"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/error_phone"
+                    app:layout_constraintTop_toBottomOf="@id/error_phone" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/gender_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp48"
+                    android:layout_marginHorizontal="@dimen/dp27"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:background="@drawable/ic_edittext_bg"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/gender"
+                    app:layout_constraintTop_toBottomOf="@id/gender">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edit_gender"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp48"
+                        android:background="@null"
+                        android:gravity="center|start"
+                        android:hint="@string/gender"
+                        android:inputType="textEmailAddress"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/dp10"
+                        android:textAppearance="@style/sp14_grey_clr2_txt"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/errorGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:text="@string/enter_gender"
+                    android:textColor="@color/primaryRedColor"
+                    android:textSize="@dimen/sp14"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/gender"
+                    app:layout_constraintTop_toBottomOf="@id/gender_spinner" />
+
+                <TextView
+                    android:id="@+id/txt_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:drawablePadding="@dimen/dp10"
+                    android:includeFontPadding="false"
+                    android:text="@string/passwordd"
+                    android:textAppearance="@style/sp16_blue_style"
+                    app:drawableStartCompat="@drawable/ic_key"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/errorGender" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/info_img"
+                    android:layout_width="@dimen/dp20"
+                    android:layout_height="@dimen/dp19"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/ic_info_img"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.837"
+                    app:layout_constraintStart_toEndOf="@id/txt_password"
+                    app:layout_constraintTop_toBottomOf="@id/errorGender" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/password_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp24"
+                    android:layout_marginTop="@dimen/dp12"
+                    android:hint="@string/enter_password"
+                    app:hintEnabled="false"
+                    app:layout_constraintStart_toStartOf="@id/txt_password"
+                    app:layout_constraintTop_toBottomOf="@id/txt_password"
+                    app:passwordToggleEnabled="true">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edit_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_edittext_bg"
+                        android:hint="@string/enter_password"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:paddingHorizontal="@dimen/dp10"
+                        android:singleLine="true"
+                        android:textAppearance="@style/sp14_grey_clr2_txt" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/errorpassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp27"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/enter_password"
+                    android:textColor="@color/primaryRedColor"
+                    android:textSize="@dimen/sp14"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/password_input_layout" />
+
+                <TextView
+                    android:id="@+id/password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:drawablePadding="@dimen/dp10"
+                    android:includeFontPadding="false"
+                    android:text="@string/confirm_passwordd"
+                    android:textAppearance="@style/sp16_blue_style"
+                    app:drawableStartCompat="@drawable/ic_key"
+                    app:layout_constraintStart_toStartOf="@id/txt_password"
+                    app:layout_constraintTop_toBottomOf="@id/errorpassword" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/re_password_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp24"
+                    android:layout_marginTop="@dimen/dp12"
+                    android:hint="@string/enter_password"
+                    app:hintEnabled="false"
+                    app:layout_constraintStart_toStartOf="@id/password"
+                    app:layout_constraintTop_toBottomOf="@id/password"
+                    app:passwordToggleEnabled="true">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edit_re_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_edittext_bg"
+                        android:hint="@string/enter_password"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:paddingHorizontal="@dimen/dp10"
+                        android:singleLine="true"
+                        android:textAppearance="@style/sp14_grey_clr2_txt" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/error_re_pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp27"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/enter_password"
+                    android:textColor="@color/primaryRedColor"
+                    android:textSize="@dimen/sp14"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/re_password_input_layout" />
+
+                <TextView
+                    android:id="@+id/tvinvalide_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:drawablePadding="@dimen/dp10"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="@string/invitecode"
+                    android:textAppearance="@style/sp16_blue_style"
+                    app:drawableStartCompat="@drawable/ic_invite_code"
+                    app:layout_constraintStart_toStartOf="@id/txt_password"
+                    app:layout_constraintTop_toBottomOf="@id/re_password_input_layout" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/re_invitecode_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp24"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:hint="@string/invitecode"
+                    app:hintEnabled="false"
+                    app:layout_constraintStart_toStartOf="@id/tvinvalide_code"
+                    app:layout_constraintTop_toBottomOf="@id/tvinvalide_code">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edit_invitecode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_edittext_bg"
+                        android:hint="@string/invitecode"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:paddingHorizontal="@dimen/dp10"
+                        android:singleLine="true"
+                        android:textAppearance="@style/sp14_grey_clr2_txt" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/error_inite_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp27"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/invitecode"
+                    android:textColor="@color/primaryRedColor"
+                    android:textSize="@dimen/sp14"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/re_invitecode_input_layout" />
+
+                <CheckBox
+                    android:id="@+id/newsLetterCheckbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp20"
+                    android:layout_marginTop="@dimen/dp20"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="1.5"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:text="@string/newsletter"
+                    android:textColor="@color/blue_clr"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintEnd_toEndOf="@id/error_inite_code"
+                    app:layout_constraintTop_toBottomOf="@id/error_inite_code" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_terms_privacy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/newsLetterCheckbox">
+
+                    <TextView
+                        android:id="@+id/terms_n_condition"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/terms_and_service"
+                        android:textColor="@color/orange_clr"
+                        android:textSize="@dimen/sp14"
+                        app:layout_constraintEnd_toStartOf="@id/and_txt"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/and_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingHorizontal="@dimen/dp8"
+                        android:text="and"
+                        android:textColor="@color/blue_clr"
+                        android:textSize="@dimen/sp14"
+                        app:layout_constraintEnd_toStartOf="@id/privacy_policy_tv"
+                        app:layout_constraintStart_toEndOf="@id/terms_n_condition"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/privacy_policy_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/privacy_policy_txt"
+                        android:textColor="@color/orange_clr"
+                        android:textSize="@dimen/sp14"
+                        app:layout_constraintStart_toEndOf="@id/and_txt"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/btnNext_Signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp42"
+                    android:layout_marginHorizontal="@dimen/dp30"
+                    android:layout_marginTop="@dimen/dp30"
+                    android:background="@drawable/orange_button_ripple"
+                    android:gravity="center"
+                    android:text="@string/next"
+                    android:textAppearance="@style/sp18_white_txt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_terms_privacy" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/progress_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp80"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@id/btnNext_Signup"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/green_loading"
+                    tools:ignore="NotSibling" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.admin_screen.manage_request.RejectedRequestFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/viewActionBar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingHorizontal="@dimen/dp24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivSideMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_side_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/black_text_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp20"
+            android:text="@string/rejected_request"
+            android:textColor="@color/blue_clr"
+            android:textSize="@dimen/sp24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivSideMenu"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/dp100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewActionBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/dp16" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/dp16" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtSearch"
+                style="@style/black_text_medium"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp48"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginEnd="@dimen/dp10"
+                android:background="@drawable/ic_edittext_bg"
+                android:drawableStart="@drawable/ic_grey_search"
+                android:drawablePadding="@dimen/dp10"
+                android:gravity="center|start"
+                android:hint="@string/label_search"
+                android:imeOptions="actionDone"
+                android:inputType="textCapWords"
+                android:paddingHorizontal="@dimen/dp20"
+                android:textAppearance="@style/sp14_grey_clr2_txt"
+                android:textColorHint="@color/grey_clr"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintEnd_toStartOf="@+id/ivShorting"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivShorting"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp48"
+                android:layout_marginEnd="@dimen/dp10"
+                android:background="@drawable/bg_grey_border_1px"
+                android:paddingHorizontal="@dimen/dp16"
+                android:src="@drawable/ic_grey_sorting"
+                app:layout_constraintEnd_toStartOf="@+id/ivFilter"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp48"
+                android:background="@drawable/bg_grey_border_1px"
+                android:paddingHorizontal="@dimen/dp16"
+                android:src="@drawable/ic_grey_filter"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp20"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/edtSearch" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvEmptyState"
+                style="@style/black_text_medium"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp150"
+                android:gravity="center"
+                android:text="@string/label_data_not_found"
+                android:textColor="@color/grey_clr"
+                android:textSize="@dimen/sp16"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/edtSearch" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

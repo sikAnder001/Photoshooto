@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/sp20">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp223"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/background_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/photographer_bg_img"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp19"
+                android:src="@drawable/ic_back_arrow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_share_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_share"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="@dimen/dp94"
+            android:layout_height="@dimen/dp94"
+            android:layout_marginStart="@dimen/dp24"
+            android:layout_marginTop="175dp"
+            android:background="@drawable/circular_bg"
+            android:src="@drawable/ic_girl_profile"
+            app:civ_border_color="@color/grey_clr1"
+            app:civ_border_width="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/editProfileImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp60"
+            android:elevation="10dp"
+            android:src="@drawable/bg_green_dot"
+            app:layout_constraintBottom_toBottomOf="@+id/profile_image"
+            app:layout_constraintEnd_toEndOf="@+id/profile_image"
+            app:layout_constraintTop_toTopOf="@+id/profile_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="Kanika Jain"
+            android:textAppearance="@style/sp16_black_style"
+            app:layout_constraintStart_toStartOf="@+id/profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pro_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:includeFontPadding="false"
+            android:text="Pro ID : PS22BLR5245"
+            android:textAppearance="@style/sp10_grey_clr2_txt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnSave"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/red_border_bg"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:padding="8dp"
+            android:text="Save"
+            android:textAppearance="@style/sp10_grey_clr2_txt"
+            android:textColor="@color/red_color"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pro_id"
+            app:layout_goneMarginEnd="10dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnBookNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_back_red"
+            android:drawableStart="@drawable/ic_assignment_add"
+            android:drawablePadding="@dimen/dp4"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:padding="8dp"
+            android:text="Book Now"
+            android:textAppearance="@style/sp10_grey_clr2_txt"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSave"
+            app:layout_goneMarginEnd="10dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/studioname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="Triveni Studios"
+            android:textAppearance="@style/sp18_bold_blue_txt"
+            app:layout_constraintEnd_toEndOf="@+id/user_name"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/user_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/photographer_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="Wedding Photographer"
+            android:textAppearance="@style/sp12_grey_clr2_txt"
+            app:layout_constraintEnd_toEndOf="@+id/user_name"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/studioname" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/photographerRates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="$30,000 per day"
+            android:textAppearance="@style/sp14_blue_style"
+            app:layout_constraintEnd_toEndOf="@+id/user_name"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/photographer_type" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp24"
+            android:layout_marginTop="@dimen/dp10"
+            app:cardCornerRadius="@dimen/dp10"
+            app:cardElevation="@dimen/dp10"
+            app:layout_constraintStart_toStartOf="@+id/photographerRates"
+            app:layout_constraintTop_toBottomOf="@+id/photographerRates">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp50"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/photographer_type"
+                app:layout_constraintTop_toBottomOf="@+id/photographer_type">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.33"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/events_completed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="0"
+                        android:textAppearance="@style/sp18_bold_blue_txt" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@string/events_completed"
+                        android:textAppearance="@style/sp10_grey_clr2_txt" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightorange" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.33"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/events_ongoing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="0"
+                        android:textAppearance="@style/sp18_bold_blue_txt" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@string/events_ongoing"
+                        android:textAppearance="@style/sp10_grey_clr2_txt" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightorange" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.33"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/rating"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="4.5"
+                        android:textAppearance="@style/sp18_bold_blue_txt" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@string/ratings"
+                        android:textAppearance="@style/sp10_grey_clr2_txt" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layout2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp40"
+            android:layout_marginHorizontal="@dimen/dp24"
+            android:layout_marginTop="@dimen/dp28"
+            android:background="@drawable/light_bluebg"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/layout1"
+            app:layout_constraintTop_toBottomOf="@+id/layout1">
+
+            <TextView
+                android:id="@+id/word_demo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/dp2"
+                android:layout_weight="0.33"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="@string/work_demo"
+                android:textAppearance="@style/sp12_blue_style" />
+
+            <TextView
+                android:id="@+id/reviews"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/dp2"
+                android:layout_weight="0.33"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="@string/reviews"
+                android:textAppearance="@style/sp12_blue_style" />
+
+            <TextView
+                android:id="@+id/packages"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/dp2"
+                android:layout_weight="0.33"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="@string/package1"
+                android:textAppearance="@style/sp12_blue_style" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <include
+            android:id="@+id/profile_work_demo_view"
+            layout="@layout/photographer_work_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="@+id/layout2"
+            app:layout_constraintTop_toBottomOf="@+id/layout2" />
+
+        <include
+            android:id="@+id/profile_review_view"
+            layout="@layout/photographer_reviews_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/layout2"
+            app:layout_constraintTop_toBottomOf="@+id/layout2" />
+
+        <include
+            android:id="@+id/profile_package_view"
+            layout="@layout/photographer_plans_views"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout2" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp80"
+            android:layout_marginVertical="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp30"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout1"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/green_loading" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

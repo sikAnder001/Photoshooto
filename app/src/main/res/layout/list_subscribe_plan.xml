@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/row"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/plansRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/bg_plan_unselected"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/planName"
+        app:layout_constraintTop_toTopOf="@id/planName">
+
+        <TextView
+            android:id="@+id/price"
+            style="@style/tvFontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/rs_amount"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/tax"
+            app:layout_constraintEnd_toEndOf="@id/tax"
+            app:layout_constraintStart_toStartOf="@id/tax"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tax"
+            style="@style/tvFontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:paddingHorizontal="40dp"
+            android:text="@string/inclusive_of_all_tax"
+            android:textColor="@color/black20"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/price" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/planName"
+        style="@style/tvFontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_plan"
+        android:backgroundTint="@color/textColor"
+        android:elevation="2dp"
+        android:gravity="center"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="15dp"
+        android:text="Promo"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@id/plansRow"
+        app:layout_constraintStart_toStartOf="@id/plansRow"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/recommended"
+        style="@style/tvFontSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_plan"
+        android:backgroundTint="@color/greenLight"
+        android:elevation="2dp"
+        android:gravity="center"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="5dp"
+        android:text="@string/recommended"
+        android:textColor="@color/buttonGreen"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/plansRow"
+        app:layout_constraintEnd_toEndOf="@id/plansRow"
+        app:layout_constraintStart_toStartOf="@id/plansRow"
+        app:layout_constraintTop_toBottomOf="@id/plansRow" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

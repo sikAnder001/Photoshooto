@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/mobile_verify_toolbar_with_back"
+        layout="@layout/toolbar_with_back_btn" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp8"
+        android:includeFontPadding="false"
+        android:text="@string/now_verify_your_email_and_your_phone_number"
+        android:textAppearance="@style/sp14_blue_style"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mobile_verify_toolbar_with_back" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/photosignup_img3"
+        android:layout_width="@dimen/_294sdp"
+        android:layout_height="@dimen/_191sdp"
+        android:layout_marginTop="@dimen/dp20"
+        android:src="@drawable/girl_updates_the_system_settings_of_the_computer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_txt" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/user_id_mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp20"
+        android:drawableLeft="@drawable/ic_key"
+        android:drawablePadding="@dimen/dp10"
+        android:includeFontPadding="false"
+        android:text="@string/mobile_otp"
+        android:textAppearance="@style/sp14_blue_style"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/photosignup_img3" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/otpLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_id_mobile">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layout_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/activity_vertical_margin"
+            android:layout_marginStart="30dp"
+            android:gravity="start"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/otp_edit_text_1"
+                android:layout_width="@dimen/dp42"
+                android:layout_height="@dimen/dp42"
+                android:layout_marginEnd="@dimen/dp4"
+                android:background="@drawable/otp_background"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/text_title"
+                android:textSize="@dimen/sp16" />
+
+            <EditText
+                android:id="@+id/otp_edit_text_2"
+                android:layout_width="@dimen/dp42"
+                android:layout_height="@dimen/dp42"
+                android:layout_marginHorizontal="@dimen/dp4"
+                android:background="@drawable/otp_background"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/text_title"
+                android:textSize="@dimen/sp16" />
+
+            <EditText
+                android:id="@+id/otp_edit_text_3"
+                android:layout_width="@dimen/dp42"
+                android:layout_height="@dimen/dp42"
+                android:layout_marginHorizontal="@dimen/dp4"
+                android:background="@drawable/otp_background"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/text_title"
+                android:textSize="@dimen/sp16" />
+
+            <EditText
+                android:id="@+id/otp_edit_text_4"
+                android:layout_width="@dimen/dp42"
+                android:layout_height="@dimen/dp42"
+                android:layout_marginHorizontal="@dimen/dp4"
+                android:background="@drawable/otp_background"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/text_title"
+                android:textSize="@dimen/sp16" />
+
+            <EditText
+                android:id="@+id/otp_edit_text_5"
+                android:layout_width="@dimen/dp42"
+                android:layout_height="@dimen/dp42"
+                android:layout_marginHorizontal="@dimen/dp4"
+                android:background="@drawable/otp_background"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/text_title"
+                android:textSize="@dimen/sp16" />
+
+            <EditText
+                android:id="@+id/otp_edit_text_6"
+                android:layout_width="@dimen/dp42"
+                android:layout_height="@dimen/dp42"
+                android:layout_marginHorizontal="@dimen/dp4"
+                android:background="@drawable/otp_background"
+                android:gravity="center"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/text_title"
+                android:textSize="@dimen/sp16" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:id="@+id/otp_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp20"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="@dimen/dp4"
+            android:gravity="center"
+            android:text="@string/invalid_pin"
+            android:textAlignment="center"
+            android:textColor="@color/orange_clr"
+            android:visibility="gone"
+            app:drawableStartCompat="@drawable/ic_info"
+            app:layout_constraintHorizontal_bias="0.12"
+            app:layout_constraintStart_toStartOf="@+id/otpLayout"
+            app:layout_constraintTop_toBottomOf="@+id/layout_pass" />
+
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:drawablePadding="@dimen/dp10"
+            android:gravity="start"
+            android:includeFontPadding="false"
+            android:text="@string/we_have_sent_otp_on_"
+            android:textAppearance="@style/sp14_blue_style"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/otp_error" />
+
+        <TextView
+            android:id="@+id/change_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:drawablePadding="@dimen/_8sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:includeFontPadding="false"
+
+            android:text="@string/edit2"
+            android:textColor="@color/orange_clr"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBaseline_toBaselineOf="@id/textView1"
+            app:layout_constraintStart_toEndOf="@id/textView1"
+            app:layout_constraintTop_toBottomOf="@id/otp_error" />
+
+        <ImageView
+            android:id="@+id/edit"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:backgroundTint="@color/orange_clr"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintBottom_toBottomOf="@id/change_number"
+            app:layout_constraintStart_toEndOf="@id/change_number"
+            app:layout_constraintTop_toTopOf="@id/change_number" />
+
+
+        <TextView
+            android:id="@+id/resend_otp_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:drawablePadding="@dimen/dp10"
+            android:gravity="start"
+            android:text="@string/if_dont_receive_a_code"
+            android:textAppearance="@style/sp12_blue_style"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp80"
+        android:layout_marginTop="@dimen/dp40"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otpLayout"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/green_loading" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/btnNext"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp42"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:background="@drawable/orange_button_ripple"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85">
+
+
+        <ImageView
+            android:id="@+id/imgVerified"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:src="@drawable/bg_white_verified_icon"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvNextOrVerified"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@string/next"
+            android:textAppearance="@style/sp14_white_txt" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp40"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNext">
+
+        <TextView
+            android:id="@+id/get_support"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/facing_problems_having_questions"
+            android:textAppearance="@style/sp14_blue_style" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

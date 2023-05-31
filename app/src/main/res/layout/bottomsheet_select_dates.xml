@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageBSDateTimeClose"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_dialog_close" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/half_curve_top_white"
+            app:layout_constraintTop_toBottomOf="@id/imageBSDateTimeClose">
+
+            <View
+                android:id="@+id/viewDivider"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_3sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bottomsheet_divider_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/viewFullDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:background="@drawable/bottomsheet_divider_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewDivider" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabelEventStartDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:includeFontPadding="false"
+                android:text="@string/start_date"
+                android:textColor="@color/text_054871"
+                android:textSize="@dimen/_14ssp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toStartOf="@id/tvLabelEventEndDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewFullDivider" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSelectEventStartDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/back_date_time_normal"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/placeholder_date"
+                android:textColor="@color/text_054871"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="@id/tvLabelEventStartDate"
+                app:layout_constraintStart_toStartOf="@id/tvLabelEventStartDate"
+                app:layout_constraintTop_toBottomOf="@id/tvLabelEventStartDate" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/tvSelectDateStartDay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:enabled="false"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:textColor="@color/text_AB293241"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="@id/tvLabelEventStartDate"
+                app:layout_constraintStart_toStartOf="@id/tvLabelEventStartDate"
+                app:layout_constraintTop_toBottomOf="@id/tvSelectEventStartDate" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/tvSelectDateStartTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:editable="false"
+                android:focusableInTouchMode="false"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center_vertical"
+                android:hint="@string/placeholder_time"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:textColor="@color/text_054871"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="@id/tvLabelEventStartDate"
+                app:layout_constraintStart_toStartOf="@id/tvLabelEventStartDate"
+                app:layout_constraintTop_toBottomOf="@id/tvSelectDateStartDay" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabelEventEndDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:includeFontPadding="false"
+                android:text="@string/end_date"
+                android:textColor="@color/text_054871"
+                android:textSize="@dimen/_14ssp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvLabelEventStartDate"
+                app:layout_constraintTop_toTopOf="@id/tvLabelEventStartDate" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSelectEventEndDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/back_date_time_normal"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/placeholder_date"
+                android:textColor="@color/text_054871"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="@id/tvLabelEventEndDate"
+                app:layout_constraintStart_toStartOf="@id/tvLabelEventEndDate"
+                app:layout_constraintTop_toBottomOf="@id/tvLabelEventEndDate" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/tvSelectDateEndDay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:enabled="false"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:textColor="@color/text_AB293241"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="@id/tvLabelEventEndDate"
+                app:layout_constraintStart_toStartOf="@id/tvLabelEventEndDate"
+                app:layout_constraintTop_toBottomOf="@id/tvSelectEventEndDate" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/tvSelectDateEndTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:editable="false"
+                android:focusableInTouchMode="false"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center_vertical"
+                android:hint="@string/placeholder_time"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:textColor="@color/text_054871"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="@id/tvLabelEventEndDate"
+                app:layout_constraintStart_toStartOf="@id/tvLabelEventEndDate"
+                app:layout_constraintTop_toBottomOf="@id/tvSelectDateEndDay" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabelDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:includeFontPadding="false"
+                android:text="Duration : 12h 12min"
+                android:textColor="@color/text_054871"
+                android:textSize="@dimen/_12ssp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSelectDateEndTime" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBSEdit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/back_date_time_normal"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/edit"
+                android:textColor="@color/text_054871"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/tvLabelEventStartDate"
+                app:layout_constraintStart_toStartOf="@id/tvLabelEventStartDate"
+                app:layout_constraintTop_toBottomOf="@id/tvLabelDuration" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBSConfirm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/back_confirm_green"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/confirm"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="@id/tvLabelEventEndDate"
+                app:layout_constraintStart_toStartOf="@id/tvLabelEventEndDate"
+                app:layout_constraintTop_toTopOf="@id/tvBSEdit" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

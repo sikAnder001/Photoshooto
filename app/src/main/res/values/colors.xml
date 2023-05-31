@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="bgcolor">#FFFFFF</color>
+
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#F8F7F7</color>
+    <color name="colorAccent">#F0481B</color>
+
+    <color name="transparent">#00FFFFFF</color>
+    <color name="trans">#80000000</color>
+    <color name="trans_new">#6D222222</color>
+    <color name="trans_all">#00222222</color>
+    <color name="light_gray">#E8E8E8</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#F0481B</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="color_grey_light">#dddddd</color>
+    <color name="color_text_logout">#1C2939</color>
+    <color name="color_dark_purpule">#805FB5</color>
+    <color name="color_background_card">#FFFFFFFF</color>
+    <color name="colorDisabled">#D1C7E1</color>
+    <color name="colorEnabled">#805FB5</color>
+
+    <color name="orange_clr">#F0481B</color>
+    <color name="blue_clr">#054871</color>
+    <color name="light_blue_clr">#D9E5ED</color>
+    <color name="grey_clr_new">#DCDCDC</color>
+    <color name="grey_clr">#8B8B8B</color>
+    <color name="grey_clr1">#818181</color>
+    <color name="grey_clr3">#6F6F6F</color>
+    <color name="thick_gray_clr">#263238</color>
+    <color name="thick_gray_">#e6edf1</color>
+    <color name="thick_gray1">#EFF9FF</color>
+    <color name="blue_tv">#054871</color>
+    <color name="dark_tv">#293241</color>
+    <color name="gray_tv">#595959</color>
+    <color name="pink_tv">#f9b6a4</color>
+    <color name="pink_light">#fdede8</color>
+
+    <color name="grey_clr2">#484848</color>
+    <color name="grey_tv">#666666</color>
+    <color name="grey_clr_light">#929292</color>
+    <color name="light_blue">#DEDEDE</color>
+    <color name="light_bg_grey">#D9D9D9</color>//#D9D9D924
+    <!--Light Mode-->
+
+    <!--Text Colors-->
+    <color name="text_title">#000000</color>
+    <color name="text_error">#FF565C</color>
+
+    <color name="green_status">#00B468</color>
+    <color name="green">#16A160</color>
+
+    <color name="green_color">#31BB00</color>
+    <color name="red_color">#F01B1B</color>
+    <!--Icon Color-->
+
+    <!--Light Theme Colors-->
+    <!--Color primary (light)-->
+    <!--Color primary variant (light)-->
+    <!--Color error (light)-->
+
+    <!--Color secondary-->
+    <!--Color secondary variant-->
+    <!--Color on secondary (light), color on background (light),-->
+    <!--color on surface (light)-->
+    <!--Color surface (light), color on error (light), -->
+    <!--color on surface (dark), color on surface (dark)-->
+
+
+    <!--Dark Theme Colors-->
+    <!--Color primary (dark)-->
+    <!--Color primary variant (dark)-->
+    <!--Color surface (dark)-->
+    <!--Color error (dark)-->
+
+    <color name="primaryRedColor">#E13E3E</color>
+    <color name="grey_edittext">#BDBDBD</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="lightorange">#FDEDE8</color>
+    <color name="lightgray">#F5F5F5</color>
+
+    <color name="btn_green">#12994B</color>
+    <color name="grey1">#333333</color>
+    <color name="grey2">#4F4F4F</color>
+    <color name="grey3">#828282</color>
+    <color name="grey5">#898989</color>
+    <color name="grey4">#D1D1D1</color>
+    <color name="grey6">#7C7A7A</color>
+    <color name="grey7">#282828</color>
+    <color name="grey8">#313131</color>
+    <color name="grey9">#7D7D7D</color>
+    <color name="grey10">#D6D5D5</color>
+    <color name="grey11">#979797</color>
+    <color name="grey12">#606060</color>
+    <color name="grey13">#7C7272</color>
+    <color name="grey14">#EAEAEA</color>
+    <color name="grey15">#414141</color>
+    <color name="grey16">#6F6F6F</color>
+    <color name="grey17">#D9D9D9</color>
+    <color name="grey18">#7E7E7E</color>
+    <color name="grey19">#4B4B4B</color>
+    <color name="grey20">#F0F0F0</color>
+    <color name="grey21">#6B6B6B</color>
+    <color name="grey22">#4B4B4B</color>
+    <color name="grey23">#999999</color>
+    <color name="grey24">#787878</color>
+    <color name="grey25">#5E5E5E</color>
+    <color name="grey26">#676767</color>
+    <color name="grey27">#293241</color>
+    <color name="grey28">#666666</color>
+    <color name="grey29">#939393</color>
+    <color name="grey30">#3C3C3C</color>
+    <color name="grey31">#575757</color>
+    <color name="grey32">#DFDFDF</color>
+    <color name="grey33">#EFEFEF</color>
+    <color name="grey34">#EEEEEE</color>
+    <color name="grey35">#545454</color>
+    <color name="grey36">#40000000</color>
+    <color name="grey37">#33000000</color>
+
+    <color name="switch_track">#E2E2E2</color>
+    <color name="splash_status_bar">#80D375</color>
+
+    <color name="colorPrimaryPressed">#F0481B</color>
+    <color name="tooshort">#E0E0E0</color>
+    <color name="weak">#ab001c</color>
+    <color name="medium">#ff8b00</color>
+    <color name="switch_thumb_off">#A3A3A3</color>
+    <color name="strong">#00c113</color>
+
+
+    <color name="coupon_selected_blue">#E8F7FF</color>
+    <color name="coupon_code_green">#23B60C</color>
+    <color name="coupon_code_bg">#E1E5FF</color>
+    <color name="coupon_apply_button">#63C9FF</color>
+    <color name="coupon_remove_blue">#1B83BA</color>
+
+    <color name="new_reuqest_blue">#EFF9FF</color>
+    <color name="manage_admin_title">#17054871</color>
+    <color name="manage_admin_title_bg">#F2FAFF</color>
+    <color name="light_greybg">#D7D7D7</color>
+
+    <color name="generating_qr_blue">#A0BFDE</color>
+
+    <!--VS Start-->
+    <color name="text_054871">#054871</color>
+    <color name="text_8B8B8B">#8B8B8B</color>
+    <color name="text_31BB00">#31BB00</color>
+    <color name="text_717171">#717171</color>
+    <color name="text_AB293241">#AB293241</color>
+    <color name="text_EFF7FF">#EFF7FF</color>
+    <color name="text_F0481B">#F0481B</color>
+    <color name="text_A5F0481B">#A5F0481B</color>
+    <color name="text_1AF0481B">#1AF0481B</color>
+
+    <color name="text_80000000">#80000000</color>
+    <color name="text_13DD94">#13DD94</color>
+    <color name="color_F1F1F1">#F1F1F1</color>
+    <color name="color_202020">#202020</color>
+    <color name="text_D9575757">#D9575757</color>
+    <!--VS End-->
+
+    <color name="thankreqister_clr">#2F2F2F</color>
+    <color name="light_orange_clr">#fef8f6</color>
+    <color name="screen_bg_clr">#fafafa</color>
+    <color name="unread_notification_bg">#E8F7FF</color>
+    <color name="neutralBlack">#151522</color>
+    <color name="textColor">#054871</color>
+    <color name="textColorDull">#14054871</color>
+    <color name="textColorHint">#C8C8C8</color>
+    <color name="greenLight">#BBE6D7</color>
+
+    <color name="window_background">#FFFFFF</color>
+
+    <color name="colorTextPrimary">#000000</color>
+    <color name="colorStarYellow">#FFCF5C</color>
+
+    <color name="neutralGrey">#999999</color>
+    <color name="grey_72">#727272</color>
+    <color name="grey_ec">#ECECEC</color>
+    <color name="grey_dc">#DCDCDC</color>
+    <color name="grey_D9">#D9D9D9</color>
+    <color name="grey_e4">#E4E4E4</color>
+    <color name="blue">#63C9FF</color>
+    <color name="grey_99">#999898</color>
+    <color name="grey_81">#818181</color>
+    <color name="grey_78">#787878</color>
+    <color name="grey_C4">#C4C4C4</color>
+    <color name="grey_66">#666666</color>
+    <color name="grey_6B">#6B6B6B</color>
+    <color name="colorBackgroundGray">#EEEEEE</color>
+    <color name="black20">#202020</color>
+
+    <color name="buttonGreen">#10C36F</color>
+    <color name="brightGreen">#31BB00</color>
+    <color name="selectedDotBlue">#276EF1</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorTransparentWhite">#a1ffffff</color>
+    <color name="colorShadow">#E4E4E4</color>
+    <color name="colorRed">#FF0000</color>
+    <color name="colorGreenText">#24AE42</color>
+    <color name="colorPinkText">#BE52F2</color>
+    <color name="colorPurpleText">#566BEA</color>
+    <color name="colorBlueText">#0084F4</color>
+    <color name="colorBlueTextDull">#1A0084F4</color>
+    <color name="colorOrange">#F0481B</color>
+    <color name="colorPurpleDull">#EDEFFF</color>
+    <color name="colorGreenDull">#E0FFE7</color>
+    <color name="colorBlueDull">#D8EDFF</color>
+    <color name="colorPinkDull">#F6E3FF</color>
+    <color name="colorOrangeLight">#1AF0481B</color>
+    <color name="colorOrangeDull">#FFE3DC</color>
+    <color name="whiteDull">#03FFFFFF</color>
+
+
+    <color name="transparent_10">#28FFFFFF</color>selected_indicator
+    <color name="card_gray">#ECEBEB</color>
+    <color name="blue_text">#054872</color>
+    <color name="text_grey">#D1D1D1</color>
+    <color name="selected_indicator">#276EF1</color>
+    <color name="unselected_indicator">#999999</color>
+    <color name="light_grey_border">#E9E4E4</color>
+    <color name="colorpurple">#BE52F2</color>
+    <color name="light_text_orange">#fcc7b8</color>
+    <color name="dark_transparent">#44000000</color>
+    <color name="purple_mid">#e4c4f2</color>
+    <color name="green_mid">#B1EBBE</color>
+    <color name="purple2_mid">#bec4eb</color>
+    <color name="grey_dull">#ECECEC</color>
+    <color name="grey_mid">#d1d1d1</color>
+
+</resources>

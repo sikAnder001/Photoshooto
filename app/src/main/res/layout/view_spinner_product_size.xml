@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tvSize"
+    style="@style/black_text_medium"
+    android:layout_width="@dimen/dp55"
+    android:layout_height="@dimen/dp40"
+    android:background="@drawable/bg_cart_product_size"
+    android:drawableEnd="@drawable/ic_down_arrow"
+    android:gravity="center"
+    android:paddingEnd="@dimen/dp10"
+    android:text="X"
+    android:textSize="@dimen/sp14"
+    app:drawableTint="@color/black">
+
+</androidx.appcompat.widget.AppCompatTextView>

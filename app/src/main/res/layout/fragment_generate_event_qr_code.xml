@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/viewActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingHorizontal="@dimen/dp24"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSideMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_side_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp20"
+            android:src="@drawable/ic_notification_bell"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivCart"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_buy"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewActionBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/dp20"
+            android:paddingBottom="@dimen/dp20">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/dp16" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/dp16" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewpagerImageSlider"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_16sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/indicator"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp10"
+                android:background="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/viewpagerImageSlider"
+                app:tabBackground="@drawable/bg_tab_selector_orange"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="0dp"
+                app:tabPaddingEnd="@dimen/dp8"
+                app:tabPaddingStart="@dimen/dp8" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardUsesOfStandee"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp48"
+                android:layout_marginTop="@dimen/dp20"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="@dimen/dp6"
+                app:cardElevation="@dimen/dp2"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/indicator"
+                app:strokeWidth="0dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/black_text_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableStart="@drawable/ic_standee"
+                    android:drawableEnd="@drawable/right_arrow"
+                    android:drawablePadding="@dimen/dp16"
+                    android:gravity="center|start"
+                    android:paddingHorizontal="@dimen/dp16"
+                    android:text="@string/uses_of_standee"
+                    android:textColor="@color/thick_gray_clr"
+                    android:textSize="@dimen/sp13" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHowToUse"
+                style="@style/black_text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp20"
+                android:text="@string/how_to_use"
+                android:textColor="@color/thick_gray_clr"
+                android:textSize="@dimen/sp18"
+                app:layout_constraintStart_toStartOf="@id/cardUsesOfStandee"
+                app:layout_constraintTop_toBottomOf="@id/cardUsesOfStandee" />
+
+            <!--            <androidx.cardview.widget.CardView-->
+            <!--                android:id="@+id/cardHowToUseVideo"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="@dimen/dp20"-->
+            <!--                app:cardCornerRadius="@dimen/dp16"-->
+            <!--                app:cardElevation="@dimen/dp2"-->
+            <!--                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"-->
+            <!--                app:layout_constraintStart_toStartOf="@+id/guidelineStart"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/tvHowToUse"-->
+            <!--                app:strokeWidth="0dp">-->
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/howToUseViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_16sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/cardUsesOfStandee"
+                app:layout_constraintTop_toBottomOf="@id/tvHowToUse" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/howToUseIndicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="@dimen/dp10"
+                android:background="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/howToUseViewPager"
+                app:tabBackground="@drawable/bg_tab_selector_orange"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="0dp"
+                app:tabPaddingEnd="@dimen/dp8"
+                app:tabPaddingStart="@dimen/dp8" />
+
+            <!--            </androidx.cardview.widget.CardView>-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTypesOfStandee"
+                style="@style/black_text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp20"
+                android:text="@string/type_of_standee"
+                android:textColor="@color/thick_gray_clr"
+                android:textSize="@dimen/sp18"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/howToUseIndicator" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerTypesOfStandee"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/tvTypesOfStandee" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnNextStandee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/right_arrow"
+                app:layout_constraintBottom_toBottomOf="@id/viewPagerTypesOfStandee"
+                app:layout_constraintStart_toEndOf="@id/viewPagerTypesOfStandee"
+                app:layout_constraintTop_toTopOf="@id/viewPagerTypesOfStandee"
+                app:tint="@color/thick_gray_clr" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnPreviousStandee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:rotation="180"
+                android:src="@drawable/right_arrow"
+                app:layout_constraintBottom_toBottomOf="@id/viewPagerTypesOfStandee"
+                app:layout_constraintEnd_toStartOf="@id/viewPagerTypesOfStandee"
+                app:layout_constraintTop_toTopOf="@id/viewPagerTypesOfStandee"
+                app:tint="@color/thick_gray_clr" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnGenerateQr"
+                style="@style/black_text_medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp30"
+                android:background="@drawable/orange_button_ripple"
+                android:gravity="center"
+                android:paddingVertical="@dimen/dp15"
+                android:text="@string/generate_event_qr_code"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/viewPagerTypesOfStandee" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

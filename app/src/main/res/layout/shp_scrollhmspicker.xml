@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <com.photoshooto.ui.qrcodesetup.customClasses.customSetTimer.NumberPickerView
+        android:id="@+id/pickerHours"
+        style="@style/Shp.ScrollNumberPickerStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        app:npv_MaxValue="99"
+        app:npv_MinValue="0"
+        app:npv_TextArray="@array/shp_0to99" />
+
+    <com.photoshooto.ui.qrcodesetup.customClasses.customSetTimer.NumberPickerView
+        android:id="@+id/pickerMinutes"
+        style="@style/Shp.ScrollNumberPickerStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        app:npv_MaxValue="59"
+        app:npv_MinValue="0"
+        app:npv_TextArray="@array/shp_0to59" />
+
+    <com.photoshooto.ui.qrcodesetup.customClasses.customSetTimer.NumberPickerView
+        android:id="@+id/pickerSeconds"
+        style="@style/Shp.ScrollNumberPickerStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        app:npv_MaxValue="59"
+        app:npv_MinValue="0"
+        app:npv_TextArray="@array/shp_0to59" />
+
+</LinearLayout>

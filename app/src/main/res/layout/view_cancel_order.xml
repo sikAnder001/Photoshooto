@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/dialogCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_15sdp"
+        android:background="@drawable/edittext_bg"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnCancleOrder"
+            style="@style/black_text_semi_bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:drawableEnd="@drawable/ic_arrow_down"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:paddingVertical="@dimen/dp10"
+            android:paddingEnd="@dimen/_20sdp"
+            android:text="Cancel Order"
+            android:textColor="@color/blue_tv"
+            android:textSize="@dimen/_14sdp"
+            app:drawableTint="@color/blue_tv" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnCancleReason"
+            style="@style/black_text_semi_bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:background="@drawable/edittext_bg"
+            android:drawableEnd="@drawable/right_arrow"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:paddingVertical="@dimen/dp10"
+            android:paddingEnd="@dimen/_10sdp"
+            android:text="Select Reason for canceling"
+            android:textColor="@color/blue_tv"
+            android:textSize="@dimen/_10sdp"
+            app:drawableTint="@color/blue_tv" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context=".ui.photographersScreens.photographerDashboard.ProfileActivity">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imgBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@drawable/ic_back_btn"
+                    app:tint="@color/blue_tv" />
+
+                <ImageView
+                    android:id="@+id/imgEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@drawable/ic_edit_img"
+                    app:tint="@color/blue_tv" />
+            </RelativeLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImage"
+                android:layout_width="154dp"
+                android:layout_height="154dp"
+                android:layout_gravity="center_horizontal"
+                tools:src="@drawable/ic_girl_profile" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgUpload"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/_46sdp"
+                android:layout_marginTop="-40dp"
+                android:src="@drawable/ic_camera_eit" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_13sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp"
+                tools:text="Rishabh Sewani" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUserLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/grey2"
+                android:textSize="@dimen/_10sdp"
+                tools:text="Banglore, Karnataka" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5ssp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/imgFav"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:background="@drawable/photography_service_item_bg"
+                    android:backgroundTint="@color/white"
+                    android:elevation="@dimen/_2ssp"
+                    android:paddingHorizontal="@dimen/_20sdp"
+                    android:src="@drawable/ic_red_heart" />
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@drawable/photography_service_item_bg"
+                    android:backgroundTint="@color/white"
+                    android:elevation="@dimen/_2ssp"
+                    android:paddingHorizontal="@dimen/_20sdp"
+                    android:src="@drawable/ic_settings"
+                    app:tint="@color/red_color" />
+
+                <ImageView
+                    android:id="@+id/imgSupport"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@drawable/photography_service_item_bg"
+                    android:backgroundTint="@color/white"
+                    android:elevation="@dimen/_2ssp"
+                    android:paddingHorizontal="@dimen/_20sdp"
+                    android:src="@drawable/ic_support_icon" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPersonalDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edittext_bg"
+                android:backgroundTint="@color/white"
+                android:drawableEnd="@drawable/right_arrow"
+                android:elevation="@dimen/_2ssp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="Personal Details"
+                android:textColor="@color/blue_tv"
+                android:textSize="@dimen/_12sdp"
+                app:drawableTint="@color/blue_tv"
+                app:fontFamily="@font/poppins_semi_bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNotification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/edittext_bg"
+                android:backgroundTint="@color/white"
+                android:drawableEnd="@drawable/right_arrow"
+                android:elevation="@dimen/_2ssp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="Notification"
+                android:textColor="@color/blue_tv"
+                android:textSize="@dimen/_12sdp"
+                app:drawableTint="@color/blue_tv"
+                app:fontFamily="@font/poppins_semi_bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMyEnquiries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/edittext_bg"
+                android:backgroundTint="@color/white"
+                android:drawableEnd="@drawable/right_arrow"
+                android:elevation="@dimen/_2ssp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="My Enquires"
+                android:textColor="@color/blue_tv"
+                android:textSize="@dimen/_12sdp"
+                app:drawableTint="@color/blue_tv"
+                app:fontFamily="@font/poppins_semi_bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/edittext_bg"
+                android:backgroundTint="@color/white"
+                android:drawableEnd="@drawable/right_arrow"
+                android:elevation="@dimen/_2ssp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="Logout"
+                android:textColor="@color/blue_tv"
+                android:textSize="@dimen/_12sdp"
+                app:drawableTint="@color/blue_tv"
+                app:fontFamily="@font/poppins_semi_bold" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/lvMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/photography_service_item_bg"
+        android:elevation="@dimen/_5ssp"
+        android:orientation="horizontal"
+        android:padding="@dimen/_10sdp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="@dimen/_50ssp"
+                android:layout_height="@dimen/_50ssp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_girl_profile" />
+
+            <ImageView
+                android:layout_width="@dimen/_24ssp"
+                android:layout_height="@dimen/_24ssp"
+                android:layout_gravity="end"
+                android:layout_marginTop="-20dp"
+                android:src="@drawable/ic_ribbon"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Kanika Jain"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUserID"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/poppins_medium"
+                android:text="ID : PS98761234"
+                android:textColor="@color/grey3"
+                android:textSize="@dimen/_10sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPhotographerType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Wedding Photograpger"
+                android:textColor="@color/grey3"
+                android:textSize="@dimen/_10sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStudioName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Treveni Studios Mumbai"
+                android:textColor="@color/grey3"
+                android:textSize="@dimen/_10sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRatings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_star"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="3.4(10)"
+                android:textColor="@color/grey3"
+                android:textSize="@dimen/_10sdp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvInquiry"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/edittext_bg"
+                android:backgroundTint="@color/red_color"
+                android:drawableStart="@drawable/ic_call_vector"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/white"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="7dp"
+                android:text="Enquire"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_9sdp"
+                app:fontFamily="@font/poppins_regular" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="View Profile"
+                android:textColor="@color/blue_tv"
+                android:textSize="12dp" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

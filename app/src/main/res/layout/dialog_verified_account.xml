@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_layout_corner_rounded_consult"
+    android:gravity="center"
+    android:minWidth="260dp"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp5"
+        android:gravity="center"
+        android:text="@string/account_will_be_verified_in"
+        android:textAppearance="@style/sp14_grey_clr2_txt"
+        android:textColor="@color/blue_clr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="@dimen/_133sdp"
+            android:layout_height="@dimen/_132sdp"
+            android:background="@drawable/circular_shape"
+            android:indeterminate="false"
+            android:progress="50"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:textAlignment="center"
+            android:visibility="visible" />
+
+        <!--android:background="@drawable/dotted_ring"-->
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/dp18"
+            android:gravity="center"
+            android:text="00:00:00"
+            android:textAppearance="@style/sp12_grey_clr2_txt" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/okayBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp42"
+        android:layout_marginTop="@dimen/dp20"
+        android:background="@drawable/btn_green_bg"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/dp28"
+        android:paddingTop="@dimen/dp10"
+        android:text="@string/wait"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+</LinearLayout>

@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_admin_dashboard"
+    app:startDestination="@id/navigation_manage_admin">
+
+    <fragment
+        android:id="@+id/navigation_new_requests"
+        android:name="com.photoshooto.ui.admin_screen.manage_request.NewRequestFragment"
+        tools:layout="@layout/fragment_new_request">
+        <action
+            android:id="@+id/action_move_to_user_details"
+            app:destination="@id/navigation_requested_user_details">
+            <argument
+                android:name="isFrom"
+                app:argType="string" />
+            <argument
+                android:name="userId"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_accepted_requests"
+        android:name="com.photoshooto.ui.admin_screen.manage_request.AcceptRequestFragment"
+        tools:layout="@layout/fragment_accept_request">
+        <action
+            android:id="@+id/action_move_to_user_details"
+            app:destination="@id/navigation_requested_user_details">
+            <argument
+                android:name="isFrom"
+                app:argType="string" />
+            <argument
+                android:name="userId"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_rejected_request"
+        android:name="com.photoshooto.ui.admin_screen.manage_request.RejectedRequestFragment"
+        tools:layout="@layout/fragment_rejected_request">
+        <action
+            android:id="@+id/action_move_to_user_details"
+            app:destination="@id/navigation_requested_user_details">
+            <argument
+                android:name="isFrom"
+                app:argType="string" />
+            <argument
+                android:name="userId"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_blocked_request"
+        android:name="com.photoshooto.ui.admin_screen.manage_request.BlockedRequestFragment"
+        tools:layout="@layout/fragment_blocked_request">
+        <action
+            android:id="@+id/action_move_to_user_details"
+            app:destination="@id/navigation_requested_user_details">
+            <argument
+                android:name="isFrom"
+                app:argType="string" />
+            <argument
+                android:name="userId"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_requested_user_details"
+        android:name="com.photoshooto.ui.admin_screen.manage_request.RequestedUserDetailsFragment"
+        tools:layout="@layout/fragment_requested_user_details">
+        <action
+            android:id="@+id/action_move_to_select_reason"
+            app:destination="@id/navigation_select_reason">
+            <argument
+                android:name="userId"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_select_reason"
+        android:name="com.photoshooto.ui.admin_screen.manage_request.SelectReasonFragment"
+        tools:layout="@layout/fragment_select_reason" />
+
+
+    <fragment
+        android:id="@+id/navigation_manage_admin"
+        android:name="com.photoshooto.ui.admin_screen.manage_admin.ManageFragment"
+        tools:layout="@layout/fragment_manage">
+        <action
+            android:id="@+id/action_create_admin"
+            app:destination="@id/navigation_create_admin" />
+        <action
+            android:id="@+id/action_admin_details"
+            app:destination="@id/navigation_admin_details">
+            <argument
+                android:name="userId"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_view_all_admins"
+            app:destination="@id/navigation_view_all_admin">
+            <argument
+                android:name="type"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_navigation_manage_admin_to_navigation_new_all_employee2"
+            app:destination="@id/navigation_new_all_employee" />
+        <action
+            android:id="@+id/action_navigation_manage_admin_to_manageJobPostingFragment"
+            app:destination="@id/manageJobPostingFragment" />
+        <action
+            android:id="@+id/action_navigation_manage_admin_to_aboutFragment"
+            app:destination="@id/aboutFragment">
+            <argument
+                android:name="btnText"
+                app:argType="string" />
+            <argument
+                android:name="id"
+                app:argType="string" />
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/usedProductList"
+        android:name="com.photoshooto.ui.usedPhotographyAdmin.fragment.UsedProductListFragment"
+        android:label=""
+        tools:layout="@layout/fragment_used_product_list">
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/postDetails"
+        android:name="com.photoshooto.ui.usedPhotographyScreens.fragment.PostDetailsFragment"
+        android:label=""
+        tools:layout="@layout/fragment_post_details">
+
+        <argument
+            android:name="postId"
+            app:argType="string" />
+        <argument
+            android:name="postTitle"
+            app:argType="string" />
+
+        <argument
+            android:name="isSeller"
+            app:argType="boolean" />
+        <argument
+            android:name="isAdmin"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <argument
+            android:name="isReported"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_create_admin"
+        android:name="com.photoshooto.ui.admin_screen.manage_admin.CreateAdminFragment"
+        tools:layout="@layout/fragment_create_admin" />
+
+    <fragment
+        android:id="@+id/navigation_admin_details"
+        android:name="com.photoshooto.ui.admin_screen.manage_admin.AdminDetailsFragment"
+        tools:layout="@layout/fragment_admin_details" />
+
+    <fragment
+        android:id="@+id/navigation_view_all_admin"
+        android:name="com.photoshooto.ui.admin_screen.manage_admin.AllAdminsFragment"
+        tools:layout="@layout/fragment_all_admins">
+        <action
+            android:id="@+id/action_admin_details"
+            app:destination="@id/navigation_admin_details">
+            <argument
+                android:name="userId"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_orders_request"
+        android:name="com.photoshooto.ui.order.OrdersRequestFragment"
+        android:label="@string/order_all_request"
+        tools:layout="@layout/fragment_orders_request">
+        <action
+            android:id="@+id/action_OrdersRequestFragment_to_OrderRequestDetailsFragment"
+            app:destination="@id/navigation_orders_request_details" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_orders_status"
+        android:name="com.photoshooto.ui.order.OrdersStatusFragment"
+        android:label="@string/order_status"
+        tools:layout="@layout/fragment_order_status">
+        <action
+            android:id="@+id/action_OrdersRequestFragment_to_OrderRequestDetailsFragment"
+            app:destination="@id/navigation_orders_request_details" />
+        <action
+            android:id="@+id/action_navigation_orders_status_to_orderDetailsFragment"
+            app:destination="@id/orderDetailsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_orders_request_details"
+        android:name="com.photoshooto.ui.order.OrderRequestDetailsFragment"
+        android:label="@string/order_details_request"
+        tools:layout="@layout/fragment_order_request_details">
+        <argument
+            android:name="item"
+            app:argType="com.photoshooto.domain.model.ListItem" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_orders"
+        android:name="com.photoshooto.ui.order.OrdersFragment"
+        android:label="Orders"
+        tools:layout="@layout/fragment_orders">
+        <action
+            android:id="@+id/action_navigation_orders_to_orderDetailsFragment"
+            app:destination="@id/orderDetailsFragment" />
+        <action
+            android:id="@+id/action_navigation_orders_to_navigation_orders_status"
+            app:destination="@id/navigation_orders_status" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderDetailsFragment"
+        android:name="com.photoshooto.ui.order.OrderDetailsFragment"
+        android:label="OrderDetailsFragment"
+        tools:layout="@layout/fragment_order_details">
+
+        <argument
+            android:name="item"
+            app:argType="com.photoshooto.domain.model.ListItem" />
+
+    </fragment>
+
+
+<!--
+    <fragment
+        android:id="@+id/allEmpployeeFragment"
+        android:name="com.photoshooto.ui.all_employee.AllEmployeeFragment"
+        android:label="fragment_all_employee_fragment"
+        tools:layout="@layout/fragment_all_employee">
+
+
+    </fragment>
+-->
+
+    <fragment
+        android:id="@+id/psEmpployeeFragment"
+        android:name="com.photoshooto.ui.all_employee.PsEmployeesFragment"
+        android:label="fragment_ps_employess"
+        tools:layout="@layout/fragment_ps_employees">
+    </fragment>
+
+    <fragment
+        android:id="@+id/printoEmpployeeFragment"
+        android:name="com.photoshooto.ui.all_employee.PrintoEmployeesFragment"
+        android:label="fragment_printo_employess"
+        tools:layout="@layout/fragment_printo_employees">
+    </fragment>
+
+    <fragment
+        android:id="@+id/employeeDetailsFragment"
+        android:name="com.photoshooto.ui.all_employee.EmployeeDetailsFragment"
+        android:label="fragment_employee_details"
+        tools:layout="@layout/fragment_employee_details">
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_new_all_employee"
+        android:name="com.photoshooto.ui.all_employee.AllEmployeeFragment"
+        android:label="navigation_new_all_employee"
+        tools:layout="@layout/fragment_create_admin">
+
+
+        <action
+            android:id="@+id/action_navigation_new_all_employee_to_psEmpployeeFragment"
+            app:destination="@id/psEmpployeeFragment" />
+
+        <action
+            android:id="@+id/action_navigation_new_all_employee_to_printoEmpployeeFragment"
+            app:destination="@id/printoEmpployeeFragment" />
+
+        <action
+            android:id="@+id/action_navigation_new_all_employee_to_employeeDetailsFragment"
+            app:destination="@id/employeeDetailsFragment" />
+
+
+       <!-- <action
+            android:id="@+id/action_allEmpployeeFragment_to_navigation_manage_admin"
+            app:destination="@id/navigation_manage_admin" />-->
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/manageJobPostingFragment"
+        android:name="com.photoshooto.ui.admin_screen.manage_job_posting.ManageJobPostingFragment"
+        android:label="fragment_manage_job_posting"
+        tools:layout="@layout/fragment_manage_job_posting">
+        <action
+            android:id="@+id/action_manageJobPostingFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.photoshooto.ui.admin_screen.manage_job_posting.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about">
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="myapp://navtophotoshooto.com/job" />
+    </fragment>
+
+</navigation>

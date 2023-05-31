@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_toolbar_back_query" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideStart16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideEnd16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/tvFontSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/order_summary"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+        app:layout_constraintStart_toStartOf="@id/guideStart16"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <TextView
+        android:id="@+id/label"
+        style="@style/tvFontSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/order_detail"
+        android:textColor="@color/textColor"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+        app:layout_constraintStart_toStartOf="@id/guideStart16"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:paddingBottom="15dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/label"
+        tools:itemCount="2"
+        tools:listitem="@layout/list_order_summary" />
+
+    <TextView
+        android:id="@+id/label_coupons"
+        style="@style/tvFontSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/use_coupons"
+        android:textColor="@color/textColor"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+        app:layout_constraintStart_toStartOf="@id/guideStart16"
+        app:layout_constraintTop_toBottomOf="@id/recycler" />
+
+    <TextView
+        android:id="@+id/label_view_coupons"
+        style="@style/tvFontSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_coupons"
+        android:textColor="@color/grey_6B"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/label_coupons"
+        app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+        app:layout_constraintTop_toTopOf="@id/label_coupons" />
+
+    <View
+        android:id="@+id/viewCoupons"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_background_primary"
+        android:backgroundTint="@color/colorBackgroundGray"
+        app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+        app:layout_constraintStart_toStartOf="@id/guideStart16"
+        app:layout_constraintTop_toBottomOf="@+id/label_coupons" />
+
+    <TextView
+        android:id="@+id/coupons_name"
+        style="@style/tvFontSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="15dp"
+        android:drawableEnd="@drawable/ic_green_tick_circle"
+        android:drawablePadding="15dp"
+        android:gravity="center_vertical"
+        android:text="########"
+        android:textColor="@color/brightGreen"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/viewCoupons"
+        app:layout_constraintEnd_toEndOf="@id/viewCoupons"
+        app:layout_constraintStart_toEndOf="@id/couponsStartDrawable"
+        app:layout_constraintTop_toTopOf="@id/viewCoupons" />
+
+    <ImageView
+        android:id="@+id/couponsStartDrawable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/ic_coupons_icon"
+        app:layout_constraintBottom_toBottomOf="@id/viewCoupons"
+        app:layout_constraintStart_toStartOf="@id/viewCoupons"
+        app:layout_constraintTop_toTopOf="@id/viewCoupons" />
+
+
+    <TextView
+        android:id="@+id/label_breakdown"
+        style="@style/tvFontSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/order_breakdown"
+        android:textColor="@color/textColor"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+        app:layout_constraintStart_toStartOf="@id/guideStart16"
+        app:layout_constraintTop_toBottomOf="@id/viewCoupons" />
+
+    <TextView
+        android:id="@+id/label_orderfinal"
+        style="@style/tvFont300"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Order:"
+        android:textColor="@color/neutralBlack"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/guideStart16"
+        app:layout_constraintTop_toBottomOf="@id/label_breakdown" />
+
+    <TextView
+        android:id="@+id/orderfinal_value"
+        style="@style/tvFontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rs_amount"
+        android:textColor="@color/grey_66"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+        app:layout_constraintTop_toTopOf="@id/label_orderfinal" />
+
+    <TextView
+        android:id="@+id/orderdisc_value"
+        style="@style/tvFontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rs_amount"
+        android:textColor="@color/brightGreen"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+        app:layout_constraintTop_toTopOf="@id/label_discfinal" />
+
+    <TextView
+        android:id="@+id/ordertaxes_value"
+        style="@style/tvFontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rs_amount"
+        android:textColor="@color/grey_66"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+        app:layout_constraintTop_toTopOf="@id/label_taxesfinal" />
+
+    <TextView
+        android:id="@+id/ordertotal_value"
+        style="@style/tvFontBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rs_amount"
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+        app:layout_constraintTop_toTopOf="@id/label_totalfinal" />
+
+    <TextView
+        android:id="@+id/label_discfinal"
+        style="@style/tvFont300"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/discount"
+        android:textColor="@color/neutralBlack"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/guideStart16"
+        app:layout_constraintTop_toBottomOf="@id/label_orderfinal" />
+
+    <TextView
+        android:id="@+id/label_taxesfinal"
+        style="@style/tvFont300"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/taxes"
+        android:textColor="@color/neutralBlack"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/guideStart16"
+        app:layout_constraintTop_toBottomOf="@id/label_discfinal" />
+
+    <TextView
+        android:id="@+id/label_totalfinal"
+        style="@style/tvFontSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/total_order"
+        android:textColor="@color/neutralBlack"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/guideStart16"
+        app:layout_constraintTop_toBottomOf="@id/label_taxesfinal" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnPay"
+        style="@style/tvFontSemiBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_bg"
+        android:backgroundTint="@color/colorOrange"
+        android:text="@string/pay"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

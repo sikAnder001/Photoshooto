@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        style="@style/BottomSheetDialogTheme"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bottom_sheet_card"
+        app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:fitsSystemWindows="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/header_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/layout_margin_full"
+                        android:ellipsize="none"
+                        android:singleLine="false"
+                        android:text="Enquiry Form"
+                        android:textColor="@color/blue_clr"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/ic_close"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="@dimen/layout_margin_full"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_close"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txt_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp24"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="@dimen/dp8"
+                    android:ellipsize="none"
+                    android:singleLine="false"
+                    android:text="Name"
+                    android:textColor="@color/blue_clr"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edtName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp24"
+                    android:layout_marginBottom="@dimen/dp8"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="Jane Cooper"
+                    android:minHeight="@dimen/dp48"
+                    android:paddingHorizontal="@dimen/dp24"
+                    android:textColorHint="@color/grey_clr"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txt_phone_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp24"
+                    android:layout_marginVertical="@dimen/dp8"
+                    android:ellipsize="none"
+                    android:singleLine="false"
+                    android:text="Phone No."
+                    android:textColor="@color/blue_clr"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edtPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp24"
+                    android:layout_marginBottom="@dimen/dp8"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="(229) 555-0109"
+                    android:inputType="number"
+                    android:minHeight="@dimen/dp48"
+                    android:paddingHorizontal="@dimen/dp24"
+                    android:textColorHint="@color/grey_clr"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txt_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp24"
+                    android:layout_marginVertical="@dimen/dp8"
+                    android:ellipsize="none"
+                    android:singleLine="false"
+                    android:text="Location"
+                    android:textColor="@color/blue_clr"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edtLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp24"
+                    android:layout_marginBottom="@dimen/dp8"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="3891 Ranchview Dr. Richardson, California 62639"
+                    android:minHeight="@dimen/dp48"
+                    android:paddingHorizontal="@dimen/dp24"
+                    android:textColorHint="@color/grey_clr"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txt_locality"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp24"
+                    android:layout_marginVertical="@dimen/dp8"
+                    android:ellipsize="none"
+                    android:singleLine="false"
+                    android:text="Locality"
+                    android:textColor="@color/blue_clr"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edtLocality"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp24"
+                    android:layout_marginBottom="@dimen/dp8"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="3891 Ranchview Dr. Richardson, California 62639"
+                    android:minHeight="@dimen/dp48"
+                    android:paddingHorizontal="@dimen/dp24"
+                    android:textColorHint="@color/grey_clr"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txt_event_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp24"
+                    android:layout_marginVertical="@dimen/dp8"
+                    android:ellipsize="none"
+                    android:singleLine="false"
+                    android:text="Event type"
+                    android:textColor="@color/blue_clr"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvEventType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp24"
+                    android:layout_marginBottom="@dimen/dp8"
+                    android:background="@drawable/edit_text_border"
+                    android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
+                    android:drawableTint="@color/orange_clr"
+                    android:gravity="center_vertical"
+                    android:hint="Select Event Type"
+                    android:minHeight="@dimen/dp48"
+                    android:paddingHorizontal="@dimen/dp24"
+                    android:textColorHint="@color/grey_clr"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txt_budget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp24"
+                    android:layout_marginVertical="@dimen/dp8"
+                    android:ellipsize="none"
+                    android:singleLine="false"
+                    android:text="Budget(approximately*)"
+                    android:textColor="@color/blue_clr"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edtBudget"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp24"
+                    android:layout_marginBottom="@dimen/dp8"
+                    android:background="@drawable/edit_text_border"
+                    android:inputType="number"
+                    android:minHeight="@dimen/dp48"
+                    android:paddingHorizontal="@dimen/dp24"
+                    android:textColorHint="@color/grey_clr"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_marginVertical="@dimen/dp8"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLabelEventStartDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:includeFontPadding="false"
+                        android:text="@string/event_start_date_amp_time"
+                        android:textColor="@color/text_054871"
+                        android:textSize="@dimen/_11ssp"
+                        app:fontFamily="@font/poppins_regular"
+                        app:layout_constraintEnd_toStartOf="@id/tvLabelEventEndDate"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvErrorEventName" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSelectEventStartTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/ed_border"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center_vertical"
+                        android:hint="05/07/2022 01:11 AM"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintEnd_toEndOf="@id/tvLabelEventStartDate"
+                        app:layout_constraintStart_toStartOf="@id/tvLabelEventStartDate"
+                        app:layout_constraintTop_toBottomOf="@id/tvLabelEventStartDate" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLabelEventEndDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="@string/event_end_date_amp_time"
+                        android:textColor="@color/text_054871"
+                        android:textSize="@dimen/_11ssp"
+                        app:fontFamily="@font/poppins_regular" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSelectEventEndTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/ed_border"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center_vertical"
+                        android:hint="05/07/2022 01:11 AM"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:textSize="@dimen/_10ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/save_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp24"
+                    android:layout_marginVertical="@dimen/dp12"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/save"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:background="@drawable/btn_drawable"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:text="Submit"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:cornerRadius="12dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</layout>
+

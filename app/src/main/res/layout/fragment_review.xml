@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="16dp">
+
+    <include
+        android:id="@+id/toolbar_review_fragment"
+        layout="@layout/toolbar_with_back_btn" />
+
+    <include
+        android:id="@+id/profile"
+        layout="@layout/layout_photographer_profile_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_review_fragment" />
+
+    <TextView
+        android:id="@+id/label"
+        style="@style/tvFontSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/overall_rating"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintStart_toStartOf="@id/profile"
+        app:layout_constraintTop_toBottomOf="@id/profile" />
+
+    <TextView
+        android:id="@+id/total_rating"
+        style="@style/tvFontSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp24"
+        app:layout_constraintStart_toStartOf="@id/profile"
+        app:layout_constraintTop_toBottomOf="@id/label" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="3dp"
+        android:src="@drawable/ic_rating_star"
+        app:layout_constraintBottom_toBottomOf="@id/total_rating"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@id/total_rating"
+        app:layout_constraintTop_toTopOf="@id/total_rating" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnWriteReview"
+        style="@style/tvFontSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        android:backgroundTint="@color/colorOrange"
+        android:paddingHorizontal="15dp"
+        android:text="@string/write_review"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintBottom_toBottomOf="@id/total_rating"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/label_rating"
+        style="@style/tvFontSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/total_ratings"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintStart_toStartOf="@id/profile"
+        app:layout_constraintTop_toBottomOf="@id/total_rating" />
+
+    <include
+        android:id="@+id/star5"
+        layout="@layout/progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/label_rating" />
+
+    <include
+        android:id="@+id/star4"
+        layout="@layout/progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/star5" />
+
+    <include
+        android:id="@+id/star3"
+        layout="@layout/progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/star4" />
+
+    <include
+        android:id="@+id/star2"
+        layout="@layout/progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/star3" />
+
+    <include
+        android:id="@+id/star1"
+        layout="@layout/progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/star2" />
+
+    <TextView
+        android:id="@+id/label_review"
+        style="@style/tvFontSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/user_review"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintStart_toStartOf="@id/profile"
+        app:layout_constraintTop_toBottomOf="@id/star1" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:overScrollMode="never"
+        android:paddingHorizontal="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_review"
+        tools:itemCount="5"
+        tools:listitem="@layout/list_review_row" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_layout_corner_rounded_consult"
+        android:gravity="center"
+        android:minWidth="350dp"
+        android:minHeight="200dp"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/dp70"
+            android:layout_height="@dimen/dp70"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_alert_red" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="Your order has been cancelled"
+            android:textAppearance="@style/sp16_blue_style"
+            android:textSize="@dimen/_12sdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="Thank you! Visit Again"
+            android:textColor="@color/grey3"
+            android:textSize="@dimen/_10sdp" />
+
+        <TextView
+            android:id="@+id/btnDone"
+            android:layout_width="@dimen/dp120"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:background="@drawable/bluebutton_ripple"
+            android:backgroundTint="@color/red_color"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_5sdp"
+            android:text="@string/done"
+            android:textAppearance="@style/sp18_white_txt"
+            android:textSize="@dimen/_10sdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/order_again"
+            android:textColor="@color/blue_tv"
+            android:textSize="@dimen/_10sdp" />
+    </LinearLayout>
+
+</layout>

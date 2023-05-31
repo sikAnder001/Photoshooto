@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:minWidth="@dimen/_250sdp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".25" />
+
+    <TextView
+        android:id="@+id/label"
+        style="@style/tvFontSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/sort_by"
+        android:textColor="@color/orange_clr"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--
+        <TextView
+            android:id="@+id/cancel"
+            style="@style/tvFontRegular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/cancel"
+            android:textColor="@color/colorOrange"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    -->
+
+    <!-- <TextView
+         android:id="@+id/label2"
+         style="@style/tvFontSemiBold"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="16dp"
+         android:paddingVertical="5dp"
+         android:text="@string/sort_by"
+         android:textColor="@color/colorBlack"
+         android:textSize="15sp"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/divider2" />-->
+
+    <RadioGroup
+        android:id="@+id/rdGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label">
+
+        <RadioButton
+            android:id="@+id/radioRecent"
+            style="@style/tvFontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/colorTransparent"
+            android:paddingStart="15dp"
+            android:text="@string/recently_updated"
+            android:textSize="14sp"
+            android:theme="@style/RadioButtonStyle"
+            app:layout_constraintTop_toBottomOf="@id/label2" />
+
+
+        <RadioButton
+            android:id="@+id/radioLtoH"
+            style="@style/tvFontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/colorTransparent"
+            android:paddingStart="15dp"
+            android:text="@string/price_range_low_to_high"
+            android:textSize="14sp"
+            android:theme="@style/RadioButtonStyle"
+            app:layout_constraintTop_toBottomOf="@id/label2" />
+
+
+        <RadioButton
+            android:id="@+id/radioHtoL"
+            style="@style/tvFontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/colorTransparent"
+            android:paddingStart="15dp"
+            android:text="@string/price_range_high_to_low"
+            android:textSize="14sp"
+            android:theme="@style/RadioButtonStyle"
+            app:layout_constraintTop_toBottomOf="@id/label2" />
+
+
+        <RadioButton
+            android:id="@+id/radioVerified"
+            style="@style/tvFontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/colorTransparent"
+            android:paddingStart="15dp"
+            android:text="@string/most_reported"
+            android:textSize="14sp"
+            android:theme="@style/RadioButtonStyle"
+            app:layout_constraintTop_toBottomOf="@id/label2" />
+
+
+        <RadioButton
+            android:id="@+id/radioApproved"
+            style="@style/tvFontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/colorTransparent"
+            android:paddingStart="15dp"
+            android:text="@string/approved_product"
+            android:textSize="14sp"
+            android:theme="@style/RadioButtonStyle"
+            app:layout_constraintTop_toBottomOf="@id/label2" />
+
+
+        <RadioButton
+            android:id="@+id/radioDecline"
+            style="@style/tvFontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/colorTransparent"
+            android:paddingStart="15dp"
+            android:text="@string/declined_product"
+            android:textSize="14sp"
+            android:theme="@style/RadioButtonStyle"
+            app:layout_constraintTop_toBottomOf="@id/label2" />
+
+        <!--<RadioButton
+            android:id="@+id/radioRating"
+            style="@style/tvFontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@color/colorTransparent"
+            android:paddingStart="15dp"
+            android:text="@string/photographer_ratings"
+            android:textSize="14sp"
+            android:theme="@style/RadioButtonStyle"
+            app:layout_constraintTop_toBottomOf="@id/label2" />
+
+        <RadioButton
+            android:id="@+id/radioNearby"
+            style="@style/tvFontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@color/colorTransparent"
+            android:paddingStart="15dp"
+            android:text="@string/nearby"
+            android:textSize="14sp"
+            android:theme="@style/RadioButtonStyle"
+            app:layout_constraintTop_toBottomOf="@id/label2" />-->
+
+    </RadioGroup>
+
+
+    <!--  <View
+          android:id="@+id/divider2"
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_marginTop="16dp"
+          android:alpha="0.5"
+          android:background="@color/grey_D9"
+          app:layout_constraintStart_toStartOf="@id/guide25"
+          app:layout_constraintTop_toBottomOf="@id/label" />-->
+
+    <!--<TextView
+        android:id="@+id/clear"
+        style="@style/tvFontRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/clear_all"
+        android:textColor="@color/colorOrange"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnApply"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnApply" />
+-->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnApply"
+        style="@style/tvFontSemiBold"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:backgroundTint="@color/colorOrange"
+
+
+        android:text="@string/apply"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rdGroup" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.photographersScreens.photographerAuth.fragments.FragmentRouting">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:titleTextColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--    <View-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="1dp"-->
+    <!--        android:background="@color/grey_clr"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/toolbar"-->
+    <!--        tools:layout_editor_absoluteX="0dp" />-->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/dp69"
+        android:layout_height="@dimen/dp97"
+        android:src="@drawable/splas_logo_ps"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.04" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp13_negative"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/photoshooto"
+            android:textAppearance="@style/ps_medium" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/your_memories"
+            android:textAppearance="@style/sp10_txt_style"
+            android:textFontWeight="400" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="Welcome to "
+            android:textAppearance="@style/sp24_blue_poppins"
+            android:textFontWeight="600" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@string/photoshooto"
+            android:textAppearance="@style/sp24_orange_poppins"
+            android:textFontWeight="600" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp120"
+        android:layout_marginTop="4dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/routing_pic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/singin_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signin_as"
+        android:textAppearance="@style/sp18_blue_txt"
+        android:textFontWeight="400"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView" />
+
+    <RadioGroup
+        android:id="@+id/user_type_radiobtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/singin_txt">
+
+        <RadioButton
+            android:id="@+id/photographerRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/orange_clr"
+            android:gravity="center"
+            android:text="Photographer"
+            android:textAppearance="@style/sp16_blue_style"
+            android:textColor="@color/blue_clr" />
+
+        <RadioButton
+            android:id="@+id/userRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp23"
+            android:buttonTint="@color/orange_clr"
+            android:checked="true"
+            android:gravity="center"
+            android:text="User"
+            android:textAppearance="@style/sp14_blue_style"
+            android:textColor="@color/blue_clr" />
+
+    </RadioGroup>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp20"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_type_radiobtn">
+
+        <TextView
+            android:id="@+id/btnSignup"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp42"
+            android:layout_marginHorizontal="@dimen/dp30"
+            android:background="@drawable/orange_button_ripple"
+            android:gravity="center"
+            android:text="@string/signup"
+            android:textAppearance="@style/sp18_white_txt"
+            android:visibility="visible" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/scan_qr_code_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp42"
+            android:layout_marginHorizontal="@dimen/dp30"
+            android:background="@drawable/orange_button_ripple"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp40"
+                android:drawableLeft="@drawable/ic_qr_code"
+                android:drawablePadding="@dimen/dp10"
+                android:gravity="center"
+                android:text="@string/scan_qr_code"
+                android:textAppearance="@style/sp18_white_txt" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp42"
+        android:layout_marginHorizontal="@dimen/dp30"
+        android:layout_marginTop="@dimen/dp24"
+        android:background="@drawable/whitebutton_ripple"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout">
+
+        <TextView
+            android:id="@+id/secondary_action_text"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp40"
+            android:drawableLeft="@drawable/ic_logout"
+            android:drawablePadding="@dimen/dp10"
+            android:gravity="center"
+            android:text="@string/login"
+            android:textAppearance="@style/sp18_orange_txt" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp5"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/login_btn"
+        app:layout_constraintStart_toStartOf="@+id/login_btn"
+        app:layout_constraintTop_toBottomOf="@+id/login_btn">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@string/already_have_an_account"
+            android:textAppearance="@style/sp14_grey_clr2_txt" />
+
+        <TextView
+            android:id="@+id/signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp5"
+            android:includeFontPadding="false"
+            android:text="@string/underline_signup"
+            android:textAppearance="@style/sp16_blue_style" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout_loginwith"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp15"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/layout_signup"
+        app:layout_constraintStart_toStartOf="@id/layout_signup"
+        app:layout_constraintTop_toBottomOf="@id/layout_signup">
+
+        <ImageView
+            android:id="@+id/google_sign_in"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:includeFontPadding="false"
+            android:src="@drawable/googleicon"
+            android:textAppearance="@style/sp14_grey_clr2_txt" />
+
+        <ImageView
+            android:id="@+id/truecaller"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="@dimen/dp5"
+            android:includeFontPadding="false"
+            android:src="@drawable/truecallericon"
+            android:textAppearance="@style/sp16_blue_style" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <TextView
+        android:id="@+id/terms_privacy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp26"
+        android:layout_marginTop="@dimen/dp20"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.5"
+        android:paddingBottom="@dimen/dp8"
+        android:text="@string/newsletter"
+        android:textColor="@color/blue_clr"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_loginwith" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/terms_privacy">
+
+        <TextView
+            android:id="@+id/terms_n_condition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/terms_and_service"
+            android:textColor="@color/orange_clr"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintEnd_toStartOf="@id/and_txt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/and_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/dp8"
+            android:text="and"
+            android:textColor="@color/blue_clr"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintEnd_toStartOf="@id/privacy_policy_tv"
+            app:layout_constraintStart_toEndOf="@id/terms_n_condition"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/privacy_policy_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/privacy_policy_txt"
+            android:textColor="@color/orange_clr"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintStart_toEndOf="@id/and_txt"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

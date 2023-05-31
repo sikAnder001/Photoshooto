@@ -1,0 +1,309 @@
+package com.photoshooto.ui.userhomepage
+
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.view.Window
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.photoshooto.R
+import com.photoshooto.databinding.BottomsheetSelectFolderBinding
+import com.photoshooto.databinding.EventFilterDialogBinding
+import com.photoshooto.databinding.FragmentTopPhotographersBinding
+import com.photoshooto.databinding.PhotographerSortByViewBinding
+import com.photoshooto.domain.adapter.CommonSingleSelectAdapter
+import com.photoshooto.domain.model.CommonMultiSelectItem
+import com.photoshooto.domain.model.EventOrderHistoryElement
+import com.photoshooto.domain.model.GetEventTypesResponse
+import com.photoshooto.domain.model.UserElement
+import com.photoshooto.domain.usecase.profile.GetUserProfileViewModel
+import com.photoshooto.ui.qrcodesetup.createEvent.CreateEventViewModel
+import com.photoshooto.ui.qrcodesetup.createEvent.adapter.SelectFolderAndTypeAdapter
+import com.photoshooto.ui.qrorderhistory.OngoingEventViewModel
+import com.photoshooto.ui.userhomepage.adapters.TopPhotographerListAdapter
+import com.photoshooto.util.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
+
+class TopPhotographersFragment : Fragment(), TopPhotographerListAdapter.OnUserItemClickListener {
+
+
+    private lateinit var binding: FragmentTopPhotographersBinding
+
+    private val viewModel: GetUserProfileViewModel by viewModel()
+    private val mViewModel: CreateEventViewModel by viewModel()
+    private var mListEventPhotographyMain =
+        arrayListOf<GetEventTypesResponse.GetEventTypesData.GetEventTypesModel>()
+    private var mListEventTypeMain: List<EventOrderHistoryElement> = ArrayList()
+
+
+    private var mSelectedEventType: GetEventTypesResponse.GetEventTypesData.GetEventTypesModel? =
+        null
+    private var mSelectedEventTypeAdapter: SelectFolderAndTypeAdapter? = null
+
+    private val eventViewModel: OngoingEventViewModel by viewModel()
+
+    var number: String = ""
+
+
+    private var sortBy = SORT_BY.popularity
+    private var sortByOrder: String? = SORT_BY.popularity
+
+    object SORT_BY {
+        val popularity = "popularity"
+        val topRated = "toprated"
+        val priceLowToHigh = "price_high_to_low"
+        val priceHighToLow = "price_low_to_high"
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentTopPhotographersBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        callRequiredAPI()
+        initObserver()
+        clickListener()
+    }
+
+
+    private fun callRequiredAPI() {
+        viewModel.getPhotographerUsers()
+        mViewModel.getEventTypeList(SharedPrefsHelper.read(SharedPrefConstant.AUTH_TOKEN))
+        val className = FilterPhotographsFragment::class.java.name
+        eventViewModel.getEventOrderHistory(0, 0, className)
+    }
+
+    private fun clickListener() {
+        binding.filterView.tvTypeOfPhotography.setOnClickListener {
+            openSelectPhotographerTypeDialog {
+                binding.filterView.tvTypeOfPhotography.text = it
+            }
+        }
+        binding.filterView.tvEvent.setOnClickListener {
+            openEventTypeFilter()
+        }
+
+        binding.filterView.tvSort.setOnClickListener {
+            openSortBy()
+        }
+
+        binding.filterView.tvBudget.setOnClickListener {
+            binding.llBudget.visibility =
+                if (binding.llBudget.visibility == View.VISIBLE) View.GONE else View.VISIBLE
+        }
+
+        binding.imgBudgetClose.setOnClickListener {
+            binding.llBudget.visibility = View.GONE
+        }
+        binding.llBudget.setOnClickListener {
+            binding.llBudget.visibility = View.GONE
+        }
+
+    }
+
+    private fun initObserver() {
+        viewModel.userResponse.observe(requireActivity(), Observer {
+            if (it.success!!) {
+                binding.recyclerViewPhotographerList.adapter =
+                    TopPhotographerListAdapter(it.data?.list, this)
+            }
+        })
+
+        viewModel.showProgressbar.observe(requireActivity(), Observer {
+            binding.progressBar.visibility = if (it!!) View.VISIBLE else View.GONE
+        })
+
+        with(mViewModel) {
+            getEventTypeListResponse.observe(requireActivity()) {
+                if (it.success!!) {
+                    mListEventPhotographyMain = arrayListOf()
+                    if (it.data != null) {
+                        if (!it.data!!.list.isNullOrEmpty()) {
+                            mListEventPhotographyMain.addAll(it.data!!.list!!)
+                        }
+                    }
+
+                } else {
+                    it.message?.let { it1 -> onToast(it1, requireActivity()) }
+                }
+            }
+        }
+        with(eventViewModel) {
+            eventOrderHistoyDetails.observe(
+                requireActivity()
+            ) { eventOrderHistoryDetails ->
+                mListEventTypeMain = eventOrderHistoryDetails?.data?.list!!
+            }
+        }
+    }
+
+    private fun openEventTypeFilter() {
+        val bottomSheetDialog = BottomSheetDialog(requireContext(), R.style.BottomSheetDialog)
+        val dialogBinding = EventFilterDialogBinding.inflate(layoutInflater)
+        bottomSheetDialog.setContentView(dialogBinding.root)
+
+
+        val dataList = ArrayList<CommonMultiSelectItem>()
+
+        for (item in mListEventTypeMain) {
+            dataList.add(CommonMultiSelectItem("0", item.event_type))
+        }
+
+        dialogBinding.apply {
+            tvClear.setOnClickListener {
+                (recyclerView.adapter as CommonSingleSelectAdapter).clearSelection()
+            }
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            recyclerView.adapter = CommonSingleSelectAdapter(dataList)
+            (recyclerView.adapter as CommonSingleSelectAdapter).onItemClickListener =
+                object : CommonSingleSelectAdapter.OnItemClickListener {
+                    override fun onDetailsClick(value: String) {
+                        binding.filterView.tvEvent.text = value
+                        bottomSheetDialog.dismiss()
+                    }
+                }
+            bottomSheetDialog.show()
+        }
+
+        /* dialogBinding.apply {
+             tvClear.setOnClickListener {
+                 (recyclerView.adapter as NewRequestFilterAdapter).clearSelection()
+             }
+             btnApply.setOnClickListener {
+                 bottomSheetDialog.dismiss()
+             }
+         }*/
+        bottomSheetDialog.show()
+
+    }
+
+    private fun openSelectPhotographerTypeDialog(onDataSelected: (String) -> Unit) {
+        val dialog = BottomSheetDialog(requireActivity(), R.style.BottomSheetDialogEvent)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.window!!.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT
+        )
+
+        val mDialogBinding = BottomsheetSelectFolderBinding.inflate(
+            LayoutInflater.from(requireActivity()), null, false
+        )
+        dialog.setContentView(mDialogBinding.root)
+
+        mDialogBinding.tvBSTitle.text = "Type of Photography"
+        val mListEventTypes = arrayListOf<String>()
+        mListEventTypes.addAll(mListEventPhotographyMain.map { checkStringReturnValue(it.type) })
+
+        val selectedName = if (mSelectedEventType != null) {
+            checkStringReturnValue(mSelectedEventType!!.type)
+        } else {
+            ""
+        }
+        mSelectedEventTypeAdapter = SelectFolderAndTypeAdapter(
+            requireActivity(),
+            mListEventTypes,
+            selectedName,
+            object : OnItemClick<String> {
+                override fun onItemClick(model: String, position: Int) {
+                    val eventTypeModel = mListEventPhotographyMain[position]
+                    mSelectedEventType = eventTypeModel
+                    onDataSelected.invoke(checkStringReturnValue(mSelectedEventType!!.type))
+                    dialog.dismiss()
+                }
+            })
+        mDialogBinding.recyclerViewItems.apply {
+            adapter = mSelectedEventTypeAdapter
+        }
+
+        mDialogBinding.imageBSNewFolderClose.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
+    }
+
+    private fun openSortBy() {
+        val bottomSheetDialog = BottomSheetDialog(requireContext(), R.style.BottomSheetDialog)
+        val dialogBinding = PhotographerSortByViewBinding.inflate(layoutInflater)
+        bottomSheetDialog.setContentView(dialogBinding.root)
+
+        dialogBinding.apply {
+            tvClear.setOnClickListener {
+                if (!rbPopularity.isChecked) {
+                    rbPopularity.isChecked = true
+                }
+            }
+            when (sortBy) {
+                PhotographerTypeFragment.SORT_BY.popularity -> {
+                    if (sortByOrder == PhotographerTypeFragment.SORT_BY.popularity) {
+                        rbPopularity.isChecked = true
+                    } else rbPopularity.isChecked = true
+                }
+                PhotographerTypeFragment.SORT_BY.topRated ->
+                    rbTopRated.isChecked = true
+                PhotographerTypeFragment.SORT_BY.priceLowToHigh ->
+                    rbLowToHigh.isChecked = true
+                else -> {
+                    rbHighToLow.isChecked = true
+                }
+
+            }
+            radiogroup.setOnCheckedChangeListener { _, i ->
+                when (i) {
+                    R.id.rbPopularity -> {
+                        sortBy = PhotographerTypeFragment.SORT_BY.popularity
+                        sortByOrder = PhotographerTypeFragment.SORT_BY.popularity
+                        //callRequestApi(true)
+                    }
+                    R.id.rbTopRated -> {
+                        sortBy = PhotographerTypeFragment.SORT_BY.topRated
+                        sortByOrder = PhotographerTypeFragment.SORT_BY.topRated
+                        //callRequestApi(true)
+                    }
+                    R.id.rbLowToHigh -> {
+                        sortBy = PhotographerTypeFragment.SORT_BY.priceLowToHigh
+                        sortByOrder = null
+                        // callRequestApi(true)
+                    }
+                    else -> {
+                        sortBy = PhotographerTypeFragment.SORT_BY.priceHighToLow
+                        sortByOrder = null
+                    }
+                }
+                bottomSheetDialog.dismiss()
+            }
+        }
+        bottomSheetDialog.show()
+    }
+
+
+    override fun onEnquireClicked(user: UserElement) {
+        number = user.profile_details?.mobile!!
+        if (number.isNotEmpty() && number.isValidMobileNumber()) {
+            callPhoneNumber(requireActivity(), number)
+        }
+    }
+
+    override fun onViewProfileClicked(user: UserElement) {
+        val bundle = Bundle()
+        bundle.putString("userID", user.id!!)
+        findNavController()
+            .navigate(
+                R.id.action_topPhotographersFragment_to_photographerDetailFragment,
+                bundle
+            )
+    }
+}

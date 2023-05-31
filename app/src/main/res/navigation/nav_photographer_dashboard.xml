@@ -1,0 +1,1059 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_photographer_dashboard"
+    app:startDestination="@id/photographerLandingPageFragment">
+
+    <fragment
+        android:id="@+id/photographerLandingPageFragment"
+        android:name="com.photoshooto.ui.photographersScreens.photographerDashboard.fragments.PhotographerLandingPageFragment"
+        android:label="PhotographerLandingPageFragment">
+        <action
+            android:id="@+id/action_photographerLandingPageFragment_to_fragmentQRCodeGenerationStandeeIntro"
+            app:destination="@id/fragmentQRCodeGenerationStandeeIntro" />
+        <action
+            android:id="@+id/action_photographerLandingPageFragment_to_introTshirtPurchaseFragment"
+            app:destination="@id/introTshirtPurchaseFragment" />
+        <action
+            android:id="@+id/action_photographerLandingPageFragment_to_fragmentPhotographerProfileDashBoard"
+            app:destination="@id/fragmentPhotographerProfileDashBoard" />
+
+        <action
+            android:id="@+id/action_photographerLandingPageFragment_to_fragmentMyQrCodes2"
+            app:destination="@id/fragmentMyQrCodes2" />
+        <action
+            android:id="@+id/action_photographerLandingPageFragment_to_fragmentMyCart"
+            app:destination="@id/fragmentMyCart" />
+        <action
+            android:id="@+id/action_photographerLandingPageFragment_to_photographerTrackOrderFragment"
+            app:destination="@id/photographerTrackOrderFragment" />
+        <action
+            android:id="@+id/action_photographerLandingPageFragment_to_PhotographerMyOrdersFragment"
+            app:destination="@id/PhotographerMyOrdersFragment" />
+        <action
+            android:id="@+id/action_photographerLandingPageFragment_to_photographerRedeemGiftFragment"
+            app:destination="@id/photographerRedeemGiftFragment" />
+        <action
+            android:id="@+id/action_photographerLandingPageFragment_to_fragmentThanksRegister"
+            app:destination="@id/fragmentThanksRegister" />
+        <action
+            android:id="@+id/action_photographerLandingPageFragment_to_fragmentPhotographerNotifications"
+            app:destination="@id/fragmentPhotographerNotifications" />
+        <action
+            android:id="@+id/action_photographerLandingPageFragment_to_navigation_Terms"
+            app:destination="@id/navigation_Terms" />
+        <action
+            android:id="@+id/action_photographerLandingPageFragment_to_jobHome"
+            app:destination="@id/jobHome" />
+        <action
+            android:id="@+id/action_photographerLandingPageFragment_to_jobCalender"
+            app:destination="@id/calendarFragment" />
+        <action
+            android:id="@+id/action_photographerLandingPageFragment_to_savedJobs"
+            app:destination="@id/savedJobFragment" />
+        <action
+            android:id="@+id/action_photographerLandingPageFragment_to_jobDetail"
+            app:destination="@id/jobDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_Terms"
+        android:name="com.photoshooto.ui.terms.FragmentTermsPrivacy"
+        tools:layout="@layout/fragment_termsprivacy" />
+    <fragment
+        android:id="@+id/fragmentQRCodeGenerationStandeeIntro"
+        android:name="com.photoshooto.ui.qrcodegenration.FragmentQRCodeGeneration"
+        android:label="FragmentQRCodeGenerationStandeeIntro">
+        <action
+            android:id="@+id/action_fragmentQRCodeGenerationStandeeIntro_to_fragmentQRCodeProceed"
+            app:destination="@id/fragmentQRCodeProceed" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentQRCodeProceed"
+        android:name="com.photoshooto.ui.qrcodegenration.FragmentQRCodeProceed"
+        android:label="FragmentQRCodeProceed"
+        tools:layout="@layout/fragment_qr_code_proceed">
+        <action
+            android:id="@+id/action_fragmentQRCodeProceed_to_fragmentChooseStandee"
+            app:destination="@id/fragmentChooseStandee" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentChooseStandee"
+        android:name="com.photoshooto.ui.qrcodegenration.FragmentChooseStandee"
+        android:label="FragmentChooseStandee"
+        tools:layout="@layout/fragment_choose_standee">
+        <action
+            android:id="@+id/action_fragmentChooseStandee_to_fragmentProceedToSummery"
+            app:destination="@id/fragmentProceedToSummery" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentProceedToSummery"
+        android:name="com.photoshooto.ui.qrcodegenration.FragmentProceedToSummery"
+        android:label="FragmentProceedToSummery"
+        tools:layout="@layout/fragment_proceed_to_summary">
+        <action
+            android:id="@+id/action_fragmentProceedToSummery_to_fragmentMyCart"
+            app:destination="@id/fragmentMyCart" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentMyCart"
+        android:name="com.photoshooto.ui.qrcodegenration.FragmentMyCart"
+        android:label="FragmentMyCart"
+        tools:layout="@layout/fragment_my_cart">
+        <action
+            android:id="@+id/action_fragmentMyCart_to_photographerManageAddressFragment"
+            app:destination="@id/photographerManageAddressFragment" />
+        <action
+            android:id="@+id/action_fragmentMyCart_to_fragmentQRCodeGenerationStandeeIntro"
+            app:destination="@id/fragmentQRCodeGenerationStandeeIntro" />
+        <action
+            android:id="@+id/action_fragmentMyCart_to_photographerLandingPageFragment"
+            app:destination="@id/photographerLandingPageFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_fragmentMyCart_to_photographerCustomizeShirtFragment"
+            app:destination="@id/photographerCustomizeShirtFragment" />
+        <action
+            android:id="@+id/action_fragmentMyCart_to_fragmentQRCodeProceed"
+            app:destination="@id/fragmentQRCodeProceed" />
+
+        <action
+            android:id="@+id/action_fragmentMyCart_to_fragmentNavigation_standee_intro"
+            app:destination="@id/navigation_standee_intro" />
+        <action
+            android:id="@+id/action_fragmentMyCart_to_fragmentQRCodeGenerationStandeeIntro2"
+            app:destination="@id/fragmentQRCodeGenerationStandeeIntro" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentRecyclerView"
+        android:name="com.photoshooto.ui.recycler_view.FragmentRecyclerView"
+        android:label="fragmentRecyclerView"
+        tools:layout="@layout/fragment_recycler_view" />
+    <fragment
+        android:id="@+id/navigation_standee_intro"
+        android:name="com.photoshooto.ui.qrcodegenration.FragmentQRCodeGeneration"
+        tools:layout="@layout/fragment_generate_event_qr_code">
+        <action
+            android:id="@+id/action_move_to_generate_qr"
+            app:destination="@id/navigation_generate_qr" />
+    </fragment>
+    <fragment
+        android:id="@+id/photographerManageAddressFragment"
+        android:name="com.photoshooto.ui.photographersScreens.photographerDashboard.fragments.PhotographerManageAddressFragment"
+        android:label="PhotographerManageAddressFragment">
+
+        <action
+            android:id="@+id/action_photographerManageAddressFragment_to_photographerAddAddressFragment"
+            app:destination="@id/photographerAddAddressFragment">
+
+            <argument
+                android:name="addressData"
+                app:argType="string" />
+
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/photographerEnquiriesFragment"
+        android:name="com.photoshooto.ui.userhomepage.UserEnquiriesFragment"
+        android:label="fragment_user_enquiries"
+        tools:layout="@layout/fragment_user_enquiries" />
+
+    <fragment
+        android:id="@+id/photographerAddAddressFragment"
+        android:name="com.photoshooto.ui.photographersScreens.photographerDashboard.fragments.PhotographerAddAddressFragment"
+        android:label="PhotographerAddAddressFragment" />
+
+    <fragment
+        android:id="@+id/introTshirtPurchaseFragment"
+        android:name="com.photoshooto.ui.purchase.IntroTshirtPurchaseFragment"
+        android:label="IntroTshirtPurchaseFragment">
+        <action
+            android:id="@+id/action_introTshirtPurchaseFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.photoshooto.ui.purchase.ProductDetailsFragment"
+        android:label="fragment_product_details"
+        tools:layout="@layout/fragment_product_details">
+        <action
+            android:id="@+id/action_productDetailsFragment_to_cartFragment"
+            app:destination="@id/cartFragment">
+
+            <argument
+                android:name="productAvailableSize"
+                app:argType="string" />
+
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.photoshooto.ui.purchase.CartFragment"
+        tools:layout="@layout/fragment_cart">
+        <!-- <action
+             android:id="@+id/action_apply_coupon"
+             app:destination="@id/navigation_coupon" />
+         <action
+             android:id="@+id/action_move_to_payment_options"
+             app:destination="@id/navigation_payment" />
+         <action
+             android:id="@+id/action_move_to_tshirt_list"
+             app:destination="@id/navigation_product_details" />
+         <action
+             android:id="@+id/action_move_to_manage_address"
+             app:destination="@id/navigation_manage_address" />
+         <action
+             android:id="@+id/action_move_to_tshirt_home"
+             app:destination="@id/navigation_home"
+             app:popUpToInclusive="true" />-->
+        <action
+            android:id="@+id/action_cartFragment_to_photographerManageAddressFragment"
+            app:destination="@id/photographerManageAddressFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_photographerLandingPageFragment"
+            app:destination="@id/photographerLandingPageFragment"
+            app:popUpTo="@id/photographerLandingPageFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentPhotographerProfileDashBoard"
+        android:name="com.photoshooto.ui.photographer.FragmentPhotographerProfile"
+        android:label="FragmentPhotographerProfile">
+        <action
+            android:id="@+id/action_fragmentPhotographerProfile_to_fragmentPhotographerPersonal"
+            app:destination="@id/fragmentPhotographerPersonal" />
+        <action
+            android:id="@+id/action_fragmentPhotographerProfile_to_fragmentPhotographerProfession"
+            app:destination="@id/fragmentPhotographerProfession" />
+        <action
+            android:id="@+id/action_fragmentPhotographerProfile_to_fragmentPhotographerAddress"
+            app:destination="@id/fragmentPhotographerAddress" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentPhotographerFeedback"
+        android:name="com.photoshooto.ui.feedback.FeedbackFragment"
+        android:label="FragmentFeedback"
+        tools:layout="@layout/feedback_fragment" />
+    <fragment
+        android:id="@+id/fragmentPhotographerEnquiry"
+        android:name="com.photoshooto.ui.photographersScreens.enquiries.PhotographerEnquiryFragment"
+        android:label="FragmentPhotographerEnquiry"
+        tools:layout="@layout/photographer_enquiry_fragment" />
+    <fragment
+        android:id="@+id/fragmentPhotographerPersonal"
+        android:name="com.photoshooto.ui.photographer.FragmentPhotographerPersonal"
+        android:label="@string/personal_details"
+        tools:layout="@layout/fragment_photographer_personal" />
+    <fragment
+        android:id="@+id/fragmentPhotographerProfession"
+        android:name="com.photoshooto.ui.photographer.FragmentPhotographerProfession"
+        android:label="FragmentPhotographerProfession" />
+    <fragment
+        android:id="@+id/fragmentPhotographerAddress"
+        android:name="com.photoshooto.ui.photographer.FragmentPhotographerAddress"
+        android:label="@layout/fragment_photographer_address">
+
+
+        <argument
+            android:name="postId"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <action
+            android:id="@+id/action_post1_to_map"
+            app:destination="@id/map"
+            app:launchSingleTop="true" />
+
+        <!--        <argument
+                    android:name="postId"
+                    android:defaultValue="@null"
+                    app:argType="string"
+                    app:nullable="true" />-->
+
+        <!-- <argument
+             android:name="postId"
+             android:defaultValue="@null"
+             app:argType="string"
+             app:nullable="true" />-->
+
+
+        <!--<action
+            android:id="@+id/action_post1_to_post2"
+            app:destination="@id/fragmentPhotographerAddress"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_post1_to_map"
+            app:destination="@id/map"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_post1_to_map"
+            app:destination="@id/map"
+            app:launchSingleTop="true" />-->
+        <!--
+                <action
+                    android:id="@+id/action_fragmentPhotographerAddress_to_map"
+                    app:destination="@id/map"
+                    app:launchSingleTop="true" />-->
+        <!--<action
+            android:id="@+id/action_fragmentPhotographerAddress_to_map"
+            app:destination="@id/map" />-->
+
+        <!-- <action
+             android:id="@+id/action_fragmentPhotographerProfile_to_fragmentPhotographerProfession"
+             app:destination="@id/fragment_map" />-->
+
+    </fragment>
+
+
+    <!--Create and setup event Section-->
+
+    <fragment
+        android:id="@+id/fragmentMyQrCodes2"
+        android:name="com.photoshooto.ui.qrcodesetup.myQrCodes.FragmentMyQrCodes"
+        android:label="FragmentMyQrCodes">
+        <action
+            android:id="@+id/action_fragmentMyQrCodes2_to_fragmentEventOrderHistory2"
+            app:destination="@id/fragmentEventOrderHistory2" />
+        <action
+            android:id="@+id/action_fragmentMyQrCodes2_to_fragmentCreateEvents"
+            app:destination="@id/fragmentCreateEvents" />
+        <action
+            android:id="@+id/action_fragmentMyQrCodes2_to_QREventOrderHistoryFragment"
+            app:destination="@id/QREventOrderHistoryFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentEventOrderHistory2"
+        android:name="com.photoshooto.ui.qrcodesetup.eventOrderHistory.FragmentEventOrderHistory"
+        android:label="FragmentEventOrderHistory">
+        <action
+            android:id="@+id/action_fragmentEventOrderHistory2_to_fragmentCreateEvents"
+            app:destination="@id/fragmentCreateEvents" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentCreateEvents"
+        android:name="com.photoshooto.ui.qrcodesetup.createEvent.FragmentCreateEvent"
+        android:label="FragmentCreateEvent">
+        <action
+            android:id="@+id/actionFragmentCreateEventToEventSetupFragment"
+            app:destination="@id/eventSetupFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/eventSetupFragment"
+        android:name="com.photoshooto.ui.qrcodesetup.eventSetup.FragmentEventSetup"
+        android:label="FragmentEventSetup">
+
+        <argument
+            android:name="mCreateEventRequest"
+            app:argType="com.photoshooto.domain.usecase.qrCodeSetup.createEvent.requestModel.CreateEventRequest"
+            app:nullable="true" />
+
+        <argument
+            android:name="mFolderName"
+            app:argType="string" />
+
+        <argument
+            android:name="mEventDuration"
+            app:argType="string" />
+
+        <argument
+            android:name="mImage"
+            app:argType="string"
+            app:nullable="true" />
+
+        <action
+            android:id="@+id/actionEventToMyQrCodeCreated"
+            app:destination="@id/fragmentMyQrCodes2"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/fragmentMyQrCodes2"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/QREventOrderHistoryFragment"
+        android:name="com.photoshooto.ui.qrorderhistory.QREventOrderHistoryFragment"
+        android:label="QREventOrderHistoryFragment" />
+
+    <fragment
+        android:id="@+id/photographerTrackOrderFragment"
+        android:name="com.photoshooto.ui.photographersScreens.photographerOrders.PhotographerTrackOrderFragment"
+        android:label="PhotographerTrackOrderFragment"
+        tools:layout="@layout/fragment_photographer_track_order">
+
+        <argument
+            android:name="item"
+            app:argType="string"
+            app:nullable="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/PhotographerMyOrdersFragment"
+        android:name="com.photoshooto.ui.photographersScreens.photographerOrders.PhotographerMyOrdersFragment"
+        tools:layout="@layout/fragment_photographer_my_orders">
+        <action
+            android:id="@+id/action_PhotographerMyOrdersFragment_to_photographerOrderDetailsFragment"
+            app:destination="@id/photographerOrderDetailsFragment" />
+        <action
+            android:id="@+id/action_PhotographerMyOrdersFragment_to_photographerInvoiceFragment"
+            app:destination="@id/photographerInvoiceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photographerRedeemGiftFragment"
+        android:name="com.photoshooto.ui.photographersScreens.surpises.PhotographerRedeemGiftFragment"
+        android:label="PhotographerRedeemGiftFragment">
+        <action
+            android:id="@+id/action_photographerRedeemGiftFragment_to_photographerUnlockFeaturesFragment"
+            app:destination="@id/photographerUnlockFeaturesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photographerUnlockFeaturesFragment"
+        android:name="com.photoshooto.ui.photographersScreens.surpises.PhotographerUnlockFeaturesFragment"
+        android:label="PhotographerUnlockFeaturesFragment">
+        <action
+            android:id="@+id/action_photographerUnlockFeaturesFragment_to_photographerSurpriseDetailsFragment"
+            app:destination="@id/photographerSurpriseDetailsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/photographerSurpriseDetailsFragment"
+        android:name="com.photoshooto.ui.photographersScreens.surpises.PhotographerSurpriseDetailsFragment"
+        android:label="PhotographerSurpriseDetailsFragment" />
+    <fragment
+        android:id="@+id/photographerOrderDetailsFragment"
+        android:name="com.photoshooto.ui.photographersScreens.photographerOrders.PhotographerOrderDetailsFragment"
+        android:label="PhotographerOrderDetailsFragment" />
+    <fragment
+        android:id="@+id/fragmentThanksRegister"
+        android:name="com.photoshooto.ui.signup.FragmentThanksRegister"
+        android:label="fragment_thanks_register"
+        tools:layout="@layout/fragment_thanks_register">
+        <action
+            android:id="@+id/action_fragmentThanksRegister_to_fragmentPhotographerProfileDashBoard"
+            app:destination="@id/fragmentPhotographerProfileDashBoard" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentPhotographerNotifications"
+        android:name="com.photoshooto.ui.photographersScreens.photographerDashboard.fragments.PhotographerNotificationsFragment"
+        android:label="fragment_photographer_notification"
+        tools:layout="@layout/fragment_photographer_notifications" />
+    <fragment
+        android:id="@+id/photographerInvoiceFragment"
+        android:name="com.photoshooto.ui.photographersScreens.photographerOrders.PhotographerOrderInvoiceFragment"
+        android:label="PhotographerInvoiceFragment">
+        <argument
+            android:name="OrderID"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/photographerCustomizeShirtFragment"
+        android:name="com.photoshooto.ui.photographersScreens.photographerOrders.PhotographerCustomizeShirtFragment"
+        android:label="PhotographerCustomizeShirtFragment">
+        <action
+            android:id="@+id/action_photographerCustomizeShirtFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+
+    <!-- Job Posting Module-->
+    <fragment
+        android:id="@+id/jobHome"
+        android:name="com.photoshooto.ui.job.fragments.JobHomeFragment"
+        android:label="JobHome"
+        tools:layout="@layout/fragment_job_home">
+
+        <action
+            android:id="@+id/action_home_to_jobList"
+            app:destination="@id/jobList"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_home_to_jobDetail"
+            app:destination="@id/jobDetail"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_home_to_photographerList"
+            app:destination="@id/photographerList"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_home_to_postProductStep1"
+            app:destination="@id/photographyProducts"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_home_to_postDetails"
+            app:destination="@id/postDetails"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_jobHome_to_photographerLandingPageFragment"
+            app:destination="@id/photographerLandingPageFragment" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/photographyProducts"
+        android:name="com.photoshooto.ui.usedPhotographyScreens.fragment.PhotographyProductsFragment"
+        android:label="Used Photography Products"
+        tools:layout="@layout/fragment_photography_products">
+
+        <action
+            android:id="@+id/action_photographyProducts_to_post1"
+            app:destination="@id/postProductStep1"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_photographyProducts_to_postDetails"
+            app:destination="@id/postDetails"
+            app:launchSingleTop="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/postDetails"
+        android:name="com.photoshooto.ui.usedPhotographyScreens.fragment.PostDetailsFragment"
+        android:label=""
+        tools:layout="@layout/fragment_post_details">
+
+        <argument
+            android:name="postId"
+            app:argType="string" />
+
+
+        <argument
+            android:name="isSeller"
+            app:argType="boolean" />
+
+        <argument
+            android:name="isAdmin"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <argument
+            android:name="isReported"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <action
+            android:id="@+id/action_details_to_fullscreen"
+            app:destination="@id/fullScreen"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_postDetails_to_post1"
+            app:destination="@id/postProductStep1"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/postDetails"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/postProductStep1"
+        android:name="com.photoshooto.ui.usedPhotographyScreens.fragment.PostProductStep01Fragment"
+        android:label="Post Product"
+        tools:layout="@layout/fragment_post_product_step_01">
+
+        <argument
+            android:name="postId"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+
+        <action
+            android:id="@+id/action_post1_to_post2"
+            app:destination="@id/postProductStep2"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_post1_to_map"
+            app:destination="@id/map"
+            app:launchSingleTop="true" />
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/postProductStep2"
+        android:name="com.photoshooto.ui.usedPhotographyScreens.fragment.PostProductStep02Fragment"
+        android:label="Post Product"
+        tools:layout="@layout/fragment_post_product_step_02">
+
+        <argument
+            android:name="postProductsPRQ"
+            app:argType="com.photoshooto.domain.model.PostProductsPRQ" />
+
+        <argument
+            android:name="postProducts"
+            android:defaultValue="@null"
+            app:argType="com.photoshooto.domain.model.ProductsModel"
+            app:nullable="true" />
+
+        <action
+            android:id="@+id/action_post2_to_post3"
+            app:destination="@id/postProductStep3"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_post2_to_fullscreen"
+            app:destination="@id/fullScreen"
+            app:launchSingleTop="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/postProductStep3"
+        android:name="com.photoshooto.ui.usedPhotographyScreens.fragment.PostProductStep03Fragment"
+        android:label="Post Product"
+        tools:layout="@layout/fragment_post_product_step_03">
+
+        <argument
+            android:name="postProductsPRQ"
+            app:argType="com.photoshooto.domain.model.PostProductsPRQ" />
+
+        <argument
+            android:name="postProducts"
+            android:defaultValue="@null"
+            app:argType="com.photoshooto.domain.model.ProductsModel"
+            app:nullable="true" />
+
+        <action
+            android:id="@+id/action_postProductStep3_to_home"
+            app:destination="@id/postDetails"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/photographyProducts"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_home_to_postProductStep1"
+            app:destination="@id/photographyProducts"
+            app:launchSingleTop="true" />
+
+
+        <action
+            android:id="@+id/action_postProductStep3_to_fullscreen"
+            app:destination="@id/fullScreen"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.photoshooto.ui.usedPhotographyScreens.fragment.MapFragment"
+        android:label="Post Product"
+        tools:layout="@layout/fragment_map">
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/fullScreen"
+        android:name="com.photoshooto.ui.usedPhotographyScreens.fragment.FullScreenImageFragment"
+        android:label="Post Product"
+        tools:layout="@layout/fragment_full_screen_image">
+
+        <argument
+            android:name="imageUrl"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/photographerList"
+        android:name="com.photoshooto.ui.job.fragments.PhotographersAvailableFragment"
+        android:label="PhotographerList"
+        tools:layout="@layout/fragment_photographers_available">
+
+        <action
+            android:id="@+id/action_photographerList_to_jobDetail"
+            app:destination="@id/jobDetail"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_photographerList_to_createJob"
+            app:destination="@id/jobCreate"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_photographerList_to_dialog_sort"
+            app:destination="@id/dialog_bottom_sort"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_photographerList_to_dialog_filter"
+            app:destination="@id/dialog_bottom_filter"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/jobList"
+        android:name="com.photoshooto.ui.job.fragments.JobLatestFragment"
+        android:label="JobList"
+        tools:layout="@layout/fragment_photographers_available">
+
+        <action
+            android:id="@+id/action_jobList_to_jobDetail"
+            app:destination="@id/jobDetail"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_jobList_to_createJob"
+            app:destination="@id/jobCreate"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_jobList_to_dialog_sort"
+            app:destination="@id/dialog_bottom_sort"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_jobList_to_dialog_filter"
+            app:destination="@id/dialog_bottom_filter"
+            app:launchSingleTop="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/jobDetail"
+        android:name="com.photoshooto.ui.job.fragments.JobDetailFragment"
+        android:label="JobDetail"
+        tools:layout="@layout/fragment_job_detail">
+
+        <action
+            android:id="@+id/action_jobDeatil_to_editJob"
+            app:destination="@id/jobCreate"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_jobDetail_to_reviewFragment"
+            app:destination="@id/reviewFragment"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_jobDetail_to_calendarFragment"
+            app:destination="@id/calendarFragment"
+            app:launchSingleTop="true" />
+
+        <argument
+            android:name="jobId"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/deeplinkFragment"
+        android:name="com.photoshooto.ui.job.fragments.DeeplinkFragment"
+        android:label="Deeplink">
+
+        <deepLink app:uri="https://photoshooto.com/jobs/{jobId}" />
+
+        <argument
+            android:name="jobId"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_deeplinkFragment_to_jobDetail"
+            app:destination="@id/jobDetail"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/deeplinkFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentOption"
+        android:name="com.photoshooto.ui.job.fragments.PaymentOptionsFragment"
+        android:label="PaymentOption"
+        tools:layout="@layout/fragment_payment_option">
+
+        <argument
+            android:name="amount"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/subscriptionFragment"
+        android:name="com.photoshooto.ui.job.fragments.SubscriptionPlansFragment"
+        android:label="SubscriptionFragment"
+        tools:layout="@layout/fragment_subscription">
+
+        <action
+            android:id="@+id/action_subscriptionFragment_to_summaryPage"
+            app:destination="@id/summaryPage"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/jobCreate"
+        android:name="com.photoshooto.ui.job.fragments.JobCreateFragment"
+        android:label="CreateFragment"
+        tools:layout="@layout/fragment_job_create">
+
+        <argument
+            android:name="action"
+            android:defaultValue="create"
+            app:argType="string" />
+
+        <argument
+            android:name="jobType"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_jobCreate_to_subscriptionFragment"
+            app:destination="@id/subscriptionFragment"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_jobCreate_to_calendarFragment"
+            app:destination="@id/calendarFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/summaryPage"
+        android:name="com.photoshooto.ui.job.fragments.SummaryPageFragment"
+        android:label="SummaryFragment"
+        tools:layout="@layout/fragment_summary">
+
+        <argument
+            android:name="orders"
+            app:argType="com.photoshooto.domain.model.OrderList" />
+
+        <action
+            android:id="@+id/action_summary_to_paymentOption"
+            app:destination="@id/paymentOption"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_summary_to_couponsFragment"
+            app:destination="@id/couponsFragment"
+            app:launchSingleTop="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/couponsFragment"
+        android:name="com.photoshooto.ui.job.fragments.CouponsFragment"
+        android:label="CouponsFragment"
+        tools:layout="@layout/fragment_coupons" />
+
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.photoshooto.ui.job.fragments.CalenderFragment"
+        android:label="CalendarFragment"
+        tools:layout="@layout/fragment_calendar">
+
+        <argument
+            android:name="userId"
+            app:argType="string" />
+
+        <argument
+            android:name="userSubscribe"
+            app:argType="boolean" />
+
+        <argument
+            android:name="userName"
+            app:argType="string" />
+
+        <argument
+            android:name="userProfile"
+            app:argType="string" />
+
+        <argument
+            android:name="userAddress"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_calendarFragment_to_editJob"
+            app:destination="@id/jobCreate"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_calendarFragment_to_photographerLandingPageFragment"
+            app:destination="@id/photographerLandingPageFragment" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/savedJobFragment"
+        android:name="com.photoshooto.ui.job.fragments.SavedJobsMyPostFragment"
+        android:label="SavedJobFragment"
+        tools:layout="@layout/fragment_save_job">
+
+        <action
+            android:id="@+id/action_bookmark_to_jobDetail"
+            app:destination="@id/jobDetail"
+            app:launchSingleTop="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.photoshooto.ui.job.fragments.ReviewsFragment"
+        android:label="ReviewFragment"
+        tools:layout="@layout/fragment_review">
+
+        <argument
+            android:name="userId"
+            app:argType="string" />
+
+        <argument
+            android:name="userSubscribe"
+            app:argType="boolean" />
+
+        <argument
+            android:name="userName"
+            app:argType="string" />
+
+        <argument
+            android:name="userProfile"
+            app:argType="string" />
+
+        <argument
+            android:name="userAddress"
+            app:argType="string" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/qrEventsFragment3"
+        android:name="com.photoshooto.ui.events.QrEventsFragment"
+        android:label="fragment_qr_events"
+        tools:layout="@layout/fragment_qr_events" />
+
+    <fragment
+        android:id="@+id/searchEventFragment"
+        android:name="com.photoshooto.ui.events.SearchEventFragment"
+        android:label="fragment_qr_events"
+        tools:layout="@layout/fragment_search_event" />
+
+    <fragment
+        android:id="@+id/qrEventsFragment"
+        android:name="com.photoshooto.ui.events.QrEventsFragment"
+        android:label="fragment_qr_events"
+        tools:layout="@layout/fragment_qr_events" />
+    <fragment
+        android:id="@+id/setUpQrEventFragment"
+        android:name="com.photoshooto.ui.events.SetUpQrEventFragment"
+        android:label="SetUpQrEventFragment">
+        <action
+            android:id="@+id/action_setUpQrEventFragment_to_searchEventFragment"
+            app:destination="@id/searchEventFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/allEventsFragment"
+        android:name="com.photoshooto.ui.events.AllEventsFragment"
+        android:label="fragment_all_events"
+        tools:layout="@layout/fragment_all_events">
+        <action
+            android:id="@+id/action_allEventsFragment_to_qrEventsFragment3"
+            app:destination="@id/qrEventsFragment3" />
+
+
+        <action
+            android:id="@+id/action_allEventsFragment_to_qrEventsFragment"
+            app:destination="@id/qrEventsFragment" />
+
+        <action
+            android:id="@+id/action_allEventsFragment_to_setUpQrEventFragment"
+            app:destination="@id/setUpQrEventFragment" />
+
+
+    </fragment>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <fragment
+        android:id="@+id/photographerNewLandingPageFragment"
+        android:name="com.photoshooto.ui.photographersScreens.photographerDashboard.fragments.PhotographerNewLandingPageFragment"
+        android:label="PhotographerNewLandingPageFragment">
+        <action
+            android:id="@+id/action_photographerNewLandingPageFragment_to_qrEventsFragment3"
+            app:destination="@id/qrEventsFragment3" />
+        <action
+            android:id="@+id/action_photographerNewLandingPageFragment_to_setUpQrEventFragment"
+            app:destination="@id/setUpQrEventFragment" />
+        <action
+            android:id="@+id/action_photographerNewLandingPageFragment_to_allEventsFragment"
+            app:destination="@id/allEventsFragment" />
+        <action
+            android:id="@+id/action_photographerNewLandingPageFragment_to_liveEventFragment"
+            app:destination="@id/liveEventFragment" />
+
+
+    </fragment>
+
+
+    <dialog
+        android:id="@+id/dialog_bottom_sort"
+        android:name="com.photoshooto.ui.job.fragments.BottomSheetSortDialog"
+        tools:layout="@layout/dialog_bottom_sort">
+        <argument
+            android:name="prefill"
+            app:argType="string" />
+        <argument
+            android:name="type"
+            app:argType="string" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/dialog_bottom_filter"
+        android:name="com.photoshooto.ui.job.fragments.BottomSheetFilterDialog"
+        tools:layout="@layout/dialog_bottom_filter">
+
+        <argument
+            android:name="type"
+            app:argType="string" />
+
+        <argument
+            android:name="prefillFilterJSON"
+            app:argType="string" />
+    </dialog>
+    <fragment
+        android:id="@+id/liveEventFragment"
+        android:name="com.photoshooto.ui.events.live_event.LiveEventFragment"
+        android:label="fragment_live_event"
+        tools:layout="@layout/fragment_live_event">
+        <action
+            android:id="@+id/action_liveEventFragment_to_registeredUsersFragment"
+            app:destination="@id/registeredUsersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registeredUsersFragment"
+        android:name="com.photoshooto.ui.events.live_event.RegisteredUsersFragment"
+        android:label="fragment_registered_users"
+        tools:layout="@layout/fragment_registered_users" />
+
+</navigation>

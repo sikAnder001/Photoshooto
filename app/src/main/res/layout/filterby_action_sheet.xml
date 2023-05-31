@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="100dp"
+    app:behavior_skipCollapsed="true"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_view" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/filter_by"
+                android:textColor="@color/neutralBlack"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvCancer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_regular"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="8dp"
+                android:text="@string/cancel"
+                android:textColor="@color/text_F0481B"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:layout_marginTop="28dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="28dp"
+                    android:paddingEnd="19dp">
+
+
+                    <TextView
+                        android:id="@+id/tvLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/location_filter"
+                        android:textColor="@color/neutralBlack"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvProduct"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="37dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/product"
+                        android:textColor="@color/neutralGrey"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="37dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/price"
+                        android:textColor="@color/neutralGrey"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey36" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20sp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/rlSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_search_input">
+
+
+                        <ImageView
+                            android:id="@+id/imgSearch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="11dp"
+                            android:src="@drawable/ic_search_filter" />
+
+                        <EditText
+                            android:id="@+id/etSearch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="2dp"
+                            android:layout_toStartOf="@+id/imgLocation"
+                            android:layout_toEndOf="@+id/imgSearch"
+                            android:background="@android:color/transparent"
+                            android:fontFamily="@font/poppins_regular"
+                            android:hint="@string/search"
+                            android:imeOptions="actionSearch"
+                            android:inputType="text"
+                            android:padding="5dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/grey21"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:id="@+id/imgLocation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="11dp"
+                            android:src="@drawable/ic_my_location" />
+
+
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:clipToPadding="false" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvProduct"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:clipToPadding="false"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/select_range"
+                        android:textColor="@color/neutralBlack"
+                        android:textSize="14sp" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="8dp">
+
+                        <TextView
+                            android:id="@+id/tvStartPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="₹500"
+                            android:textColor="@color/neutralGrey"
+                            android:textSize="16sp" />
+
+                        <com.photoshooto.util.RangeSeekbar.DoubleValueSeekBarView
+                            android:id="@+id/rangeSeekbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginEnd="3dp"
+                            android:layout_toStartOf="@+id/tvEndPrice"
+                            android:layout_toEndOf="@+id/tvStartPrice"
+                            app:r2CurrentMaxValue="5000000"
+                            app:r2barHeight="2dp"
+                            app:r2baseColor="@color/switch_track"
+                            app:r2circleFillColor="@color/black"
+                            app:r2circleRadius="11dp"
+                            app:r2circleTextColor="@color/black"
+                            app:r2circleTextSize="5dp"
+                            app:r2fillColor="@color/black"
+                            app:r2maxValue="5000000"
+                            app:r2maxValueStep="500"
+                            app:r2minValueStep="500" />
+
+                        <TextView
+                            android:id="@+id/tvEndPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="₹50L"
+                            android:textColor="@color/neutralGrey"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="13dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/range_selected"
+                        android:textColor="@color/neutralBlack"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvRangePrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:text="₹500 - ₹50,00,000"
+                        android:textColor="@color/text_F0481B"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:id="@+id/tvClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/poppins_regular"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="8dp"
+            android:text="@string/clear_all"
+            android:textColor="@color/colorPrimaryPressed"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnApply"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button_ripple2"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/apply"
+            android:textAllCaps="false"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+</LinearLayout>

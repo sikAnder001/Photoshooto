@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_marginBottom="@dimen/dp5"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="@dimen/dp5"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back_icons"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:gravity="center"
+                    android:src="@drawable/ic_accepted" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp10"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp5"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivProduct"
+                        android:layout_width="100dp"
+                        android:layout_height="@dimen/dp120"
+                        android:padding="@dimen/dp5"
+                        android:src="@drawable/img_ts"
+                        android:textColor="@color/blue_tv"
+                        android:textSize="12sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llClickForDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="5dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="Ninad Shivare"
+                        android:textColor="@color/blue_tv"
+                        android:textSize="@dimen/sp15"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:fontFamily="@font/poppins_medium" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="Order ID : "
+                            android:textColor="@color/grey_clr"
+                            android:textSize="@dimen/sp10"
+                            android:visibility="visible"
+                            app:fontFamily="@font/poppins_medium" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvOrderId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="PS1345454569"
+                            android:textColor="@color/grey_clr"
+                            android:textSize="@dimen/sp10"
+                            android:visibility="visible"
+                            app:fontFamily="@font/poppins_medium" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="Standee type : "
+                            android:textColor="@color/grey_clr"
+                            android:textSize="@dimen/sp10"
+                            android:visibility="visible"
+                            app:fontFamily="@font/poppins_medium" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="Premium"
+                            android:textColor="@color/grey_clr"
+                            android:textSize="@dimen/sp10"
+                            android:visibility="visible"
+                            app:fontFamily="@font/poppins_medium" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp1"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="Quantity : "
+                            android:textColor="@color/grey_clr"
+                            android:textSize="@dimen/sp10"
+                            android:visibility="visible"
+                            app:fontFamily="@font/poppins_medium" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvQty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="2 "
+                            android:textColor="@color/grey_clr"
+                            android:textSize="@dimen/sp10"
+                            android:visibility="visible"
+                            app:fontFamily="@font/poppins_medium" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp1"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="Transaction ID : "
+                            android:textColor="@color/grey_clr"
+                            android:textSize="@dimen/sp10"
+                            android:visibility="visible"
+                            app:fontFamily="@font/poppins_medium" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvTransactionId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="#5647478PS7668AWB "
+                            android:textColor="@color/grey_clr"
+                            android:textSize="@dimen/sp10"
+                            android:visibility="visible"
+                            app:fontFamily="@font/poppins_medium" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp1"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="Location : "
+                            android:textColor="@color/grey_clr"
+                            android:textSize="@dimen/sp10"
+                            android:visibility="visible"
+                            app:fontFamily="@font/poppins_medium" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvLocation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="New Delhi "
+                            android:textColor="@color/grey_clr"
+                            android:textSize="@dimen/sp10"
+                            android:visibility="visible"
+                            app:fontFamily="@font/poppins_medium" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="Payment Status : "
+                            android:textColor="@color/grey_clr"
+                            android:textSize="@dimen/sp10"
+                            android:visibility="visible"
+                            app:fontFamily="@font/poppins_medium" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/dp12"
+                            android:layout_height="@dimen/dp12"
+                            android:layout_marginStart="@dimen/dp5"
+                            app:srcCompat="@drawable/ic_green_right_mark" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvPaymentStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:includeFontPadding="false"
+                            android:text="Successful"
+                            android:textColor="@color/grey_clr"
+                            android:textSize="@dimen/sp10"
+                            android:visibility="visible"
+                            app:fontFamily="@font/poppins_medium" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp1"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="Date : "
+                                android:textColor="@color/grey_clr"
+                                android:textSize="@dimen/sp10"
+                                android:visibility="visible"
+                                app:fontFamily="@font/poppins_medium" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="22/09/22"
+                                android:textColor="@color/grey_clr"
+                                android:textSize="@dimen/sp10"
+                                android:visibility="visible"
+                                app:fontFamily="@font/poppins_medium" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp15"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="Time : "
+                                android:textColor="@color/grey_clr"
+                                android:textSize="@dimen/sp10"
+                                android:visibility="visible"
+                                app:fontFamily="@font/poppins_medium" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="09:45 AM"
+                                android:textColor="@color/grey_clr"
+                                android:textSize="@dimen/sp10"
+                                android:visibility="visible"
+                                app:fontFamily="@font/poppins_medium" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp1"
+                android:layout_marginRight="@dimen/dp1"
+                android:layout_marginBottom="@dimen/dp1"
+                android:background="@color/thick_gray1"
+                android:gravity="center"
+                android:padding="@dimen/dp5"
+                android:text="View Details"
+                android:textColor="@color/blue_tv"
+                android:textSize="@dimen/sp12"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

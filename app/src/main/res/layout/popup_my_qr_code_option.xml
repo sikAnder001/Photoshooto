@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_20sdp"
+        android:background="@drawable/back_white"
+        android:minWidth="@dimen/_150sdp"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_12sdp">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPopupTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:includeFontPadding="false"
+            android:text="@string/option"
+            android:textColor="@color/text_054871"
+            android:textSize="@dimen/_13ssp"
+            app:fontFamily="@font/poppins_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:buttonTint="@color/text_F0481B"
+            android:checked="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPopupTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPopupReprintTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@string/reprint_qr"
+            android:textColor="@color/text_054871"
+            android:textSize="@dimen/_13ssp"
+            app:fontFamily="@font/poppins_medium"
+            app:layout_constraintBottom_toBottomOf="@id/checkBox"
+            app:layout_constraintStart_toEndOf="@id/checkBox"
+            app:layout_constraintTop_toTopOf="@id/checkBox" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/viewRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/toolbar_qr_code_generated"
+        layout="@layout/toolbar_with_back_btn" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_qr_code_generated">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/dp20">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/dp50" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/dp50" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/viewQr"
+                android:layout_width="@dimen/dp270"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp30"
+                android:background="@drawable/bg_scan_me_qr"
+                android:padding="@dimen/dp20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/appCompatTextView6"
+                    style="@style/black_text_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:text="@string/label_scan_me"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:textAllCaps="true" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivQrCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_qr_code"
+                    app:layout_constraintTop_toBottomOf="@id/appCompatTextView6"
+                    tools:layout_editor_absoluteX="10dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabelPleaseDownload"
+                style="@style/black_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp30"
+                android:gravity="center"
+                android:text="@string/please_download_save"
+                android:textColor="@color/grey25"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintEnd_toEndOf="@id/viewQr"
+                app:layout_constraintStart_toStartOf="@id/viewQr"
+                app:layout_constraintTop_toBottomOf="@id/viewQr" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnDownloadQr"
+                style="@style/black_text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp48"
+                android:layout_marginTop="@dimen/dp20"
+                android:background="@drawable/orange_borderbutton_ripple_5dp"
+                android:drawableStart="@drawable/ic_orange_file"
+                android:drawablePadding="@dimen/dp16"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/dp20"
+                android:text="@string/download_qr"
+                android:textColor="@color/orange_clr"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintEnd_toStartOf="@+id/btnInfo"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/tvLabelPleaseDownload" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnInfo"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="@dimen/dp20"
+                android:src="@drawable/info_icon"
+                android:tint="@color/orange_clr"
+                app:layout_constraintBottom_toBottomOf="@id/btnDownloadQr"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                app:layout_constraintStart_toEndOf="@id/btnDownloadQr"
+                app:layout_constraintTop_toTopOf="@id/btnDownloadQr" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCreateNewQr"
+                style="@style/black_text_medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp30"
+                android:gravity="center"
+                android:text="@string/create_new_qr"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/btnDownloadQr" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnProceed"
+                style="@style/black_text_medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp36"
+                android:layout_marginTop="@dimen/dp40"
+                android:background="@drawable/orange_button_ripple"
+                android:gravity="center"
+                android:paddingVertical="@dimen/dp15"
+                android:text="@string/proceed"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCreateNewQr" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+
+
+    <ImageView
+        android:id="@+id/imgCategory"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/tvCategoryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="Cameras"
+        android:textColor="@color/blue_clr"
+        android:textSize="11sp" />
+
+</LinearLayout>
+

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginStart="18dp"
+    android:layout_marginEnd="18dp"
+    android:background="@drawable/ic_dialog_background"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieOrderSuccess"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/order_added_success_loading" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/your_product_is_posted_successfully"
+            android:textColor="@color/text_054871"
+            android:textSize="@dimen/sp13" />
+
+        <TextView
+            android:id="@+id/tvId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Your Product ID: 0021010865"
+            android:textColor="@color/grey24"
+            android:textSize="@dimen/sp13" />
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Post is under review !"
+            android:textColor="@color/orange_clr"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/adId" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnView"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/ic_button_border"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/view"
+            android:textAllCaps="false"
+            android:textColor="@color/text_F0481B"
+            android:textSize="@dimen/sp10" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="20dp"
+            android:weightSum="2">
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

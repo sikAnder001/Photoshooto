@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageBack"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:padding="@dimen/_3sdp"
+            app:layout_constraintBottom_toBottomOf="@id/tvCreateEventTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvCreateEventTitle"
+            app:srcCompat="@drawable/ic_back_arrow" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCreateEventTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_12sdp"
+            android:text="@string/create_event"
+            android:textColor="@color/text_054871"
+            android:textSize="@dimen/_18ssp"
+            app:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCreateEventTitle">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="@dimen/_15sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageMap"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_140sdp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/image_map"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ImageContrastCheck"
+                    tools:layout_editor_absoluteX="19dp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_140sdp"
+                    android:scaleType="fitXY"
+
+                    android:src="@drawable/image_black_frame"
+                    app:layout_constraintBottom_toBottomOf="@id/imageMap"
+                    app:layout_constraintEnd_toEndOf="@id/imageMap"
+                    app:layout_constraintStart_toStartOf="@id/imageMap"
+                    app:layout_constraintTop_toTopOf="@id/imageMap"
+                    tools:ignore="ImageContrastCheck" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFindMyEventLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_while_circle"
+                    android:includeFontPadding="false"
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:text="@string/find_my_event_location_on_google_map"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10ssp"
+                    app:fontFamily="@font/poppins_medium"
+                    app:layout_constraintBottom_toBottomOf="@id/imageMap"
+                    app:layout_constraintEnd_toEndOf="@id/imageMap"
+                    app:layout_constraintStart_toStartOf="@id/imageMap"
+                    app:layout_constraintTop_toTopOf="@id/imageMap"
+                    tools:ignore="TextContrastCheck" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/linearFindEventLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_35sdp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imageMap">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_12sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        app:srcCompat="@drawable/ic_location" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCreateEventLocationName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:includeFontPadding="false"
+                        android:text="@string/find_my_event_location"
+                        android:textColor="@color/text_054871"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/poppins_medium" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageFolder"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/linearFindEventLocation"
+                    app:srcCompat="@drawable/ic_folder"
+                    tools:ignore="ImageContrastCheck" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLabelSelectFolder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:includeFontPadding="false"
+                    android:text="@string/select_folder"
+                    android:textColor="@color/text_054871"
+                    android:textSize="@dimen/_12ssp"
+                    app:fontFamily="@font/poppins_regular"
+                    app:layout_constraintBottom_toBottomOf="@id/imageFolder"
+                    app:layout_constraintStart_toEndOf="@id/imageFolder"
+                    app:layout_constraintTop_toTopOf="@id/imageFolder" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageFolderInfo"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/imageFolder"
+                    app:layout_constraintStart_toEndOf="@id/tvLabelSelectFolder"
+                    app:layout_constraintTop_toTopOf="@id/imageFolder"
+                    app:srcCompat="@drawable/ic_info" />
+
+                <LinearLayout
+                    android:id="@+id/linearSelectFolder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/ed_border"
+                    android:gravity="center_vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imageFolderInfo">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSelectFolderTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:textColor="@color/text_8B8B8B"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/poppins_medium"
+                        tools:text="@string/select_folder" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        app:srcCompat="@drawable/ic_down_arrow" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvErrorSelectFolder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:text="@string/select_folder"
+                    android:textColor="@color/primaryRedColor"
+                    android:textSize="@dimen/_10sdp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@+id/linearSelectFolder"
+                    app:layout_constraintTop_toBottomOf="@+id/linearSelectFolder" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/linearCreateNewFolder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvErrorSelectFolder">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_12sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        app:srcCompat="@drawable/ic_create_folder" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:includeFontPadding="false"
+                        android:text="@string/create_new_folder"
+                        android:textColor="@color/text_054871"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/poppins_medium" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLabelGenerateQRCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:includeFontPadding="false"
+                    android:text="@string/generated_qr_codes"
+                    android:textColor="@color/text_054871"
+                    android:textSize="@dimen/_12ssp"
+                    app:fontFamily="@font/poppins_regular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/linearCreateNewFolder" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewGeneratedQr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLabelGenerateQRCode"
+                    tools:itemCount="10"
+                    tools:listitem="@layout/item_generated_qr_code" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLabelEventType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:includeFontPadding="false"
+                    android:text="@string/event_type"
+                    android:textColor="@color/text_054871"
+                    android:textSize="@dimen/_11ssp"
+                    app:fontFamily="@font/poppins_regular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/recyclerViewGeneratedQr" />
+
+                <LinearLayout
+                    android:id="@+id/linearSelectEventType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/ed_border"
+                    android:gravity="center_vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLabelEventType">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSelectEventTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/event_type"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/_12sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:textColor="@color/text_8B8B8B"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/poppins_medium"
+                        tools:ignore="TextContrastCheck" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        app:srcCompat="@drawable/ic_down_arrow" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvErrorSelectEventType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:text="@string/select_event_type"
+                    android:textColor="@color/primaryRedColor"
+                    android:textSize="@dimen/_10sdp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@+id/linearSelectEventType"
+                    app:layout_constraintTop_toBottomOf="@+id/linearSelectEventType" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLabelEventName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:includeFontPadding="false"
+                    android:text="@string/event_name"
+                    android:textColor="@color/text_054871"
+                    android:textSize="@dimen/_11ssp"
+                    app:fontFamily="@font/poppins_regular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvErrorSelectEventType" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edSelectEventName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/ed_border"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center_vertical"
+                    android:hint="@string/enter_event_name"
+                    android:includeFontPadding="false"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLabelEventName"
+                    tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvErrorEventName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:text="@string/enter_event_name"
+                    android:textColor="@color/primaryRedColor"
+                    android:textSize="@dimen/_10sdp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@+id/edSelectEventName"
+                    app:layout_constraintTop_toBottomOf="@+id/edSelectEventName" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLabelEventStartDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:includeFontPadding="false"
+                    android:text="@string/event_start_date_amp_time"
+                    android:textColor="@color/text_054871"
+                    android:textSize="@dimen/_11ssp"
+                    app:fontFamily="@font/poppins_regular"
+                    app:layout_constraintEnd_toStartOf="@id/tvLabelEventEndDate"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvErrorEventName" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSelectEventStartTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/ed_border"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="@id/tvLabelEventStartDate"
+                    app:layout_constraintStart_toStartOf="@id/tvLabelEventStartDate"
+                    app:layout_constraintTop_toBottomOf="@id/tvLabelEventStartDate"
+                    tools:hint="05/07/2022 01:11 AM" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLabelEventEndDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:includeFontPadding="false"
+                    android:text="@string/event_end_date_amp_time"
+                    android:textColor="@color/text_054871"
+                    android:textSize="@dimen/_11ssp"
+                    app:fontFamily="@font/poppins_regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvLabelEventStartDate"
+                    app:layout_constraintTop_toTopOf="@id/tvLabelEventStartDate" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSelectEventEndTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/ed_border"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="@id/tvLabelEventEndDate"
+                    app:layout_constraintStart_toStartOf="@id/tvLabelEventEndDate"
+                    app:layout_constraintTop_toBottomOf="@id/tvLabelEventEndDate"
+                    tools:hint="05/07/2022 01:11 AM" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLabelClientName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:includeFontPadding="false"
+                    android:text="@string/client_name"
+                    android:textColor="@color/text_054871"
+                    android:textSize="@dimen/_11ssp"
+                    app:fontFamily="@font/poppins_regular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvSelectEventStartTime" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edClientName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/ed_border"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center_vertical"
+                    android:hint="@string/enter_client_name"
+                    android:includeFontPadding="false"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLabelClientName" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvErrorClientName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:text="@string/enter_client_name"
+                    android:textColor="@color/primaryRedColor"
+                    android:textSize="@dimen/_10sdp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@+id/edClientName"
+                    app:layout_constraintTop_toBottomOf="@+id/edClientName" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLabelClientNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:includeFontPadding="false"
+                    android:text="@string/client_contact_number"
+                    android:textColor="@color/text_054871"
+                    android:textSize="@dimen/_11ssp"
+                    app:fontFamily="@font/poppins_regular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvErrorClientName" />
+
+                <LinearLayout
+                    android:id="@+id/linearClientNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/ed_border"
+                    android:gravity="center_vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLabelClientNumber">
+
+                    <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+                        android:id="@+id/countryPicker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        app:ccp_arrowSize="@dimen/_15sdp"
+                        app:ccp_hideNameCode="true"
+                        app:ccp_textColor="@color/text_8B8B8B"
+                        app:ccp_textSize="@dimen/_10ssp" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edMobileNumber"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:includeFontPadding="false"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:textColor="@color/text_054871"
+                        android:textColorHint="@color/text_8B8B8B"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/poppins_medium" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvErrorClientNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:text="@string/enter_mobile_empid"
+                    android:textColor="@color/primaryRedColor"
+                    android:textSize="@dimen/_10sdp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@+id/linearClientNumber"
+                    app:layout_constraintTop_toBottomOf="@+id/linearClientNumber" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnProceed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:background="@drawable/btn_back_red"
+                    android:includeFontPadding="false"
+                    android:paddingHorizontal="@dimen/_40sdp"
+                    android:paddingVertical="@dimen/_7ssp"
+                    android:text="@string/label_proceed"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    app:fontFamily="@font/poppins_semi_bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvErrorClientNumber" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/progressBarCommon"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp80"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/green_loading" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvSize"
+    style="@style/black_text_medium"
+    android:layout_width="@dimen/dp80"
+    android:layout_height="@dimen/dp40"
+    android:background="@color/white"
+    android:gravity="center|start"
+    android:padding="@dimen/dp10"
+    android:text="M"
+    android:textSize="@dimen/sp14">
+
+</androidx.appcompat.widget.AppCompatTextView>

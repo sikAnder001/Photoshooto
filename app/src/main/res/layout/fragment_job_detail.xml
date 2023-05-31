@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="16dp">
+
+    <include
+        android:id="@+id/toolbar_about_job_details"
+        layout="@layout/toolbar_with_back_btn" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_about_job_details">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="80dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/start16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/end16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
+
+            <com.photoshooto.ui.job.utility.CircleImageView
+                android:id="@+id/imageViewProfile"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="14dp"
+                android:src="@drawable/icn_placeholder_user"
+                app:civ_border_color="@color/grey_dc"
+                app:civ_border_width="1dp"
+                app:layout_constraintBottom_toBottomOf="@id/city"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="@id/start16" />
+
+            <View
+                android:id="@+id/dot"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="7dp"
+                android:background="@drawable/ic_dot"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewProfile"
+                app:layout_constraintEnd_toEndOf="@id/imageViewProfile" />
+
+            <TextView
+                android:id="@+id/studioName"
+                style="@style/tvFontSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toTopOf="@id/userId"
+                app:layout_constraintStart_toEndOf="@id/imageViewProfile"
+                app:layout_constraintTop_toTopOf="@id/imageViewProfile"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="Name Name" />
+
+            <TextView
+                android:id="@+id/userId"
+                style="@style/tvFontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/grey_6B"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintStart_toStartOf="@id/studioName"
+                app:layout_constraintTop_toBottomOf="@id/studioName"
+                tools:text="ID: 0000000" />
+
+            <TextView
+                android:id="@+id/city"
+                style="@style/tvFontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:drawablePadding="@dimen/dp4"
+                android:textColor="@color/grey_6B"
+                android:textSize="@dimen/sp10"
+                app:drawableStartCompat="@drawable/ic_location_filled"
+                app:layout_constraintStart_toStartOf="@id/studioName"
+                app:layout_constraintTop_toBottomOf="@id/userId"
+                tools:text="Ahm" />
+
+            <View
+                android:id="@+id/ratingBack"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_job_detail_row"
+                android:backgroundTint="@color/colorOrange"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/ratingCount"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/rating"
+                app:layout_constraintTop_toBottomOf="@id/city" />
+
+            <TextView
+                android:id="@+id/rating"
+                style="@style/tvFontSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="5dp"
+                android:drawablePadding="4dp"
+                android:gravity="center_vertical"
+                android:paddingVertical="8dp"
+                android:paddingStart="10dp"
+                android:textColor="@color/blue_clr"
+                android:textSize="@dimen/sp10"
+                app:layout_constraintBottom_toBottomOf="@id/ratingCount"
+                app:layout_constraintEnd_toStartOf="@id/star"
+                app:layout_constraintTop_toTopOf="@id/ratingCount"
+                tools:text="5.0" />
+
+            <ImageView
+                android:id="@+id/star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/ic_rating_star"
+                app:layout_constraintBottom_toBottomOf="@id/ratingCount"
+                app:layout_constraintEnd_toStartOf="@id/ratingCount"
+                app:layout_constraintTop_toTopOf="@id/ratingCount" />
+
+            <TextView
+                android:id="@+id/ratingCount"
+                style="@style/tvFontSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:paddingVertical="8dp"
+                android:paddingEnd="10dp"
+                android:textColor="@color/blue_clr"
+                android:textSize="@dimen/sp10"
+                app:layout_constraintEnd_toEndOf="@id/ratingBack"
+                app:layout_constraintTop_toTopOf="@id/ratingBack"
+                tools:text="(47 rating)" />
+
+            <ImageView
+                android:id="@+id/check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:src="@drawable/ic_shield"
+                app:layout_constraintStart_toEndOf="@id/studioName"
+                app:layout_constraintTop_toTopOf="@id/studioName" />
+
+            <ImageView
+                android:id="@+id/share"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_share_android"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/studioName" />
+
+            <ImageView
+                android:id="@+id/edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="8dp"
+                android:paddingBottom="8dp"
+                android:src="@drawable/edit"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/studioName" />
+
+            <ImageView
+                android:id="@+id/bookmark"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="7dp"
+                android:src="@drawable/ic_bookmark"
+                app:layout_constraintEnd_toStartOf="@id/share"
+                app:layout_constraintTop_toTopOf="@id/share" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/grey_C4"
+                app:layout_constraintTop_toBottomOf="@id/ratingBack" />
+
+            <TextView
+                android:id="@+id/time"
+                style="@style/tvFontSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/grey_6B"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view"
+                tools:text="Posted : 5h ago" />
+
+            <ImageView
+                android:id="@+id/verify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_verifed_job"
+                app:layout_constraintBottom_toBottomOf="@id/time"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/time" />
+
+            <TextView
+                android:id="@+id/report"
+                style="@style/tvFontSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/dp4"
+                android:gravity="center"
+                android:text="@string/report"
+                android:textColor="@color/colorOrange"
+                android:textSize="@dimen/sp12"
+                app:drawableStartCompat="@drawable/ic_report"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ad_id"
+                app:layout_constraintTop_toTopOf="@id/ad_id" />
+
+            <TextView
+                android:id="@+id/ad_id"
+                style="@style/tvFontSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/ad_id"
+                android:textColor="@color/grey_99"
+                android:textSize="@dimen/sp10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/time" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/selfGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:constraint_referenced_ids="share,bookmark,ratingCount,rating,star,report" />
+
+            <include
+                android:id="@+id/eventNameRow"
+                layout="@layout/job_detail_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/ad_id" />
+
+            <include
+                android:id="@+id/eventTypeRow"
+                layout="@layout/job_detail_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/eventNameRow" />
+
+            <include
+                android:id="@+id/eventLocationRow"
+                layout="@layout/job_detail_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/eventTypeRow" />
+
+            <include
+                android:id="@+id/eventDateRow"
+                layout="@layout/job_detail_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/eventLocationRow" />
+
+            <View
+                android:id="@+id/viewPhotographer"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_job_detail_row"
+                android:backgroundTint="@color/colorPurpleDull"
+                app:layout_constraintBottom_toBottomOf="@id/space2"
+                app:layout_constraintTop_toBottomOf="@id/eventDateRow" />
+
+            <include
+                android:id="@+id/eventPhotographyType"
+                layout="@layout/job_detail_assets_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/viewPhotographer" />
+
+            <include
+                android:id="@+id/eventCameraRequired"
+                layout="@layout/job_detail_assets_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@id/eventPhotographyType" />
+
+            <include
+                android:id="@+id/eventVideoRequired"
+                layout="@layout/job_detail_assets_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@id/eventCameraRequired" />
+
+            <include
+                android:id="@+id/eventEquipmentRequired"
+                layout="@layout/job_detail_assets_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@id/eventVideoRequired" />
+
+            <include
+                android:id="@+id/eventPhotographerCount"
+                layout="@layout/job_detail_assets_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@id/eventEquipmentRequired" />
+
+            <androidx.legacy.widget.Space
+                android:id="@+id/space2"
+                android:layout_width="50dp"
+                android:layout_height="14dp"
+                app:layout_constraintStart_toStartOf="@id/viewPhotographer"
+                app:layout_constraintTop_toBottomOf="@id/eventPhotographerCount" />
+
+
+            <include
+                android:id="@+id/eventDescRow"
+                layout="@layout/job_detail_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/viewPhotographer" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnContact"
+        style="@style/tvFontSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_bg"
+        android:backgroundTint="@color/colorOrange"
+        android:paddingHorizontal="50dp"
+        android:text="@string/contact_now"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

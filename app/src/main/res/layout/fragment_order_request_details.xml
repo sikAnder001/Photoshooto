@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.photoshooto.ui.order.OrdersFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/blue_tv">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewBack"
+                android:layout_width="@dimen/dp30"
+                android:layout_height="@dimen/dp30"
+                android:padding="3dp"
+                app:srcCompat="@drawable/ic_back_arrow" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp15"
+                android:includeFontPadding="false"
+                android:text="@string/order_requests"
+                android:textColor="@color/blue_clr"
+                android:textSize="22sp"
+                app:fontFamily="@font/poppins_medium" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:context="com.photoshooto.ui.order.OrderRequestDetailsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp20">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/dp16" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/dp16" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp16"
+                android:src="@drawable/ic_arrow_back_24"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvProductName"
+                style="@style/black_text_semi_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:text="Event T-shirt"
+                android:textColor="@color/blue_clr"
+                android:textSize="@dimen/sp24"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+                app:layout_constraintStart_toEndOf="@+id/ivBack"
+                app:layout_constraintTop_toTopOf="@+id/ivBack" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/details"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp24"
+                android:visibility="visible"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/tvProductName">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/appCompatImageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="172dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="@dimen/dp5"
+                    android:src="@drawable/img_ts"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_current_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp10"
+                    android:layout_marginEnd="@dimen/dp10"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/dp4"
+                    app:cardElevation="0dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/details"
+                    app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:layout_marginTop="@dimen/dp15"
+                            android:layout_marginEnd="@dimen/dp10"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="@dimen/dp5"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/details"
+                            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp5"
+                                android:layout_marginBottom="@dimen/dp10"
+                                android:orientation="vertical"
+                                android:padding="@dimen/dp10">
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="Photographer ID : "
+                                        android:textColor="@color/thick_gray_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="visible"
+                                        app:fontFamily="@font/poppins_regular" />
+
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvPhotographerId"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="PS22BGLR007"
+                                        android:textColor="@color/grey_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="visible"
+                                        app:fontFamily="@font/poppins_regular" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp5"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="Order ID : "
+                                        android:textColor="@color/thick_gray_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="visible"
+                                        app:fontFamily="@font/poppins_regular" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvOrderId"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="#AWB6758923446"
+                                        android:textColor="@color/grey_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="visible"
+                                        app:fontFamily="@font/poppins_regular" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp5"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="Order Quantity : "
+                                        android:textColor="@color/thick_gray_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="visible"
+                                        app:fontFamily="@font/poppins_regular" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvQty"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="6"
+                                        android:textColor="@color/grey_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="visible"
+                                        app:fontFamily="@font/poppins_regular" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:id="@+id/llSize"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp5"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="Order Sizes : "
+                                        android:textColor="@color/thick_gray_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="visible"
+                                        app:fontFamily="@font/poppins_regular" />
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/recyclerViewSizeSelector"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                                        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                                        app:layout_constraintTop_toBottomOf="@+id/tvSelectSizeLabel"
+                                        tools:itemCount="1"
+                                        tools:listitem="@layout/adapter_order_size" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp5"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="Studio Name/ Photographer Name"
+                                        android:textColor="@color/thick_gray_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="visible"
+                                        app:fontFamily="@font/poppins_regular" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="M(2), L(3), XL(1)"
+                                        android:textColor="@color/grey_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="gone"
+                                        app:fontFamily="@font/poppins_regular" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="Studio Name/ Photographer Name"
+                                        android:textColor="@color/thick_gray_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="gone"
+                                        app:fontFamily="@font/poppins_regular" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvStudioName"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="Lakshmi Photographer"
+                                        android:textColor="@color/grey_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="visible"
+                                        app:fontFamily="@font/poppins_regular" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp5"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="Studio Tagline"
+                                        android:textColor="@color/thick_gray_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="visible"
+                                        app:fontFamily="@font/poppins_regular" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="M(2), L(3), XL(1)"
+                                        android:textColor="@color/grey_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="gone"
+                                        app:fontFamily="@font/poppins_regular" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="Studio Name/ Photographer Name"
+                                        android:textColor="@color/thick_gray_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="gone"
+                                        app:fontFamily="@font/poppins_regular" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvStudioTaglineLabel"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="Preserving your memory for many generation"
+                                        android:textColor="@color/grey_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="visible"
+                                        app:fontFamily="@font/poppins_regular" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp15"
+                                    android:orientation="vertical">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="Uploads :"
+                                        android:textColor="@color/thick_gray_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="visible"
+                                        app:fontFamily="@font/poppins_regular" />
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/recyclerViewUpload"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/dp5"
+                                        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                                        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                                        app:layout_constraintTop_toBottomOf="@+id/tvSelectSizeLabel"
+                                        tools:itemCount="1"
+                                        tools:listitem="@layout/adapter_order_upload" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp15"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.LinearLayoutCompat
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:includeFontPadding="false"
+                                            android:text="Contact Number"
+                                            android:textColor="@color/thick_gray_clr"
+                                            android:textSize="@dimen/sp14"
+                                            android:visibility="visible"
+                                            app:fontFamily="@font/poppins_regular" />
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:id="@+id/tvContactNo"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:includeFontPadding="false"
+                                            android:text="+91 7676123545"
+                                            android:textColor="@color/grey_clr"
+                                            android:textSize="@dimen/sp14"
+                                            android:visibility="visible"
+                                            app:fontFamily="@font/poppins_regular" />
+
+                                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                    <androidx.appcompat.widget.LinearLayoutCompat
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:includeFontPadding="false"
+                                            android:text="Alternative Number"
+                                            android:textColor="@color/thick_gray_clr"
+                                            android:textSize="@dimen/sp14"
+                                            android:visibility="visible"
+                                            app:fontFamily="@font/poppins_regular" />
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:id="@+id/tvAlternativeNo"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:includeFontPadding="false"
+                                            android:text="+91 7676123545"
+                                            android:textColor="@color/grey_clr"
+                                            android:textSize="@dimen/sp14"
+                                            android:visibility="visible"
+                                            app:fontFamily="@font/poppins_regular" />
+
+                                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp5"
+                                    android:orientation="vertical">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="Delivery Address"
+                                        android:textColor="@color/thick_gray_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="visible"
+                                        app:fontFamily="@font/poppins_regular" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvDeliverAddress"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="13th, 1st main Thimmenahalli, Banglore (894522)"
+                                        android:textColor="@color/grey_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="visible"
+                                        app:fontFamily="@font/poppins_regular" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp5"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:includeFontPadding="false"
+                                        android:text="Payment Status : "
+                                        android:textColor="@color/thick_gray_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="visible"
+                                        app:fontFamily="@font/poppins_regular" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:drawableEnd="@drawable/ic_check_circle"
+                                        android:drawablePadding="@dimen/dp5"
+                                        android:includeFontPadding="false"
+                                        android:text="Successful"
+                                        android:textColor="@color/grey_clr"
+                                        android:textSize="@dimen/sp14"
+                                        android:visibility="visible"
+                                        app:fontFamily="@font/poppins_regular" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:includeFontPadding="false"
+                            android:text="Billing ID"
+                            android:textAppearance="@style/sp14_blue_style"
+                            android:textColor="@color/grey_tv"
+                            android:visibility="gone" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llOrderStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp15"
+                            android:orientation="vertical"
+                            android:padding="@dimen/dp10"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/card_current_location">
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp10"
+                                android:includeFontPadding="false"
+                                android:text="Billing ID"
+                                android:textAppearance="@style/sp14_blue_style"
+                                android:textColor="@color/thick_gray_clr" />
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/edit_bill_id"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp48"
+                                android:layout_marginTop="@dimen/dp8"
+                                android:background="@drawable/ic_edittext_bg"
+                                android:gravity="center|start"
+                                android:hint="AWB Details"
+                                android:inputType="textEmailAddress"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="@dimen/dp10"
+                                android:textAppearance="@style/sp14_grey_clr2_txt"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="@+id/tv_studio_name"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_studio_name" />
+
+
+                            <TextView
+                                android:id="@+id/errore_edit_bill_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp5"
+                                android:text="@string/enter_email_id"
+                                android:textColor="@color/primaryRedColor"
+                                android:textSize="@dimen/sp14"
+                                android:visibility="gone" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/appCompatTextView4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp12"
+                                android:includeFontPadding="false"
+                                android:text="Status Update"
+                                android:textAppearance="@style/sp14_blue_style"
+                                android:textColor="@color/thick_gray_clr" />
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/et_status"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp50"
+                                android:layout_marginTop="@dimen/dp8"
+                                android:background="@drawable/ic_edittext_bg"
+                                android:drawableRight="@drawable/ic_sp_dropdwon"
+                                android:drawableTint="@color/grey_tv"
+                                android:focusable="false"
+                                android:hint="Update Status"
+                                android:inputType="text"
+                                android:paddingHorizontal="@dimen/dp10"
+                                android:textAppearance="@style/sp14_grey_clr2_txt" />
+
+                            <TextView
+                                android:id="@+id/errorStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp5"
+                                android:text="@string/select_order_status"
+                                android:textColor="@color/primaryRedColor"
+                                android:textSize="@dimen/sp14"
+                                android:visibility="gone"
+                                app:layout_constraintStart_toStartOf="@+id/appCompatTextView4"
+                                app:layout_constraintTop_toBottomOf="@+id/sp_profession" />
+
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/dp15"
+                                android:clickable="true"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvHoldOrder"
+                                    android:layout_width="@dimen/dp120"
+                                    android:layout_height="45dp"
+                                    android:background="@drawable/back_border_eight"
+                                    android:gravity="center"
+                                    android:includeFontPadding="false"
+                                    android:text="Hold Order"
+                                    android:textColor="@color/grey_clr"
+                                    android:textSize="@dimen/sp12"
+                                    app:fontFamily="@font/poppins_regular" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvProceed"
+                                    android:layout_width="@dimen/dp120"
+                                    android:layout_height="@dimen/dp45"
+                                    android:layout_marginStart="@dimen/dp25"
+                                    android:background="@drawable/btn_bg_green"
+                                    android:gravity="center"
+                                    android:includeFontPadding="false"
+                                    android:text="Proceed"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp12"
+                                    app:fontFamily="@font/poppins_regular" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/dp15"
+                            android:clickable="true"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvDecline"
+                                android:layout_width="@dimen/dp120"
+                                android:layout_height="45dp"
+                                android:background="@drawable/back_border_eight"
+                                android:gravity="center"
+                                android:text="Decline"
+                                android:textColor="@color/grey_clr"
+                                android:textSize="@dimen/sp12"
+                                android:textStyle="bold" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvAccept"
+                                android:layout_width="@dimen/dp120"
+                                android:layout_height="@dimen/dp45"
+                                android:layout_marginStart="@dimen/dp25"
+                                android:background="@drawable/btn_bg_green"
+                                android:gravity="center"
+                                android:text="Accept"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp12"
+                                android:textStyle="bold" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

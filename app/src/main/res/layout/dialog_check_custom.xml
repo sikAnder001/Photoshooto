@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/colorTransparent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewClaim"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/dialog_bg"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent=".85">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintClaimDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite">
+
+            <TextView
+                android:id="@+id/tvHeader"
+                style="@style/tvFontSemiBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:text="@string/photography_types"
+                android:textColor="@color/colorOrange"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvClearAll"
+                style="@style/tvStyleRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:gravity="center"
+                android:text="@string/clear_all"
+                android:textColor="@color/grey_6B"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/ckGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHeader" />
+
+            <CheckBox
+                android:id="@+id/radioOther"
+                style="@style/tvFontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTransparent"
+                android:minHeight="0dp"
+                android:paddingVertical="10dp"
+                android:paddingStart="15dp"
+                android:text="@string/others"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/ckGroup"
+                app:layout_constraintTop_toBottomOf="@id/ckGroup" />
+
+            <ImageView
+                android:id="@+id/dummy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/checkbox_selected"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/etOther"
+                app:layout_constraintStart_toStartOf="@id/ckGroup"
+                app:layout_constraintTop_toTopOf="@id/etOther" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etOther"
+                style="@style/tvStyleRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:background="@color/colorTransparent"
+                android:drawablePadding="16dp"
+                android:elevation="10dp"
+                android:inputType="textCapWords"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingStart="20dp"
+                android:text="jkhjhjk"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/ckGroup"
+                app:layout_constraintStart_toEndOf="@id/dummy"
+                app:layout_constraintTop_toBottomOf="@id/radioOther" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnApply"
+                style="@style/tvFontSemiBold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorOrange"
+                android:text="@string/apply"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etOther" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

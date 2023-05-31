@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/viewEvent"
+        android:layout_width="8dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_job_detail_row"
+        app:layout_constraintBottom_toBottomOf="@id/rowLocation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rowDate"
+        style="@style/tvFontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/_5_mar_23"
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/viewEvent"
+        app:layout_constraintTop_toTopOf="@id/viewEvent" />
+
+    <TextView
+        android:id="@+id/rowTime"
+        style="@style/tvFontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="@string/_12_00_pm"
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/rowLocation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rowDate" />
+
+    <TextView
+        android:id="@+id/rowLocation"
+        style="@style/tvFont300"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="8dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="8dp"
+        android:text="@string/location_bangalore"
+        android:textColor="@color/colorBlack"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/rowTime"
+        app:layout_constraintStart_toStartOf="@id/rowDate"
+        app:layout_constraintTop_toBottomOf="@id/rowDate" />
+
+
+    <!--
+
+
+        <TextView
+            android:id="@+id/rowValue1"
+            style="@style/tvFontBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Event Name"
+            android:textColor="@color/colorOrange"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@id/rowLabel1"
+            app:layout_constraintTop_toBottomOf="@id/rowLabel1" />
+
+        <TextView
+            android:id="@+id/actionLabel"
+            style="@style/tvFontBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:drawableEnd="@drawable/map"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="View Map"
+            android:textColor="@color/textColor"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/viewEvent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/viewEvent" />
+
+        <ImageView
+            android:id="@+id/rowImg1"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/job_event"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@id/viewEvent"
+            app:layout_constraintTop_toTopOf="@id/rowLabel1" />
+
+        <TextView
+            android:id="@+id/rowLabel2"
+            style="@style/tvFontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="25dp"
+            android:text="Event Name"
+            android:textColor="@color/grey_6B"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/rowImg1"
+            app:layout_constraintTop_toBottomOf="@id/rowValue1" />
+
+        <TextView
+            android:id="@+id/rowValue2"
+            style="@style/tvFontBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="16dp"
+            android:text="Event Name"
+            android:textColor="@color/colorOrange"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@id/rowLabel2"
+            app:layout_constraintTop_toBottomOf="@id/rowLabel2" />
+
+        <ImageView
+            android:id="@+id/rowImg2"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/job_event"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@id/viewEvent"
+            app:layout_constraintTop_toTopOf="@id/rowLabel2" />
+
+        <androidx.legacy.widget.Space
+            android:id="@+id/space2"
+            android:layout_width="0dp"
+            android:layout_height="14dp"
+            app:layout_constraintEnd_toEndOf="@id/rowValue2"
+            app:layout_constraintStart_toStartOf="@id/rowImg2"
+            app:layout_constraintTop_toBottomOf="@id/rowImg2" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/secondRowGrup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="dottedLIne,rowImg2,rowLabel2,rowValue2" />
+
+        <View
+            android:id="@+id/dottedLIne"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@drawable/dotted_line"
+            app:layout_constraintBottom_toTopOf="@id/rowImg2"
+            app:layout_constraintEnd_toEndOf="@id/rowImg1"
+            app:layout_constraintStart_toStartOf="@id/rowImg1"
+            app:layout_constraintTop_toBottomOf="@id/rowImg1" />
+    -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

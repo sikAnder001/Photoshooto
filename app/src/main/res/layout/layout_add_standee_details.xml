@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/dp20">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/dp20" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/dp20" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivStandee"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp200"
+            android:layout_marginTop="@dimen/dp20"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_standee_elite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvStandeeType"
+            style="@style/black_text_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:text="@string/elite_standee"
+            android:textColor="@color/blue_clr"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivStandee" />
+
+        <TextView
+            android:id="@+id/tvLabelEnterDetails"
+            style="@style/black_text_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp30"
+            android:text="@string/enter_details_to_display_standee"
+            android:textSize="@dimen/sp16"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/tvStandeeType" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStudioNameLabel"
+            style="@style/black_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:drawableStart="@drawable/ic_user_orange"
+            android:drawablePadding="@dimen/dp10"
+            android:drawableTint="@color/blue_clr"
+            android:gravity="center"
+            android:text="@string/label_studio_name_photographer_name"
+            android:textColor="@color/blue_clr"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/tvLabelEnterDetails" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtStudioName"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp48"
+            android:layout_marginTop="@dimen/dp5"
+            android:background="@drawable/ic_edittext_bg"
+            android:hint="@string/label_triveni_photography"
+            android:imeOptions="actionNext"
+            android:inputType="textCapWords"
+            android:paddingHorizontal="@dimen/dp10"
+            android:textAppearance="@style/sp14_grey_clr2_txt"
+            android:textColorHint="@color/grey_clr"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/tvStudioNameLabel" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStudioTaglineLabel"
+            style="@style/black_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:drawableStart="@drawable/ic_mic_document_orange"
+            android:drawablePadding="@dimen/dp10"
+            android:drawableTint="@color/blue_clr"
+            android:gravity="center"
+            android:text="@string/label_studio_tagline"
+            android:textColor="@color/blue_clr"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/edtStudioName" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStudioTaglineLabel2"
+            style="@style/black_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp5"
+            android:layout_marginTop="@dimen/dp20"
+            android:text="@string/label_optional"
+            android:textColor="@color/grey_clr"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintStart_toEndOf="@+id/tvStudioTaglineLabel"
+            app:layout_constraintTop_toBottomOf="@+id/edtStudioName" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtStudioTagline"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp48"
+            android:layout_marginTop="@dimen/dp5"
+            android:background="@drawable/ic_edittext_bg"
+            android:hint="@string/label_preserving_your_memory_for_many_generation"
+            android:imeOptions="actionNext"
+            android:inputType="textCapSentences"
+            android:paddingHorizontal="@dimen/dp10"
+            android:textAppearance="@style/sp14_grey_clr2_txt"
+            android:textColorHint="@color/grey_clr"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/tvStudioTaglineLabel" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPhotographerId"
+            style="@style/black_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:drawableStart="@drawable/ic_user_orange"
+            android:drawablePadding="@dimen/dp10"
+            android:drawableTint="@color/blue_clr"
+            android:gravity="center"
+            android:text="@string/photographer_id"
+            android:textColor="@color/blue_clr"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/edtStudioTagline" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtPhotographerId"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp48"
+            android:layout_marginTop="@dimen/dp5"
+            android:background="@drawable/ic_edittext_bg"
+            android:enabled="false"
+            android:hint="@string/label_photographer_id"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:paddingHorizontal="@dimen/dp10"
+            android:singleLine="true"
+            android:textAppearance="@style/sp14_grey_clr2_txt"
+            android:textColorHint="@color/grey_clr"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/tvPhotographerId" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvContactNo"
+            style="@style/black_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:drawableStart="@drawable/ic_phone"
+            android:drawablePadding="@dimen/dp10"
+            android:gravity="center"
+            android:text="@string/contact_num"
+            android:textColor="@color/blue_clr"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/edtPhotographerId" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/viewContactNo"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp48"
+            android:layout_marginTop="@dimen/dp5"
+            android:background="@drawable/ic_edittext_bg"
+            android:paddingHorizontal="@dimen/dp16"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/tvContactNo">
+
+            <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+                android:id="@+id/countryPicker1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:visibility="gone"
+                app:ccp_arrowSize="@dimen/_15sdp"
+                app:ccp_hideNameCode="true"
+                app:ccp_textColor="@color/text_8B8B8B"
+                app:ccp_textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvContactNoCountry"
+                style="@style/black_text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_india_flag"
+                android:drawableEnd="@drawable/ic_arrow_down"
+                android:drawablePadding="@dimen/dp8"
+                android:gravity="center"
+                android:text="+91"
+                android:textColor="@color/grey_clr"
+                android:textSize="@dimen/sp12"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtContactNo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:enabled="false"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:paddingStart="@dimen/dp16"
+                android:singleLine="true"
+                android:textAppearance="@style/sp14_grey_clr2_txt"
+                android:textColor="@color/blue_clr"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/countryPicker1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAltContactNo"
+            style="@style/black_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:drawableStart="@drawable/ic_phone"
+            android:drawablePadding="@dimen/dp10"
+            android:gravity="center"
+            android:text="@string/alternative_number"
+            android:textColor="@color/blue_clr"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/viewContactNo" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/viewAltContactNo"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp48"
+            android:layout_marginTop="@dimen/dp5"
+            android:background="@drawable/ic_edittext_bg"
+            android:paddingHorizontal="@dimen/dp16"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/tvAltContactNo">
+
+            <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+                android:id="@+id/countryPicker2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_medium"
+                android:visibility="gone"
+                app:ccp_arrowSize="@dimen/_15sdp"
+                app:ccp_hideNameCode="true"
+                app:ccp_textColor="@color/text_8B8B8B"
+                app:ccp_textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAltContactNoCountry"
+                style="@style/black_text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_india_flag"
+                android:drawableEnd="@drawable/ic_arrow_down"
+                android:drawablePadding="@dimen/dp8"
+                android:gravity="center"
+                android:text="+91"
+                android:textColor="@color/grey_clr"
+                android:textSize="@dimen/sp12"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtAltContactNo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:paddingStart="@dimen/dp16"
+                android:singleLine="true"
+                android:textAppearance="@style/sp14_grey_clr2_txt"
+                android:textColor="@color/blue_clr"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/countryPicker2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStudioAddress"
+            style="@style/black_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:drawableStart="@drawable/ic_location"
+            android:drawablePadding="@dimen/dp10"
+            android:drawableTint="@color/blue_clr"
+            android:gravity="center"
+            android:text="@string/studio_address"
+            android:textColor="@color/blue_clr"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/viewAltContactNo" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layoutAddress"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp48"
+            android:layout_marginHorizontal="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/dp5"
+            android:background="@drawable/ic_edittext_bg"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/dp10"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/tvStudioAddress">
+
+            <EditText
+                android:id="@+id/edtStudioAddress"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp48"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:hint="@string/studio_address"
+                android:imeOptions="actionDone"
+                android:inputType="textCapSentences"
+                android:singleLine="true"
+                android:textAppearance="@style/sp14_grey_clr2_txt"
+                android:textColorHint="@color/grey_clr"
+                android:textSize="@dimen/sp12"
+                app:drawableTint="@color/blue_clr" />
+
+            <ImageView
+                android:id="@+id/imgLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_location_map"
+                app:tint="@color/blue_clr" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardUpload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/dp10"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/layoutAddress"
+            app:strokeColor="@color/grey4"
+            app:strokeWidth="@dimen/dp1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp10">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivUploadIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_clound_upload_grey"
+                    app:layout_constraintEnd_toEndOf="@+id/tvUploadLogoLabel"
+                    app:layout_constraintStart_toStartOf="@+id/tvUploadLogoLabel"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUploadLogoLabel"
+                    style="@style/black_text_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/label_upload_logo"
+                    android:textColor="@color/thick_gray_clr"
+                    android:textSize="@dimen/sp12"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivUploadIcon" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivPlaceHolderImage2"
+                    android:layout_width="@dimen/dp50"
+                    android:layout_height="@dimen/dp50"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_image_place_holder"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivRemoveImage2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_remove_image_red"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@+id/ivPlaceHolderImage2"
+                    app:layout_constraintTop_toTopOf="@+id/ivPlaceHolderImage2" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvImageName2"
+                    style="@style/black_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:text="@string/label_jpg_jpeg"
+                    android:textColor="@color/grey6"
+                    android:textSize="@dimen/sp10"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/ivPlaceHolderImage2"
+                    app:layout_constraintStart_toStartOf="@+id/ivPlaceHolderImage2"
+                    app:layout_constraintTop_toBottomOf="@+id/ivPlaceHolderImage2" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivPlaceHolderImage1"
+                    android:layout_width="@dimen/dp50"
+                    android:layout_height="@dimen/dp50"
+                    android:layout_marginEnd="@dimen/dp10"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_image_place_holder"
+                    app:layout_constraintEnd_toStartOf="@+id/ivPlaceHolderImage2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivRemoveImage1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_remove_image_red"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@+id/ivPlaceHolderImage1"
+                    app:layout_constraintTop_toTopOf="@+id/ivPlaceHolderImage1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvImageName1"
+                    style="@style/black_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:text="@string/label_png_svg"
+                    android:textColor="@color/grey6"
+                    android:textSize="@dimen/sp10"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/ivPlaceHolderImage1"
+                    app:layout_constraintStart_toStartOf="@+id/ivPlaceHolderImage1"
+                    app:layout_constraintTop_toBottomOf="@+id/ivPlaceHolderImage1" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/ivPlaceHolderImage1"
+                    app:layout_constraintStart_toEndOf="@+id/tvUploadLogoLabel"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvFileSizeLabel"
+                        style="@style/black_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_file_size_less_then"
+                        android:textColor="@color/grey6"
+                        android:textSize="@dimen/sp12"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvFileSize5mbLabel"
+                        style="@style/black_text_semi_bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_mb_5"
+                        android:textColor="@color/blue_clr"
+                        android:textSize="@dimen/sp12"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvFileSizeLabel" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnProceed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:background="@drawable/orange_button_ripple"
+            android:gravity="center"
+            android:paddingVertical="@dimen/dp15"
+            android:text="@string/proceed_to_summery"
+            android:textAppearance="@style/sp14_white_txt"
+            android:textSize="@dimen/sp16"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/cardUpload" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

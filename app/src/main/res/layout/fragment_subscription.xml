@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_toolbar_back_query" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@id/terms"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideStart16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_16sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideEnd16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/_16sdp" />
+
+            <TextView
+                android:id="@+id/label"
+                style="@style/tvFontSemiBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/reach_verified_photographers_with"
+                android:textColor="@color/black20"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+                app:layout_constraintStart_toStartOf="@id/guideStart16"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/label2"
+                style="@style/tvFontSemiBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Premium Jobs"
+                android:textColor="@color/colorOrange"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+                app:layout_constraintStart_toStartOf="@id/guideStart16"
+                app:layout_constraintTop_toBottomOf="@id/label" />
+
+            <TextView
+                android:id="@+id/label3"
+                style="@style/tvFontRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/by_promoted_job_reaches_most_potential_photographer_and_verified_job_posts"
+                android:textColor="@color/grey_99"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+                app:layout_constraintStart_toStartOf="@id/guideStart16"
+                app:layout_constraintTop_toBottomOf="@id/label2" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardCurrentPlan"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="15dp"
+                android:visibility="visible"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="8dp"
+                app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+                app:layout_constraintStart_toStartOf="@id/guideStart16"
+                app:layout_constraintTop_toBottomOf="@id/label3"
+                app:strokeColor="@color/grey_66"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/tick"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_green_tick_circle"
+                        app:layout_constraintBottom_toBottomOf="@id/planName"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/labelCurrent" />
+
+                    <TextView
+                        android:id="@+id/labelCurrent"
+                        style="@style/tvFontSemiBold"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/current_plan"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="13sp"
+                        app:layout_constraintStart_toEndOf="@id/tick"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/labelRemaning"
+                        style="@style/tvFontSemiBold"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/remaining_promote_job"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/planName"
+                        style="@style/tvFontSemiBold"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text=""
+                        android:textColor="@color/brightGreen"
+                        android:textSize="13sp"
+                        app:layout_constraintStart_toEndOf="@id/tick"
+                        app:layout_constraintTop_toBottomOf="@id/labelCurrent" />
+
+                    <TextView
+                        android:id="@+id/price"
+                        style="@style/tvFontBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rs_amount"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/labelTax"
+                        style="@style/tvFontRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="50dp"
+                        android:text="@string/inclusive_of_all_tax"
+                        android:textColor="@color/grey_66"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/price" />
+
+                    <TextView
+                        android:id="@+id/renewal"
+                        style="@style/tvFontRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Renewal:"
+                        android:textColor="@color/grey_66"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/labelTax" />
+
+                    <TextView
+                        android:id="@+id/count"
+                        style="@style/tvFontRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_wand"
+                        android:drawablePadding="5dp"
+                        android:text="@string/_0_0"
+                        android:textColor="@color/grey_66"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/label4"
+                style="@style/tvFontBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/trending_plans"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+                app:layout_constraintStart_toStartOf="@id/guideStart16"
+                app:layout_constraintTop_toBottomOf="@id/cardCurrentPlan" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerPlan"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:paddingBottom="5dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label4"
+                tools:itemCount="4"
+                tools:listitem="@layout/list_subscribe_plan" />
+
+            <TextView
+                android:id="@+id/label5"
+                style="@style/tvFontBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/choose_your_subscription"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+                app:layout_constraintStart_toStartOf="@id/guideStart16"
+                app:layout_constraintTop_toBottomOf="@id/recyclerPlan" />
+
+            <View
+                android:id="@+id/planTypeBg"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_plan_type"
+                app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+                app:layout_constraintStart_toStartOf="@id/guideStart16"
+                app:layout_constraintTop_toBottomOf="@id/label5" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnMonthly"
+                style="@style/tvFontSemiBold"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/button_bg"
+                android:backgroundTint="@color/colorOrange"
+                android:text=""
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintBottom_toBottomOf="@id/planTypeBg"
+                app:layout_constraintEnd_toStartOf="@id/btnYearly"
+                app:layout_constraintStart_toStartOf="@id/planTypeBg"
+                app:layout_constraintTop_toTopOf="@id/planTypeBg" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnYearly"
+                style="@style/tvFontSemiBold"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/button_bg"
+                android:backgroundTint="@color/colorOrange"
+                android:text=""
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/btnMonthly"
+                app:layout_constraintEnd_toEndOf="@id/planTypeBg"
+                app:layout_constraintStart_toEndOf="@id/btnMonthly"
+                app:layout_constraintTop_toTopOf="@id/btnMonthly" />
+
+            <TextView
+                android:id="@+id/txtMonthly"
+                style="@style/tvFontSemiBold"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:text="1 Month"
+                android:textColor="@color/colorWhite"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@id/btnMonthly"
+                app:layout_constraintEnd_toEndOf="@id/btnMonthly"
+                app:layout_constraintStart_toStartOf="@id/btnMonthly"
+                app:layout_constraintTop_toTopOf="@id/btnMonthly" />
+
+            <TextView
+                android:id="@+id/txtYearly"
+                style="@style/tvFontSemiBold"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:text="6 Months"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@id/btnYearly"
+                app:layout_constraintEnd_toEndOf="@id/btnYearly"
+                app:layout_constraintStart_toStartOf="@id/btnYearly"
+                app:layout_constraintTop_toTopOf="@id/btnYearly" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/recyclerHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+                app:layout_constraintStart_toStartOf="@id/guideStart16"
+                app:layout_constraintTop_toBottomOf="@id/planTypeBg">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".36" />
+
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/tvFontSemiBold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="3dp"
+                    android:text="Features"
+                    android:textColor="@color/colorOrange"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/guide"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <View
+                    android:id="@+id/bgView1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@color/colorBlueTextDull"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/plan1Price"
+                    app:layout_constraintStart_toStartOf="@id/plan1Price"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/bgView2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@color/colorBlueTextDull"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/plan2Price"
+                    app:layout_constraintStart_toStartOf="@id/plan2Price"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/bgView3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@color/colorBlueTextDull"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/plan3Price"
+                    app:layout_constraintStart_toStartOf="@id/plan3Price"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/bgView4"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@color/colorBlueTextDull"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/plan4Price"
+                    app:layout_constraintStart_toStartOf="@id/plan4Price"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/plan4Img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/img_plan4"
+                    app:layout_constraintBottom_toTopOf="@id/plan4Name"
+                    app:layout_constraintEnd_toEndOf="@id/plan4Price"
+                    app:layout_constraintStart_toStartOf="@id/plan4Price"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/plan4Name"
+                    style="@style/tvFontRegular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/colorOrange"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@id/plan4Price"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/plan3Name"
+                    app:layout_constraintTop_toBottomOf="@id/plan4Img" />
+
+                <TextView
+                    android:id="@+id/plan4Price"
+                    style="@style/tvFontRegular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/plan3Price"
+                    app:layout_constraintTop_toBottomOf="@id/plan4Name" />
+
+                <ImageView
+                    android:id="@+id/plan3Img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/img_plan3"
+                    app:layout_constraintBottom_toTopOf="@id/plan3Name"
+                    app:layout_constraintEnd_toEndOf="@id/plan3Price"
+                    app:layout_constraintStart_toStartOf="@id/plan3Price"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/plan3Name"
+                    style="@style/tvFontRegular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/colorOrange"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@id/plan3Price"
+                    app:layout_constraintEnd_toStartOf="@id/plan4Name"
+                    app:layout_constraintStart_toEndOf="@id/plan2Name"
+                    app:layout_constraintTop_toBottomOf="@id/plan3Img"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/plan3Price"
+                    style="@style/tvFontRegular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/plan4Price"
+                    app:layout_constraintStart_toEndOf="@id/plan2Price"
+                    app:layout_constraintTop_toBottomOf="@id/plan3Name"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+
+                <ImageView
+                    android:id="@+id/plan2Img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/img_plan2"
+                    app:layout_constraintBottom_toTopOf="@id/plan2Name"
+                    app:layout_constraintEnd_toEndOf="@id/plan2Price"
+                    app:layout_constraintStart_toStartOf="@id/plan2Price"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/plan2Name"
+                    style="@style/tvFontRegular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/colorOrange"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@id/plan2Price"
+                    app:layout_constraintEnd_toStartOf="@id/plan3Name"
+                    app:layout_constraintStart_toEndOf="@id/plan1Name"
+                    app:layout_constraintTop_toBottomOf="@id/plan2Img"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/plan2Price"
+                    style="@style/tvFontRegular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/plan3Price"
+                    app:layout_constraintStart_toEndOf="@id/plan1Price"
+                    app:layout_constraintTop_toBottomOf="@id/plan2Name"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+
+                <ImageView
+                    android:id="@+id/plan1Img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/img_plan2"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toTopOf="@id/plan1Name"
+                    app:layout_constraintEnd_toEndOf="@id/plan1Price"
+                    app:layout_constraintStart_toStartOf="@id/plan1Price"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/plan1Name"
+                    style="@style/tvFontRegular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/colorOrange"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@id/plan1Price"
+                    app:layout_constraintEnd_toStartOf="@id/plan2Name"
+                    app:layout_constraintStart_toStartOf="@id/plan1Price"
+                    app:layout_constraintTop_toBottomOf="@id/plan1Img"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/plan1Price"
+                    style="@style/tvFontRegular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/grey_66"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/plan2Price"
+                    app:layout_constraintStart_toStartOf="@id/guide"
+                    app:layout_constraintTop_toBottomOf="@id/plan1Name"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerFeatures"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:orientation="vertical"
+                android:overScrollMode="never"
+                android:paddingBottom="5dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/recyclerHeader"
+                tools:itemCount="8"
+                tools:listitem="@layout/list_subscribe_features" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/terms"
+        style="@style/tvFontRegular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/terms_desc"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@id/divider" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/neutralGrey"
+        app:layout_constraintBottom_toTopOf="@id/btnSubmit" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSubmit"
+        style="@style/tvFontSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_bg"
+        android:backgroundTint="@color/brightGreen"
+        android:text="@string/upgrade_now"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.main.profile.ProProfile">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:titleTextColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_left"
+        app:title="Order Request"
+        app:titleTextColor="@color/blue_tv" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"
+        android:visibility="visible">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_current_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="visible"
+            app:cardBackgroundColor="@color/thick_gray_"
+            app:cardCornerRadius="@dimen/dp4"
+            app:cardElevation="2dp"
+            app:cardPreventCornerOverlap="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginBottom="@dimen/dp5"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <androidx.appcompat.widget.SearchView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp42"
+                    android:layout_marginRight="@dimen/dp5"
+                    android:layout_weight=".45"
+                    android:background="@drawable/ic_edittext_bg"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp14"
+                    app:queryHint="Search" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp42"
+                    android:layout_marginLeft="@dimen/dp5"
+                    android:layout_weight="1.3"
+                    android:background="@drawable/edittext_bg"
+                    android:padding="@dimen/dp10"
+                    android:src="@drawable/ic_data"
+                    android:textColor="@color/blue_tv"
+                    android:textSize="12sp"
+
+                    />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp42"
+                    android:layout_marginLeft="@dimen/dp5"
+                    android:layout_weight="1.3"
+                    android:background="@drawable/edittext_bg"
+                    android:padding="@dimen/dp10"
+                    android:src="@drawable/ic_filter"
+                    android:textColor="@color/blue_tv"
+                    android:textSize="12sp" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/dp5"
+            app:layout_constraintStart_toStartOf="@+id/card_current_location"
+            app:layout_constraintTop_toBottomOf="@+id/card_current_location"
+            tools:listitem="@layout/item_order_status" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/terms_privacy"
+        android:layout_width="@dimen/dp272"
+        android:layout_height="@dimen/dp42"
+        android:layout_marginHorizontal="@dimen/dp79"
+        android:layout_marginVertical="@dimen/dp40"
+        android:layout_marginBottom="@dimen/dp20"
+        android:background="@drawable/btn_bg_green"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="Make Payment"
+        android:textAppearance="@style/sp14_grey_clr2_txt"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_layout_corner_rounded_consult"
+    android:minWidth="260dp"
+    android:padding="24dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/thumbsup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/right_mark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp18"
+        android:gravity="center"
+        android:text="@string/success_pwd_changed"
+        android:textAppearance="@style/sp14_grey_clr2_txt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thumbsup" />
+
+
+    <TextView
+        android:id="@+id/okayBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp42"
+        android:layout_marginTop="@dimen/dp12"
+        android:background="@drawable/btn_blue_bg"
+        android:drawableStart="@drawable/ic_home_img"
+        android:drawablePadding="@dimen/dp10"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/dp28"
+        android:text="@string/title_home"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.userhomepage.HomePageFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp5"
+                android:layout_marginRight="@dimen/dp5"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dp10">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/searchView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:background="@drawable/edittext_bg"
+                    android:ems="10"
+                    android:iconifiedByDefault="false"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:queryBackground="@color/white"
+                    android:textColorHint="@color/black"
+                    android:visibility="gone"
+                    app:iconifiedByDefault="false"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:queryBackground="@android:color/transparent" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="145dp"
+                    android:layout_marginHorizontal="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:background="@color/white"
+                    android:visibility="gone"
+                    app:cardCornerRadius="@dimen/dp10"
+                    tools:targetApi="lollipop">
+
+                    <com.smarteist.autoimageslider.SliderView
+                        android:id="@+id/imageSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:sliderAutoCycleDirection="right"
+                        app:sliderAutoCycleEnabled="true"
+                        app:sliderIndicatorGravity="center_horizontal|bottom"
+                        app:sliderIndicatorMargin="5dp"
+                        app:sliderIndicatorOrientation="horizontal"
+                        app:sliderIndicatorPadding="3dp"
+                        app:sliderIndicatorRadius="1dp"
+                        app:sliderIndicatorSelectedColor="@color/blue_clr"
+                        app:sliderIndicatorUnselectedColor="@color/grey3"
+                        app:sliderScrollTimeInSec="1"
+
+                        app:sliderStartAutoCycle="true" />
+
+                </androidx.cardview.widget.CardView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp4"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginEnd="@dimen/dp3"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp10"
+                        android:padding="2dp"
+                        android:text="Photographers in top cities"
+                        android:textColor="@color/gray_tv"
+                        android:textSize="@dimen/sp12"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/poppins_regular" />
+
+                    <TextView
+                        android:id="@+id/tvTopCitiesViewAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:padding="2dp"
+                        android:text="View All >>"
+                        android:textColor="@color/red_color"
+                        android:textSize="10dp" />
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTopCities"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/cities_items" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/dp16" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/dp16" />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/carousel_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/viewActionBar" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/screen_bg_clr"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@+id/carousel_viewpager"
+                    app:tabBackground="@drawable/bg_tab_selector_orange"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp"
+                    app:tabPaddingEnd="@dimen/dp8"
+                    app:tabPaddingStart="@dimen/dp8"
+                    tools:ignore="MissingConstraints" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp4"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginEnd="@dimen/dp3"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp10"
+                        android:padding="2dp"
+                        android:text="Top Photography Services"
+                        android:textColor="@color/gray_tv"
+                        android:textSize="@dimen/sp12"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/poppins_regular" />
+
+                    <TextView
+                        android:id="@+id/tvPhotographerTopService"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:padding="2dp"
+                        android:text="View All >>"
+                        android:textColor="@color/red_color"
+                        android:textSize="10dp" />
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTopServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/photographer_service_items" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp4"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginEnd="@dimen/dp3"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp10"
+                        android:padding="2dp"
+                        android:text="Top Photography Near you"
+                        android:textColor="@color/gray_tv"
+                        android:textSize="@dimen/sp12"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/poppins_regular" />
+
+                    <TextView
+                        android:id="@+id/tvTopPhotographersViewAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:padding="2dp"
+                        android:text="View All >>"
+                        android:textColor="@color/red_color"
+                        android:textSize="10dp" />
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTopIndia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp10"
+                    android:padding="@dimen/dp8"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/top_photography_near_item" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp4"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginEnd="@dimen/dp3"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp10"
+                        android:padding="2dp"
+                        android:text="Premium Photographers in India"
+                        android:textColor="@color/gray_tv"
+                        android:textSize="@dimen/sp12"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/poppins_regular" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:padding="2dp"
+                        android:text="Coming Soon"
+                        android:textColor="@color/red_color"
+                        android:textSize="10dp" />
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:visibility="gone"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/top_photography_near_item" />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/premium_photographer_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/viewActionBar" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp80"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp40"
+            android:visibility="visible"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/green_loading" />
+
+    </FrameLayout>
+</layout>

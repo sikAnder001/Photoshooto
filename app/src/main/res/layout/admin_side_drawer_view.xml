@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/edit_text_shape_drawer">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/nav_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="bottom"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:src="@drawable/dummy_profile"
+                    app:civ_border_color="@color/grey_clr1"
+                    app:civ_border_width="@dimen/_1sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:includeFontPadding="false"
+                    android:text="tv_name"
+                    android:textAppearance="@style/sp16_white_bold_style"
+                    app:layout_constraintStart_toEndOf="@+id/profile_image"
+                    app:layout_constraintTop_toTopOf="@+id/profile_image" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_id"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:includeFontPadding="false"
+                    android:text="tv_id"
+                    android:textAppearance="@style/sp14_white_style"
+                    app:layout_constraintStart_toStartOf="@+id/tv_name"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_exp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:includeFontPadding="false"
+                    android:text="tv_exp"
+                    android:textAppearance="@style/sp14_white_style"
+                    app:layout_constraintStart_toStartOf="@+id/tv_id"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_id" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_profession"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:includeFontPadding="false"
+                    android:text="tv_profession"
+                    android:textAppearance="@style/sp14_white_style"
+                    app:layout_constraintStart_toStartOf="@+id/tv_exp"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_exp" />
+
+                <!--  <ImageView
+                      android:id="@+id/ic_close"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginEnd="16dp"
+                      android:padding="@dimen/dp10"
+                      android:src="@drawable/ic_close_img"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintTop_toTopOf="parent" />-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/progress_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/nav_header">
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_8sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:max="100"
+                    android:progress="45"
+                    android:progressDrawable="@drawable/ic_progress_side"
+                    app:layout_constraintBottom_toBottomOf="@+id/progress_text"
+                    app:layout_constraintEnd_toStartOf="@+id/progress_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/progress_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:text="69%"
+                    android:textAppearance="@style/sp16_white_bold_style"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/progress_layout">
+
+
+                <!--region Photographer and User Flow -->
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/super_admin_side_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp2"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/nav_dashboard"
+                    app:layout_constraintTop_toBottomOf="@+id/nav_dashboard">
+
+                    <!--region Dashboard-->
+                    <TextView
+                        android:id="@+id/nav_dashboard_Admin"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bluebutton_ripple_rectangle"
+                        android:drawableEnd="@drawable/right_filled_arrow"
+                        android:drawablePadding="@dimen/dp15"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/dp25"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:text="@string/dashboard"
+                        android:textAppearance="@style/sp16_white_bold_style"
+                        app:drawableStartCompat="@drawable/ic_admin_orders_img" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/handleDashboardLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="@dimen/dp30"
+                        android:visibility="gone">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/layout_new_request"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp15"
+                            android:background="@drawable/bluebutton_ripple_rectangle"
+                            android:gravity="center|left"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="@dimen/dp5"
+                            android:paddingVertical="@dimen/dp10"
+                            android:paddingStart="@dimen/dp25"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/progress_bar">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="@dimen/dp15"
+                                android:text="@string/new_request"
+                                android:textAppearance="@style/sp14_white_style" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/layout_accepted_req"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp15"
+                            android:background="@drawable/bluebutton_ripple_rectangle"
+                            android:gravity="center|left"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="@dimen/dp5"
+                            android:paddingVertical="@dimen/dp10"
+                            android:paddingStart="@dimen/dp25"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/progress_bar">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="@dimen/dp15"
+                                android:text="@string/accepted_request"
+                                android:textAppearance="@style/sp14_white_style" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/layout_rejected_req"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp15"
+                            android:background="@drawable/bluebutton_ripple_rectangle"
+                            android:gravity="center|left"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="@dimen/dp5"
+                            android:paddingVertical="@dimen/dp10"
+                            android:paddingStart="@dimen/dp25"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/progress_bar">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="@dimen/dp15"
+                                android:text="@string/rejected_request"
+                                android:textAppearance="@style/sp14_white_style" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/layout_blocked_req"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp15"
+                            android:background="@drawable/bluebutton_ripple_rectangle"
+                            android:gravity="center|left"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="@dimen/dp5"
+                            android:paddingVertical="@dimen/dp10"
+                            android:paddingStart="@dimen/dp25"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/progress_bar">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="@dimen/dp15"
+                                android:text="@string/blocked_req"
+                                android:textAppearance="@style/sp14_white_style" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <!--end region-->
+
+                    <!--all employess start-->
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/layout_all_employees"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp2"
+                        android:gravity="center|left"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/allEmployeesClick"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bluebutton_ripple_rectangle"
+                            android:drawableStart="@drawable/icon_all_employees"
+                            android:drawablePadding="@dimen/dp15"
+                            android:gravity="center_vertical"
+                            android:paddingStart="@dimen/dp25"
+                            android:text="@string/all_employees"
+                            android:textAppearance="@style/sp16_white_bold_style" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <!--all employess end-->
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/layout_manage_admins"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bluebutton_ripple_rectangle"
+                        android:gravity="center|left"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="@dimen/dp5"
+                        android:paddingVertical="@dimen/dp10"
+                        android:paddingStart="@dimen/dp25">
+
+                        <TextView
+                            android:id="@+id/manageAdminsClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_manage_admin_img"
+                            android:drawablePadding="@dimen/dp15"
+                            android:text="@string/manage_admins"
+                            android:textAppearance="@style/sp16_white_bold_style" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/handlePSEmployeesLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/dp30"
+                            android:visibility="gone">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/layout_PSEmployees"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp15"
+                                android:background="@drawable/bluebutton_ripple_rectangle"
+                                android:gravity="center|left"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="@dimen/dp5"
+                                android:paddingVertical="@dimen/dp10"
+                                android:paddingStart="@dimen/dp25"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.1"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/progress_bar">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="@dimen/dp15"
+                                    android:text="@string/label_ps_employee"
+                                    android:textAppearance="@style/sp14_white_style" />
+
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/layout_PintoEmployees"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp15"
+                                android:background="@drawable/bluebutton_ripple_rectangle"
+                                android:gravity="center|left"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="@dimen/dp5"
+                                android:paddingVertical="@dimen/dp10"
+                                android:paddingStart="@dimen/dp25"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.1"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/progress_bar">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="@dimen/dp15"
+                                    android:text="@string/label_pintoemployees"
+                                    android:textAppearance="@style/sp14_white_style" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/layout_manage_job_positing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp2"
+                        android:background="@drawable/bluebutton_ripple_rectangle"
+                        android:gravity="center|left"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="@dimen/dp5"
+                        android:paddingVertical="@dimen/dp10"
+                        android:paddingStart="@dimen/dp25">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/icon_jobs"
+                            android:drawablePadding="@dimen/dp14"
+                            android:text="@string/manage_job_posting"
+                            android:textAppearance="@style/sp16_white_bold_style" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/layout_used_product_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp2"
+                        android:background="@drawable/bluebutton_ripple_rectangle"
+                        android:gravity="center|left"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="@dimen/dp5"
+                        android:paddingVertical="@dimen/dp10"
+                        android:paddingStart="@dimen/dp25">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_used_product_list"
+                            android:drawablePadding="@dimen/dp15"
+                            android:text="@string/manage_camera"
+                            android:textAppearance="@style/sp16_white_bold_style" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/layout_admin_orders"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp2"
+                        android:gravity="center|left"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/adminOrderClick"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bluebutton_ripple_rectangle"
+                            android:drawableStart="@drawable/ic_admin_orders_img"
+                            android:drawableEnd="@drawable/right_filled_arrow"
+                            android:drawablePadding="@dimen/dp15"
+
+                            android:gravity="center_vertical"
+                            android:paddingStart="@dimen/dp25"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:text="@string/orders"
+                            android:textAppearance="@style/sp16_white_bold_style" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/handleAdminOrders"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/dp30"
+                            android:visibility="gone">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/layout_order_requests"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp15"
+                                android:background="@drawable/bluebutton_ripple_rectangle"
+                                android:gravity="center|left"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="@dimen/dp5"
+                                android:paddingVertical="@dimen/dp10"
+                                android:paddingStart="@dimen/dp25"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.1"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/progress_bar">
+
+                                <TextView
+                                    android:id="@+id/tvOrderRequestOrAllOrders"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="@dimen/dp15"
+                                    android:text="@string/order_requests"
+                                    android:textAppearance="@style/sp14_white_style" />
+
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/layout_order_Status"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp15"
+                                android:background="@drawable/bluebutton_ripple_rectangle"
+                                android:gravity="center|left"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="@dimen/dp5"
+                                android:paddingVertical="@dimen/dp10"
+                                android:paddingStart="@dimen/dp25"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.1"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/progress_bar">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="@dimen/dp15"
+                                    android:text="@string/order_Status"
+                                    android:textAppearance="@style/sp14_white_style" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/layout_analytics"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp2"
+                        android:background="@drawable/bluebutton_ripple_rectangle"
+                        android:gravity="center|left"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="@dimen/dp5"
+                        android:paddingVertical="@dimen/dp10"
+                        android:paddingStart="@dimen/dp25">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_analytics"
+                            android:drawablePadding="@dimen/dp15"
+                            android:text="@string/analytics"
+                            android:textAppearance="@style/sp16_white_bold_style" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/layout_admin_settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp2"
+                        android:background="@drawable/bluebutton_ripple_rectangle"
+                        android:gravity="center|left"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="@dimen/dp5"
+                        android:paddingVertical="@dimen/dp10"
+                        android:paddingStart="@dimen/dp25"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/layout_orders"
+                        app:layout_constraintTop_toBottomOf="@+id/layout_orders">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_settings"
+                            android:drawablePadding="@dimen/dp15"
+                            android:text="@string/adminsettings"
+                            android:textAppearance="@style/sp16_white_bold_style" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <!--region Logout-->
+                <TextView
+                    android:id="@+id/nav_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bluebutton_ripple_rectangle"
+                    android:drawablePadding="@dimen/_12sdp"
+                    android:paddingHorizontal="@dimen/_22sdp"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:text="@string/logout"
+                    android:textAppearance="@style/sp16_white_bold_style"
+                    app:drawableStartCompat="@drawable/ic_logout_img" />
+                <!--end region-->
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

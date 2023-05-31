@@ -1,0 +1,56 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Growero" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/btn_green</item>
+        <item name="colorPrimaryVariant">@color/splash_status_bar</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:textColor">@color/grey_clr</item>
+        <!-- Customize your theme here. -->
+        <item name="android:forceDarkAllowed">false</item>
+    </style>
+
+    <style name="Theme.BottomNavWithSideNav" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/colorAccent</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!--<item name="android:textColor">@color/grey_clr</item>-->
+        <item name="android:forceDarkAllowed">false</item>
+        <!-- Customize your theme here. -->
+        <item name="android:buttonBarPositiveButtonStyle">@style/Widget.MaterialComponents.Button
+        </item>
+        <item name="android:buttonBarNegativeButtonStyle">
+            @style/Widget.MaterialComponents.Button.TextButton
+        </item>
+        <item name="android:buttonBarNeutralButtonStyle">@style/Widget.MaterialComponents.Button
+        </item>
+    </style>
+
+    <style name="Theme_Dialog" parent="android:Theme.Holo.Dialog">
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+    </style>
+
+    <style name="TransparentTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+
+    </style>
+
+</resources>

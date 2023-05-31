@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar_with_back"
+                layout="@layout/toolbar_with_back_btn" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:padding="@dimen/dp8">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edtSearch"
+                        style="@style/black_text_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp48"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:background="@drawable/ic_edittext_bg"
+                        android:drawableEnd="@drawable/ic_grey_search"
+                        android:drawableTint="@color/grey4"
+                        android:hint="@string/search_hint"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textAppearance="@style/sp14_grey_clr2_txt"
+                        android:textColorHint="@color/grey_clr"
+                        android:textSize="@dimen/sp12" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCurrentLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:drawableStart="@drawable/ic_location_map"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Use current location"
+                        android:textColor="@color/red_color"
+                        android:textSize="@dimen/sp14"
+                        app:drawableTint="@color/black" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginVertical="@dimen/dp16"
+                        android:background="@color/grey_clr_new"
+                        android:outlineSpotShadowColor="@color/grey_clr_new"
+                        android:shadowColor="@color/grey_clr_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:text="Popular Cities"
+                        android:textColor="@color/blue_tv"
+                        android:textSize="@dimen/sp20" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewPopularCities"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:spanCount="4"
+                        tools:itemCount="8"
+                        tools:listitem="@layout/adapter_popular_cities" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:text="Other Cities"
+                        android:textColor="@color/blue_tv"
+                        android:textSize="@dimen/_14sdp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewOtherCities"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="6"
+                        tools:listitem="@layout/adapter_photography_services_items" />
+
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp80"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp40"
+            android:visibility="visible"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/green_loading" />
+    </RelativeLayout>
+
+</layout>

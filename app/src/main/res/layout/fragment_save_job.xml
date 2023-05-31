@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar_saved_post"
+        layout="@layout/toolbar_with_back_btn" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideStart16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideEnd16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <include
+        android:id="@+id/tabMyPost"
+        layout="@layout/commom_tab_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/tabSavedPost"
+        app:layout_constraintStart_toStartOf="@id/guideStart16"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_saved_post" />
+
+    <include
+        android:id="@+id/tabSavedPost"
+        layout="@layout/commom_tab_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+        app:layout_constraintStart_toEndOf="@id/tabMyPost"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_saved_post" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/colorTransparent"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabMyPost" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

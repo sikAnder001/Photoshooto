@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/verifed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="20dp"
+        android:src="@drawable/ic_verified_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/textColor" />
+
+    <ImageView
+        android:id="@+id/verifedIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="10dp"
+        android:src="@drawable/ic_verified_job_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/innerRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/border_dark"
+        app:layout_constraintTop_toBottomOf="@id/verifedIcon">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <com.photoshooto.ui.job.utility.CircleImageView
+            android:id="@+id/imageViewProfile"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/icn_placeholder_user"
+            app:civ_border_color="@color/grey_dc"
+            app:civ_border_width="1dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@id/start16"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/dot"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/ic_dot"
+            app:layout_constraintBottom_toBottomOf="@id/imageViewProfile"
+            app:layout_constraintEnd_toEndOf="@id/imageViewProfile" />
+
+        <TextView
+            android:id="@+id/eventName"
+            style="@style/tvFontBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:text="Name Name"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/imageViewProfile"
+            app:layout_constraintTop_toTopOf="@id/imageViewProfile"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/time"
+            style="@style/tvFontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            android:text="5h ago"
+            android:textColor="@color/grey_6B"
+            app:layout_constraintEnd_toEndOf="@id/end16"
+            app:layout_constraintTop_toTopOf="@id/eventName" />
+
+        <ImageView
+            android:id="@+id/check"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="7dp"
+            android:src="@drawable/checkmark_starburst"
+            app:layout_constraintStart_toEndOf="@id/studioName"
+            app:layout_constraintTop_toTopOf="@id/studioName" />
+
+        <ImageView
+            android:id="@+id/share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_share_android"
+            app:layout_constraintEnd_toEndOf="@id/time"
+            app:layout_constraintTop_toBottomOf="@id/time" />
+
+        <TextView
+            android:id="@+id/studioName"
+            style="@style/tvFontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_camera_dark"
+            android:drawablePadding="3dp"
+            android:paddingStart="3dp"
+            android:text="Ahm"
+            android:textColor="@color/textColor"
+            app:layout_constraintStart_toStartOf="@id/eventName"
+            app:layout_constraintTop_toBottomOf="@id/imageViewProfile" />
+
+        <TextView
+            android:id="@+id/stuId"
+            style="@style/tvFontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="3dp"
+            android:paddingStart="5dp"
+            android:text="Ahm"
+            android:textColor="@color/grey_6B"
+            app:layout_constraintStart_toEndOf="@id/check"
+            app:layout_constraintTop_toBottomOf="@id/imageViewProfile" />
+
+        <TextView
+            android:id="@+id/city"
+            style="@style/tvFontRegular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_location_filled"
+            android:drawablePadding="3dp"
+            android:paddingStart="3dp"
+            android:text="Ahm"
+            android:textColor="@color/textColor"
+            app:layout_constraintEnd_toStartOf="@id/reportCount"
+            app:layout_constraintStart_toStartOf="@id/studioName"
+            app:layout_constraintTop_toBottomOf="@id/studioName" />
+
+        <TextView
+            android:id="@+id/stDate"
+            style="@style/tvFontRegular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/ic_date_start"
+            android:drawablePadding="3dp"
+            android:paddingStart="3dp"
+            android:text="25/01/2023, 12:00 PM"
+            android:textColor="@color/textColor"
+            app:layout_constraintEnd_toStartOf="@id/btnDetails"
+            app:layout_constraintStart_toStartOf="@id/studioName"
+            app:layout_constraintTop_toBottomOf="@id/city" />
+
+        <TextView
+            android:id="@+id/endDate"
+            style="@style/tvFontRegular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/ic_date_start"
+            android:drawablePadding="3dp"
+            android:paddingStart="3dp"
+            android:text="25/01/2023, 12:00 PM"
+            android:textColor="@color/textColor"
+            app:layout_constraintEnd_toStartOf="@id/btnDetails"
+            app:layout_constraintStart_toStartOf="@id/studioName"
+            app:layout_constraintTop_toBottomOf="@id/stDate" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDetails"
+            style="@style/tvFontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/border_orange"
+            android:paddingHorizontal="15dp"
+            android:text="@string/view_details"
+            android:textAllCaps="false"
+            android:textColor="@color/colorOrange"
+            app:layout_constraintBottom_toBottomOf="@id/endDate"
+            app:layout_constraintEnd_toEndOf="@id/end16"
+            app:layout_constraintTop_toTopOf="@id/stDate" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDecline"
+            style="@style/btnStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/colorOrange"
+            android:drawableStart="@drawable/dismiss_circle"
+            android:drawablePadding="10dp"
+            android:paddingHorizontal="20dp"
+            android:text="@string/decline"
+            app:layout_constraintBottom_toTopOf="@id/viewBackBottom"
+            app:layout_constraintEnd_toStartOf="@id/btnApproval"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/endDate" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnApproval"
+            style="@style/tvFontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button_bg"
+            android:backgroundTint="@color/brightGreen"
+            android:drawableStart="@drawable/checkmark_circle"
+            android:drawablePadding="10dp"
+            android:paddingHorizontal="20dp"
+            android:text="@string/approve"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnDecline"
+            app:layout_constraintTop_toBottomOf="@id/endDate" />
+
+        <TextView
+            android:id="@+id/reportCount"
+            style="@style/tvFontSemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_job_detail_row"
+            android:drawableStart="@drawable/person_prohibited"
+            android:drawablePadding="10dp"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="8dp"
+            android:text="3 Persons"
+            android:textColor="@color/colorOrange"
+            app:layout_constraintBottom_toTopOf="@id/btnDetails"
+            app:layout_constraintEnd_toEndOf="@id/btnDetails"
+            app:layout_constraintStart_toStartOf="@id/btnDetails" />
+
+        <View
+            android:id="@+id/viewBackBottom"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/card_bottom_grey_curve"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnDecline" />
+
+        <TextView
+            android:id="@+id/ad_id"
+            style="@style/tvFontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AD ID:0000"
+            android:textColor="@color/textColor"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/viewBackBottom"
+            app:layout_constraintStart_toStartOf="@id/imageViewProfile"
+            app:layout_constraintTop_toTopOf="@id/viewBackBottom" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+

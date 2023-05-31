@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/viewActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingHorizontal="@dimen/dp16"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/black_text_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp12"
+            android:text="@string/add_address"
+            android:textColor="@color/blue_clr"
+            android:textSize="@dimen/sp24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivBack"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewActionBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp16">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/dp20" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/dp20" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp10"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rbOffice"
+                    style="@style/black_text_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:drawableStart="@drawable/drawable_selector_orange_radio_button_2"
+                    android:drawablePadding="@dimen/dp10"
+                    android:text="@string/label_office"
+                    android:textColor="@color/orange_clr"
+                    android:textSize="@dimen/sp14" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rbHome"
+                    style="@style/black_text_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:button="@null"
+                    android:drawableStart="@drawable/drawable_selector_orange_radio_button_2"
+                    android:drawablePadding="@dimen/dp10"
+                    android:text="@string/label_home"
+                    android:textColor="@color/orange_clr"
+                    android:textSize="@dimen/sp14" />
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabelOfficeHouseNo"
+                style="@style/black_text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp30"
+                android:drawableStart="@drawable/ic_address_office_home_no"
+                android:drawablePadding="@dimen/dp5"
+                android:gravity="center"
+                android:text="@string/label_office_house_no"
+                android:textColor="@color/blue_clr"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/black_text_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/symbol_star"
+                android:textColor="@color/orange_clr"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintStart_toEndOf="@+id/tvLabelOfficeHouseNo"
+                app:layout_constraintTop_toTopOf="@+id/tvLabelOfficeHouseNo" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtOfficeHouseNo"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp48"
+                android:layout_marginTop="@dimen/dp10"
+                android:background="@drawable/ic_edittext_bg"
+                android:hint="@string/label_enter_house_no"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences"
+                android:paddingHorizontal="@dimen/dp18"
+                android:textAppearance="@style/sp14_grey_clr2_txt"
+                android:textColorHint="@color/grey_clr"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelOfficeHouseNo" />
+
+            <ImageView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:elevation="5dp"
+                android:src="@drawable/ic_location_map"
+                app:layout_constraintBottom_toBottomOf="@id/edtOfficeHouseNo"
+                app:layout_constraintEnd_toEndOf="@id/edtOfficeHouseNo"
+                app:layout_constraintTop_toTopOf="@id/edtOfficeHouseNo" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabelAddLandmark"
+                style="@style/black_text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp20"
+                android:drawableStart="@drawable/ic_address_landmark"
+                android:drawablePadding="@dimen/dp5"
+                android:gravity="center"
+                android:text="@string/label_add_landmark"
+                android:textColor="@color/blue_clr"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/location" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/black_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp5"
+                android:gravity="center"
+                android:text="@string/label_optional"
+                android:textColor="@color/grey_clr"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintStart_toEndOf="@+id/tvLabelAddLandmark"
+                app:layout_constraintTop_toTopOf="@+id/tvLabelAddLandmark" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtLandmark"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp48"
+                android:layout_marginTop="@dimen/dp10"
+                android:background="@drawable/ic_edittext_bg"
+                android:hint="@string/label_enter_landmark"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences"
+                android:paddingHorizontal="@dimen/dp18"
+                android:textAppearance="@style/sp14_grey_clr2_txt"
+                android:textColorHint="@color/grey_clr"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelAddLandmark" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabelCity"
+                style="@style/black_text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp20"
+                android:drawableStart="@drawable/ic_address_city"
+                android:drawablePadding="@dimen/dp5"
+                android:gravity="center"
+                android:text="@string/label_city"
+                android:textColor="@color/blue_clr"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/edtLandmark" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/black_text_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/symbol_star"
+                android:textColor="@color/orange_clr"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintStart_toEndOf="@+id/tvLabelCity"
+                app:layout_constraintTop_toTopOf="@+id/tvLabelCity" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtCity"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp48"
+                android:layout_marginTop="@dimen/dp10"
+                android:background="@drawable/ic_edittext_bg"
+                android:hint="@string/label_enter_city"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:paddingHorizontal="@dimen/dp18"
+                android:textAppearance="@style/sp14_grey_clr2_txt"
+                android:textColorHint="@color/grey_clr"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelCity" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabelSociety"
+                style="@style/black_text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp20"
+                android:drawableStart="@drawable/ic_address_society_street"
+                android:drawablePadding="@dimen/dp5"
+                android:gravity="center"
+                android:text="@string/label_society_street_name"
+                android:textColor="@color/blue_clr"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/edtCity" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appCompatTextView7"
+                style="@style/black_text_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/symbol_star"
+                android:textColor="@color/orange_clr"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintStart_toEndOf="@+id/tvLabelSociety"
+                app:layout_constraintTop_toTopOf="@+id/tvLabelSociety" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtSocietyName"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp48"
+                android:layout_marginTop="@dimen/dp10"
+                android:background="@drawable/ic_edittext_bg"
+                android:hint="@string/label_enter_society_street_name"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences"
+                android:paddingHorizontal="@dimen/dp18"
+                android:textAppearance="@style/sp14_grey_clr2_txt"
+                android:textColorHint="@color/grey_clr"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelSociety" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabelPincode"
+                style="@style/black_text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp20"
+                android:drawableStart="@drawable/ic_address_pincode"
+                android:drawablePadding="@dimen/dp5"
+                android:gravity="center"
+                android:text="@string/label_pincode"
+                android:textColor="@color/blue_clr"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/edtSocietyName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/black_text_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/symbol_star"
+                android:textColor="@color/orange_clr"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintStart_toEndOf="@+id/tvLabelPincode"
+                app:layout_constraintTop_toTopOf="@+id/tvLabelPincode" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtPincode"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp48"
+                android:layout_marginTop="@dimen/dp10"
+                android:background="@drawable/ic_edittext_bg"
+                android:hint="@string/label_enter_your_pincode"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="6"
+                android:paddingHorizontal="@dimen/dp18"
+                android:textAppearance="@style/sp14_grey_clr2_txt"
+                android:textColorHint="@color/grey_clr"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelPincode" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabelState"
+                style="@style/black_text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp20"
+                android:drawableStart="@drawable/ic_address_state"
+                android:drawablePadding="@dimen/dp5"
+                android:gravity="center"
+                android:text="@string/label_state"
+                android:textColor="@color/blue_clr"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/edtPincode" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/black_text_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/symbol_star"
+                android:textColor="@color/orange_clr"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintStart_toEndOf="@+id/tvLabelState"
+                app:layout_constraintTop_toTopOf="@+id/tvLabelState" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtState"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp48"
+                android:layout_marginTop="@dimen/dp10"
+                android:background="@drawable/ic_edittext_bg"
+                android:drawableEnd="@drawable/ic_arrow_down"
+                android:focusable="false"
+                android:hint="@string/label_select_state"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences"
+                android:paddingHorizontal="@dimen/dp18"
+                android:textAppearance="@style/sp14_grey_clr2_txt"
+                android:textColorHint="@color/grey_clr"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelState" />
+
+            <CheckBox
+                android:id="@+id/checkboxMakeDefault"
+                style="@style/black_text_medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp10"
+                android:button="@null"
+                android:drawableStart="@drawable/drawable_selector_blue_check_box"
+                android:drawablePadding="@dimen/dp18"
+                android:paddingVertical="@dimen/dp10"
+                android:text="@string/label_make_as_default"
+                android:textColor="@color/blue_clr"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/edtState" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnAdd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp30"
+                android:background="@drawable/orange_button_ripple"
+                android:gravity="center"
+                android:paddingVertical="@dimen/dp15"
+                android:text="@string/add"
+                android:textAppearance="@style/sp14_white_txt"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/checkboxMakeDefault" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

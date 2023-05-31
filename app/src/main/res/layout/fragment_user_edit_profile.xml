@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/background_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200sdp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_edit_profile" />
+
+                <ImageView
+                    android:id="@+id/imgBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:src="@drawable/ic_arrow_back_24"
+                    app:tint="@color/white" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-130dp"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="154dp"
+                    android:layout_height="154dp"
+                    android:layout_gravity="center_horizontal"
+                    tools:src="@drawable/ic_girl_profile" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgUpload"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/_35sdp"
+                    android:layout_marginTop="-40dp"
+                    android:src="@drawable/ic_camera_eit" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_user_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/grey2"
+                    android:textSize="@dimen/_10sdp"
+                    tools:text="Bangalore, Karnataka" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:drawableStart="@drawable/ic_user"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Name"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:textColor="@color/grey2"
+                    android:textSize="@dimen/_12sdp"
+                    app:drawableTint="@color/blue_tv"
+                    app:fontFamily="@font/poppins_semi_bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="@color/grey10" />
+
+                <TextView
+                    android:id="@+id/tvDateOfBirth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Date of Birth (DD/MM/YYYY)"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:textColor="@color/grey2"
+                    android:textSize="@dimen/_12sdp"
+                    app:drawableStartCompat="@drawable/ic_calender"
+                    app:drawableTint="@color/blue_tv"
+                    app:fontFamily="@font/poppins_semi_bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="@color/grey10" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:drawableStart="@drawable/ic_email_blue"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Email Id"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:textColor="@color/grey2"
+                    android:textSize="@dimen/_12sdp"
+                    app:drawableTint="@color/blue_tv"
+                    app:fontFamily="@font/poppins_semi_bold" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="@color/grey10" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtMobileNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:drawableStart="@drawable/ic_phone"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="+91-78437-XXXXX"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:textColor="@color/grey2"
+                    android:textSize="@dimen/_12sdp"
+                    app:drawableTint="@color/blue_tv"
+                    app:fontFamily="@font/poppins_semi_bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="@color/grey10" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="14dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/gender"
+                        app:tint="@color/blue_clr" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spGender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@color/transparent"
+                        android:entries="@array/gender"
+                        android:theme="@style/sp16_black_style" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="@color/grey10" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:visibility="gone"
+                    android:weightSum="10">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edt_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8"
+                        android:background="#00000000"
+                        android:drawableStart="@drawable/show_password_selector"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:enabled="false"
+                        android:fontFamily="@font/poppins_medium"
+                        android:hint="@string/password"
+                        android:maxLength="12"
+                        android:textColor="@color/grey2"
+                        android:textSize="@dimen/_12sdp"
+                        app:drawableTint="@color/blue_tv"
+                        app:fontFamily="@font/poppins_semi_bold" />
+
+                    <TextView
+                        android:id="@+id/change_password_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="end"
+                        android:text="Change"
+                        android:textColor="@color/red_color" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.7dp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@color/grey2"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnEditProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:background="@drawable/back_date_time_normal"
+                android:backgroundTint="@color/grey3"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

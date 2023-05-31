@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_layout_corner_rounded_consult"
+    android:minWidth="280dp"
+    android:minHeight="180dp"
+    android:padding="12dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/dp35"
+        android:layout_height="@dimen/dp35"
+        android:layout_marginStart="116dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_alert_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCancelTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:gravity="center"
+        android:text="Do you want to cancel your order?"
+        android:textAppearance="@style/sp16_blue_style"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <TextView
+        android:id="@+id/btnYes"
+        android:layout_width="@dimen/dp100"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:background="@drawable/back_border_red"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="@string/yes"
+        android:textAppearance="@style/sp18_blue_txt"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85" />
+
+    <TextView
+        android:id="@+id/btnNo"
+        android:layout_width="@dimen/dp100"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:background="@drawable/bluebutton_ripple"
+        android:backgroundTint="@color/red_color"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="@string/no"
+        android:textAppearance="@style/sp18_white_txt"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

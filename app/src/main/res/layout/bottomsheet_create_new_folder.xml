@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageBSNewFolderClose"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_dialog_close" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/half_curve_top_white"
+            android:paddingHorizontal="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@id/imageBSNewFolderClose">
+
+            <View
+                android:id="@+id/viewDivider"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_3sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bottomsheet_divider_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageBSNewFolder"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewDivider"
+                app:srcCompat="@drawable/ic_big_folder" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBSTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:includeFontPadding="false"
+                android:text="@string/create_new_folder"
+                android:textColor="@color/text_054871"
+                android:textSize="@dimen/_13ssp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageBSNewFolder" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabelFolderName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:includeFontPadding="false"
+                android:text="@string/enter_folder_name"
+                android:textColor="@color/text_054871"
+                android:textSize="@dimen/_11ssp"
+                app:fontFamily="@font/poppins_regular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvBSTitle" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/ednCreateFolderName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/ed_border"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center_vertical"
+                android:hint="@string/enter_folder_name"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:textColorHint="@color/text_8B8B8B"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvLabelFolderName"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvErrorFolderName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/enter_email_mobile"
+                android:textColor="@color/primaryRedColor"
+                android:textSize="@dimen/_10ssp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/ednCreateFolderName"
+                app:layout_constraintTop_toBottomOf="@+id/ednCreateFolderName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabelPasscode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:includeFontPadding="false"
+                android:text="@string/enter_passcode"
+                android:textColor="@color/text_054871"
+                android:textSize="@dimen/_11ssp"
+                app:fontFamily="@font/poppins_regular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvErrorFolderName" />
+
+            <com.chaos.view.PinView
+                android:id="@+id/pinViewPasscode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:inputType="number"
+                app:itemCount="6"
+                app:itemHeight="@dimen/_37sdp"
+                app:itemRadius="@dimen/_5sdp"
+                app:itemSpacing="@dimen/_7sdp"
+                app:itemWidth="@dimen/_37sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvLabelPasscode"
+                app:lineColor="#D1D1D1"
+                app:lineWidth="1dp"
+                app:viewType="rectangle"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabelResetPasscode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:includeFontPadding="false"
+                android:text="@string/reset_passcode"
+                android:textColor="@color/text_8B8B8B"
+                android:textSize="@dimen/_11ssp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pinViewPasscode" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCreate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@drawable/btn_back_red"
+                android:includeFontPadding="false"
+                android:paddingVertical="@dimen/_12ssp"
+                android:text="@string/create"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                app:cornerRadius="10dp"
+                app:fontFamily="@font/poppins_regular"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvLabelResetPasscode" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

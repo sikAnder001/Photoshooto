@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dashboardFragment"
+        android:icon="@drawable/icon_dash"
+        android:title="Dashboard" />
+
+    <item
+        android:id="@+id/qrEventsFragment"
+        android:icon="@drawable/prime_qrcode"
+        android:title="QR Events">
+        <!--<menu>
+            <item
+                android:id="@+id/qrEventsSetup"
+                android:icon="@drawable/prime_qrcode"
+                android:title="QR Event Setup" />
+        </menu>-->
+    </item>
+
+
+    <item
+        android:id="@+id/shopFragment"
+        android:icon="@drawable/icon_shopping"
+        android:title="Shop" />
+
+
+    <item
+        android:id="@+id/arCardsFragment"
+        android:icon="@drawable/icon_badg"
+        android:title="AR Cards" />
+
+
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/icon_user"
+        android:title="My Profile" />
+
+    <item
+        android:id="@+id/myOrdersFragment"
+        android:icon="@drawable/icon_order"
+        android:title="My Orders" />
+
+
+    <item
+        android:id="@+id/settingFragment"
+        android:icon="@drawable/icon_setting"
+        android:title="Setting" />
+
+    <item
+        android:id="@+id/recycleBinFragment"
+        android:icon="@drawable/icon_delete"
+        android:title="Recycle Bin" />
+
+    <item
+        android:id="@+id/informationFragment"
+        android:icon="@drawable/icon_information"
+        android:title="Information" />
+    <item
+        android:id="@+id/shareAppFragment"
+        android:icon="@drawable/icon_share"
+        android:title="Share App" />
+
+    <!--    android:icon="@drawable/ic_baseline_person_outline_24"-->
+
+    <!-- <item
+         android:id="@+id/action_invite_friends_mode"
+         android:icon="@drawable/ic_users"
+         android:title="@string/invite_a_friend" />-->
+
+    <item
+        android:id="@+id/rate_on_play_store"
+        android:icon="@drawable/ic_rate_on_play_store"
+        android:title="@string/rate_on_play_store" />
+
+    <item
+        android:id="@+id/logoutFragment"
+        android:icon="@drawable/ic_logout_grey"
+        android:title="@string/logout" />
+
+
+</menu>

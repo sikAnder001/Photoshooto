@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_5sdp"
+    android:background="@drawable/card_background"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="@dimen/_10sdp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/dp50"
+            android:layout_height="@dimen/dp50"
+            android:src="@drawable/dummy_image" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_weight="1.8"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/titleTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/green_check_curl"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/ram"
+                    android:textAppearance="@style/sp14_blue_style" />
+
+                <TextView
+                    android:id="@+id/timeAgoTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/hours_ago"
+                    android:textAppearance="@style/sp12_grey_clr2_txt" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/idTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/job_id"
+                    android:textAppearance="@style/sp10_grey_clr2_txt" />
+
+                <TextView
+                    android:id="@+id/shareTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/ic_share_android"
+                    android:gravity="end" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/starRatingTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_star"
+                    android:drawablePadding="@dimen/_2sdp"
+                    android:gravity="center"
+                    android:text="5.0"
+                    android:textAppearance="@style/sp12_blue_style" />
+
+                <TextView
+                    android:id="@+id/numberRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:text="@string/ratings2"
+                    android:textAppearance="@style/sp12_blue_style" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/locaionTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/location"
+                android:drawablePadding="@dimen/_5sdp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/address_details"
+                android:textAppearance="@style/sp12_blue_style" />
+
+            <TextView
+                android:id="@+id/equipmentTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_camera_dark"
+                android:drawablePadding="@dimen/_5sdp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/equipments_available"
+                android:textAppearance="@style/sp12_blue_style" />
+
+            <TextView
+                android:id="@+id/photographyTypeTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/icon_candid"
+                android:drawablePadding="@dimen/_5sdp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/photography_types"
+                android:textAppearance="@style/sp12_blue_style" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.3"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/reportCount"
+                style="@style/tvFontSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_job_detail_row"
+                android:drawableStart="@drawable/person_prohibited"
+                android:drawablePadding="6dp"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="6dp"
+                android:text="3 Person"
+                android:textColor="@color/colorOrange"
+                android:textSize="12dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/statusTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/tick_green_hollow"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_5sdp"
+                android:text="@string/pending"
+                android:textColor="@color/green_status"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/viewDetailsTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_orange"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_5sdp"
+                android:text="@string/view_details"
+                android:textAppearance="@style/sp14_orange_txt"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnRemove"
+            style="@style/btnStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/colorOrange"
+            android:drawableStart="@drawable/ic_remove_product"
+            android:drawablePadding="10dp"
+            android:paddingHorizontal="30dp"
+            android:text="@string/remove"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/viewDetailsTv2"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/border_orange"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="@dimen/_5sdp"
+            android:text="@string/view_details"
+            android:textAppearance="@style/sp14_orange_txt"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/layoutBtnAppDec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDecline"
+                style="@style/btnStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:backgroundTint="@color/colorOrange"
+                android:drawableStart="@drawable/dismiss_circle"
+                android:drawablePadding="10dp"
+                android:paddingHorizontal="20dp"
+                android:text="@string/decline" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnApproval"
+                style="@style/tvFontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginStart="19dp"
+                android:background="@drawable/button_bg"
+                android:backgroundTint="@color/brightGreen"
+                android:drawableStart="@drawable/checkmark_circle"
+                android:drawablePadding="10dp"
+                android:paddingHorizontal="20dp"
+                android:text="@string/approve"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite" />
+
+        </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>

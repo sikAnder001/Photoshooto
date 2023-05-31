@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="8dp">
+
+    <TextView
+        android:id="@+id/star_label"
+        style="@style/tvFontSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/_5_starts"
+        android:textColor="@color/grey_78"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/star_value"
+        style="@style/tvFontSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="@string/_0"
+        android:textColor="@color/colorOrange"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintBottom_toBottomOf="@id/star_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/txt_dummy"
+        app:layout_constraintTop_toTopOf="@id/star_label" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progressBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:backgroundTint="@color/textColor"
+        android:progress="0"
+        app:indicatorColor="@color/colorOrange"
+        app:layout_constraintBottom_toBottomOf="@id/star_label"
+        app:layout_constraintEnd_toStartOf="@id/star_value"
+        app:layout_constraintStart_toEndOf="@id/star_label"
+        app:layout_constraintTop_toTopOf="@id/star_label"
+        app:trackColor="@color/grey_e4"
+        app:trackCornerRadius="10dp"
+        app:trackThickness="10dp" />
+
+    <TextView
+        android:id="@+id/txt_dummy"
+        style="@style/tvFontSemiBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/_100"
+        android:textColor="@color/colorOrange"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/star_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/star_label" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

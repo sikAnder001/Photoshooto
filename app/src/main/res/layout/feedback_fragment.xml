@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/feedback_toolbar"
+            layout="@layout/toolbar_with_back_btn" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/feedback_toolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dp16">
+
+                <ImageView
+                    android:id="@+id/img_feedback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@drawable/ic_feedback_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_rate_our_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/dp48"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:text="Rate Our Service"
+                    android:textColor="@color/blue_clr"
+                    android:textSize="@dimen/sp24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img_feedback" />
+
+                <com.hsalf.smileyrating.SmileyRating
+                    android:id="@+id/smile_rating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp48"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_rate_our_service" />
+
+                <TextView
+                    android:id="@+id/txt_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/dp48"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:text="Message"
+                    android:textColor="@color/blue_clr"
+                    android:textSize="@dimen/sp16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/smile_rating" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/subject"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp50"
+                    android:layout_marginHorizontal="@dimen/dp48"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:background="@drawable/ic_edittext_bg"
+                    android:backgroundTint="@color/lightgray"
+                    android:hint="@string/subject"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingHorizontal="@dimen/dp10"
+                    android:textAppearance="@style/sp14_grey_clr2_txt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_message" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/feedback_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp48"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@drawable/ic_edittext_bg"
+                    android:backgroundTint="@color/lightgray"
+                    android:gravity="top|start"
+                    android:hint="@string/add_message"
+                    android:imeOptions="actionNext"
+                    android:inputType="textMultiLine"
+                    android:maxLength="500"
+                    android:minHeight="@dimen/dp100"
+                    android:minLines="3"
+                    android:paddingHorizontal="@dimen/dp10"
+                    android:scrollHorizontally="false"
+                    android:textAppearance="@style/sp14_grey_clr2_txt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/subject" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/add_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp50"
+                    android:layout_marginHorizontal="@dimen/dp48"
+                    android:layout_marginTop="@dimen/dp16"
+                    android:background="@drawable/ic_edittext_bg"
+                    android:backgroundTint="@color/lightgray"
+                    android:drawableEnd="@drawable/ic_attach_file"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="Attachment"
+                    android:imeOptions="actionNext"
+                    android:inputType="none"
+                    android:paddingHorizontal="@dimen/dp10"
+                    android:textAppearance="@style/sp14_grey_clr2_txt"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/feedback_message" />
+
+                <LinearLayout
+                    android:id="@+id/photographer_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_64sdp"
+                    android:layout_marginTop="@dimen/dp40"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toTopOf="@id/btnNext_Signup"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/add_photo">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/response_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp40"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_rounded_rectangle">
+
+                        <TextView
+                            android:id="@+id/response_txt"
+                            style="@style/black_text_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:gravity="center|start"
+                            android:minWidth="@dimen/_100sdp"
+                            android:text="Response"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/response_like"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/response_like"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_vector_like"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/response_unlike"
+                            app:layout_constraintStart_toEndOf="@id/response_txt"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/response_unlike"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginStart="20dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_vector_dislike"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/response_like"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/quality_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp40"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dp16"
+                        android:background="@drawable/ic_rounded_rectangle">
+
+                        <TextView
+                            android:id="@+id/quality_txt"
+                            style="@style/black_text_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:gravity="center|start"
+                            android:minWidth="@dimen/_100sdp"
+                            android:text="Quality"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/quality_like"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/quality_like"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_vector_like"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/quality_unlike"
+                            app:layout_constraintStart_toEndOf="@id/quality_txt"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/quality_unlike"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginStart="20dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_vector_dislike"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/quality_like"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/delivery_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp40"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dp16"
+                        android:background="@drawable/ic_rounded_rectangle">
+
+                        <TextView
+                            android:id="@+id/delivery_txt"
+                            style="@style/black_text_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:gravity="center|start"
+                            android:minWidth="@dimen/_100sdp"
+                            android:text="Delivery"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/delivery_like"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/delivery_like"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_vector_like"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/delivery_unlike"
+                            app:layout_constraintStart_toEndOf="@id/delivery_txt"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/delivery_unlike"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginStart="20dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_vector_dislike"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/delivery_like"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/btn_submit_feedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp42"
+                    android:layout_marginHorizontal="@dimen/dp48"
+                    android:layout_marginVertical="@dimen/dp16"
+                    android:background="@drawable/orange_button_ripple"
+                    android:gravity="center"
+                    android:text="@string/submit"
+                    android:textAppearance="@style/sp18_white_txt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/photographer_view" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/progress_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp60"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnNext_Signup"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/green_loading"
+                    tools:ignore="NotSibling" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

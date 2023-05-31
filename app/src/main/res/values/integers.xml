@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Min validations-->
+    <integer name="min_length_mobile">8</integer>
+    <integer name="min_length_password">6</integer>
+    <!--Max validations-->
+    <integer name="max_length_mobile">9</integer>
+    <integer name="max_length_email">50</integer>
+    <integer name="max_length_password">15</integer>
+
+</resources>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_layout_corner_rounded_consult"
+    android:minWidth="260dp"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp5"
+        android:gravity="center"
+        android:text="@string/support"
+        android:textAppearance="@style/sp14_grey_clr2_txt"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/thumbsup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/man_programmer_writing_code_make_web_design_on_a_pc"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp18"
+        android:gravity="center"
+        android:text="@string/we_are_happy_to_help_you_please_reach_out_us"
+        android:textAppearance="@style/sp12_grey_clr2_txt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thumbsup" />
+
+    <TextView
+        android:id="@+id/support_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp36"
+        android:drawableStart="@drawable/ic_phone_blue"
+        android:drawablePadding="@dimen/dp10"
+        android:gravity="start"
+        android:text="@string/support_phone_no"
+        android:textAppearance="@style/sp14_grey_clr2_txt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/support_email_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp16"
+        android:drawableStart="@drawable/ic_email_blue"
+        android:drawablePadding="@dimen/dp10"
+        android:gravity="start"
+        android:text="@string/support_email_id"
+        android:textAppearance="@style/sp14_grey_clr2_txt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/support_no" />
+
+    <TextView
+        android:id="@+id/okayBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp42"
+        android:layout_marginTop="@dimen/dp12"
+        android:background="@drawable/btn_blue_bg"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/dp28"
+        android:text="@string/thank_you"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/support_email_id" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

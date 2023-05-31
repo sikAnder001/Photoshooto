@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <androidx.appcompat.widget.AppCompatRadioButton
+        android:id="@+id/rbCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp25"
+        android:buttonTint="@color/orange_clr"
+        android:fontFamily="@font/poppins_medium"
+        android:includeFontPadding="false"
+        android:paddingHorizontal="@dimen/dp5"
+        android:paddingVertical="@dimen/dp15"
+        android:text="fsefdfes"
+        android:textColor="@color/blue_tv"
+        app:layout_constraintBottom_toTopOf="@id/viewMain"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvValue"
+        style="@style/black_text_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp20"
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="Value"
+        android:textColor="@color/blue_clr"
+        android:textSize="@dimen/sp16"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/viewMain"
+        app:layout_constraintStart_toEndOf="@+id/rbCheckBox"
+        app:layout_constraintTop_toTopOf="@+id/rbCheckBox" />
+
+    <View
+        android:id="@+id/viewMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp1"
+        android:layout_marginTop="@dimen/dp16"
+        android:background="@color/grey17"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

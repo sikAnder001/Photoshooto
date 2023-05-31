@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <declare-styleable name="NumberPickerView">
+        <!--set number of item displayed, default is 3-->
+        <attr name="npv_ShownCount" format="reference|integer" />
+        <!--set if show divider, default is true-->
+        <attr name="npv_ShowDivider" format="reference|boolean" />
+        <attr name="npv_DividerColor" format="reference|color" />
+        <attr name="npv_DividerMarginLeft" format="reference|dimension" />
+        <attr name="npv_DividerMarginRight" format="reference|dimension" />
+        <attr name="npv_DividerHeight" format="reference|dimension" />
+        <attr name="npv_TextColorNormal" format="reference|color" />
+        <attr name="npv_TextColorSelected" format="reference|color" />
+        <attr name="npv_TextColorHint" format="reference|color" />
+        <attr name="npv_TextSizeNormal" format="reference|dimension" />
+        <attr name="npv_TextSizeSelected" format="reference|dimension" />
+        <attr name="npv_TextSizeHint" format="reference|dimension" />
+        <attr name="npv_TextArray" format="reference" />
+        <attr name="npv_MinValue" format="reference|integer" />
+        <attr name="npv_MaxValue" format="reference|integer" />
+        <attr name="npv_WrapSelectorWheel" format="reference|boolean" />
+        <attr name="npv_RespondChangeOnDetached" format="reference|boolean" />
+        <attr name="npv_HintText" format="reference|string" />
+        <attr name="npv_EmptyItemHint" format="reference|string" />
+        <attr name="npv_MarginStartOfHint" format="reference|dimension" />
+        <attr name="npv_MarginEndOfHint" format="reference|dimension" />
+        <attr name="npv_ItemPaddingHorizontal" format="reference|dimension" />
+        <attr name="npv_ItemPaddingVertical" format="reference|dimension" />
+        <attr name="npv_RespondChangeInMainThread" format="reference|boolean" />
+        <attr name="npv_TextEllipsize" format="reference|string" />
+        <attr name="npv_SelectedItemBackground" format="reference" />
+
+        <!--just used to measure maxWidth for wrap_content without hint,
+            the string array will never be displayed.
+            you can set this attr if you want to keep the wraped numberpickerview
+            width unchanged when alter the content list-->
+        <attr name="npv_AlternativeTextArrayWithMeasureHint" format="reference" />
+        <attr name="npv_AlternativeTextArrayWithoutMeasureHint" format="reference" />
+        <!--the max length of hint content-->
+        <attr name="npv_AlternativeHint" format="reference|string" />
+    </declare-styleable>
+
+    <declare-styleable name="ScrollHmsPicker" tools:ignore="ResourceName">
+        <attr name="shp_normal_color" format="color" />
+        <attr name="shp_selected_color" format="color" />
+        <attr name="shp_hours" format="integer" />
+        <attr name="shp_minutes" format="integer" />
+        <attr name="shp_seconds" format="integer" />
+        <attr name="shp_auto_step" format="boolean" />
+        <attr name="shp_show_hours" format="boolean" />
+        <attr name="shp_show_minutes" format="boolean" />
+        <attr name="shp_show_seconds" format="boolean" />
+        <attr name="shp_enable_99_hours" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="cs_CircularSeekBar">
+        <attr name="cs_circle_style">
+            <enum name="butt" value="0" />
+            <enum name="round" value="1" />
+            <enum name="square" value="2" />
+        </attr>
+        <attr name="cs_progress" format="integer" />
+        <attr name="cs_max" format="integer" />
+        <attr name="cs_negative_enabled" format="boolean" />
+        <attr name="cs_move_outside_circle" format="boolean" />
+        <attr name="cs_maintain_equal_circle" format="boolean" />
+        <attr name="cs_use_custom_radii" format="boolean" />
+        <attr name="cs_lock_enabled" format="boolean" />
+        <attr name="cs_circle_x_radius" format="dimension" />
+        <attr name="cs_circle_y_radius" format="dimension" />
+        <attr name="cs_circle_stroke_width" format="dimension" />
+        <attr name="cs_disable_pointer" format="boolean" />
+        <attr name="cs_pointer_stroke_width" format="dimension" />
+        <attr name="cs_pointer_halo_width" format="dimension" />
+        <attr name="cs_pointer_halo_border_width" format="dimension" />
+        <attr name="cs_circle_fill" format="color" />
+        <attr name="cs_circle_color" format="color" />
+        <attr name="cs_circle_progress_color" format="color" />
+        <attr name="cs_pointer_color" format="color" />
+        <attr name="cs_pointer_halo_color" format="color" />
+        <attr name="cs_pointer_halo_color_ontouch" format="color" />
+        <attr name="cs_pointer_alpha_ontouch" format="integer" />
+        <attr name="cs_pointer_angle" format="float" />
+        <attr name="cs_start_angle" format="float" />
+        <attr name="cs_end_angle" format="float" />
+        <attr name="cs_disable_progress_glow" format="boolean" />
+        <attr name="cs_hide_progress_when_empty" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="DoubleValueSeekBarView">
+        <attr name="r2minValueStep" format="integer|dimension" />
+        <attr name="r2maxValueStep" format="integer|dimension" />
+        <attr name="r2maxValue" format="integer|dimension" />
+        <attr name="r2minValue" format="integer|dimension" />
+        <attr name="r2CurrentMaxValue" format="integer|dimension" />
+        <attr name="r2CurrentMinValue" format="integer|dimension" />
+        <attr name="r2barHeight" format="dimension" />
+        <attr name="r2circleRadius" format="dimension" />
+        <attr name="r2circleTextSize" format="dimension" />
+        <attr name="r2circleTextColor" format="color" />
+        <attr name="r2baseColor" format="color" />
+        <attr name="r2fillColor" format="color" />
+        <attr name="r2circleFillColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="RangeSeekBarView">
+        <attr name="stepValue" format="integer|dimension" />
+        <attr name="minValue" format="integer|dimension" />
+        <attr name="maxValue" format="integer|dimension" />
+        <attr name="currentValue" format="integer|dimension" />
+        <attr name="barHeight" format="dimension" />
+        <attr name="circleRadius" format="dimension" />
+        <attr name="circleTextSize" format="dimension" />
+        <attr name="circleTextColor" format="color" />
+        <attr name="baseColor" format="color" />
+        <attr name="fillColor" format="color" />
+        <attr name="circleFillColor" format="color" />
+        <attr name="orientation" format="enum">
+            <enum name="RIGHT_TO_LEFT" value="0" />
+            <enum name="LEFT_TO_RIGHT" value="1" />
+            <enum name="TOP_TO_BOTTOM" value="2" />
+            <enum name="BOTTOM_TO_TOP" value="3" />
+        </attr>
+
+    </declare-styleable>
+</resources>

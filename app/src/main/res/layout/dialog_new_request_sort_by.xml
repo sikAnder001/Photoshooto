@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet_top_radius">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivDragger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:src="@drawable/ic_line_bottom_sheet_dragger"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivDragger">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/black_text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp25"
+                android:text="@string/label_sort_by"
+                android:textColor="@color/blue_clr"
+                android:textSize="@dimen/sp24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvClear"
+                style="@style/black_text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp25"
+                android:text="@string/label_clear"
+                android:textColor="@color/grey_clr"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+
+            <RadioGroup
+                android:id="@+id/radiogroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginBottom="@dimen/dp20"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rbNewToOld"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:button="@null"
+                    android:drawableStart="@drawable/drawable_selector_orange_radio_button"
+                    android:drawablePadding="@dimen/dp18"
+                    android:paddingHorizontal="@dimen/dp25"
+                    android:paddingVertical="@dimen/dp10"
+                    android:text="@string/label_newest_to_old"
+                    android:textColor="@color/text_orange_check_box_clr"
+                    android:textSize="@dimen/sp14" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rbOldToNew"
+                    style="@style/black_text_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:button="@null"
+                    android:drawableStart="@drawable/drawable_selector_orange_radio_button"
+                    android:drawablePadding="@dimen/dp18"
+                    android:paddingHorizontal="@dimen/dp25"
+                    android:paddingVertical="@dimen/dp10"
+                    android:text="@string/label_oldest_to_new"
+                    android:textColor="@color/text_orange_check_box_clr"
+                    android:textSize="@dimen/sp14" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rbLast1Week"
+                    style="@style/black_text_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:button="@null"
+                    android:drawableStart="@drawable/drawable_selector_orange_radio_button"
+                    android:drawablePadding="@dimen/dp18"
+                    android:paddingHorizontal="@dimen/dp25"
+                    android:paddingVertical="@dimen/dp10"
+                    android:text="@string/label_last_1_week"
+                    android:textColor="@color/text_orange_check_box_clr"
+                    android:textSize="@dimen/sp14" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rbLast1Month"
+                    style="@style/black_text_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:button="@null"
+                    android:drawableStart="@drawable/drawable_selector_orange_radio_button"
+                    android:drawablePadding="@dimen/dp18"
+                    android:paddingHorizontal="@dimen/dp25"
+                    android:paddingVertical="@dimen/dp10"
+                    android:text="@string/label_last_1_month"
+                    android:textColor="@color/text_orange_check_box_clr"
+                    android:textSize="@dimen/sp14" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rbAlphabetically"
+                    style="@style/black_text_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:button="@null"
+                    android:drawableStart="@drawable/drawable_selector_orange_radio_button"
+                    android:drawablePadding="@dimen/dp18"
+                    android:paddingHorizontal="@dimen/dp25"
+                    android:paddingVertical="@dimen/dp10"
+                    android:text="@string/label_alphabetically_order"
+                    android:textColor="@color/text_orange_check_box_clr"
+                    android:textSize="@dimen/sp14" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/row"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/dp4"
+    android:background="@drawable/border_dark"
+    android:padding="@dimen/dp8"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <com.photoshooto.ui.job.utility.CircleImageView
+        android:id="@+id/imageViewProfile"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:src="@drawable/icn_placeholder_user"
+        app:civ_border_color="@color/grey_dc"
+        app:civ_border_width="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/dot"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/ic_dot"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewProfile"
+        app:layout_constraintEnd_toEndOf="@id/imageViewProfile" />
+
+    <TextView
+        android:id="@+id/userName"
+        style="@style/tvFontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintBottom_toTopOf="@id/userId"
+        app:layout_constraintStart_toEndOf="@id/imageViewProfile"
+        app:layout_constraintTop_toTopOf="@id/imageViewProfile"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Name" />
+
+    <TextView
+        android:id="@+id/userId"
+        style="@style/tvFontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/grey_6B"
+        android:textSize="@dimen/sp10"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewProfile"
+        app:layout_constraintStart_toEndOf="@id/imageViewProfile"
+        app:layout_constraintTop_toBottomOf="@id/userName"
+        tools:text="Id: ABC" />
+
+    <ImageView
+        android:id="@+id/check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp8"
+        android:src="@drawable/ic_shield"
+        app:layout_constraintStart_toEndOf="@id/userName"
+        app:layout_constraintTop_toTopOf="@id/userName" />
+
+    <TextView
+        android:id="@+id/city"
+        style="@style/tvFontRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp8"
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_marginBottom="10dp"
+        android:drawablePadding="@dimen/dp8"
+        android:paddingHorizontal="@dimen/dp4"
+        android:textColor="@color/grey_78"
+        android:textSize="@dimen/sp10"
+        app:drawableStartCompat="@drawable/location"
+        app:layout_constraintBottom_toTopOf="@id/camera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imageViewProfile"
+        app:layout_constraintTop_toBottomOf="@id/imageViewProfile"
+        tools:text="Ahm" />
+
+    <TextView
+        android:id="@+id/camera"
+        style="@style/tvFontRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp8"
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_marginBottom="10dp"
+        android:drawablePadding="@dimen/dp8"
+        android:paddingHorizontal="@dimen/dp4"
+        android:textColor="@color/grey_78"
+        android:textSize="@dimen/sp10"
+        app:drawableStartCompat="@drawable/ic_camera_dark"
+        app:layout_constraintBottom_toTopOf="@id/event"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imageViewProfile"
+        tools:text="Ahm" />
+
+    <TextView
+        android:id="@+id/event"
+        style="@style/tvFontRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp8"
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_marginBottom="10dp"
+        android:drawablePadding="@dimen/dp8"
+        android:paddingHorizontal="@dimen/dp4"
+        android:textColor="@color/grey_78"
+        android:textSize="@dimen/sp10"
+        app:drawableStartCompat="@drawable/megaphone_loud"
+        app:layout_constraintBottom_toTopOf="@id/btnDetails"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imageViewProfile"
+        tools:text="Ahm" />
+
+    <ImageView
+        android:id="@+id/verify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_verifed_profile"
+        app:layout_constraintBottom_toBottomOf="@id/btnDetails"
+        app:layout_constraintEnd_toStartOf="@id/btnDetails"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@id/imageViewProfile"
+        app:layout_constraintTop_toTopOf="@id/btnDetails" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnDetails"
+        style="@style/btnStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/colorOrange"
+        android:paddingHorizontal="10dp"
+        android:text="@string/check_availability"
+        android:textSize="@dimen/sp10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/verify" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

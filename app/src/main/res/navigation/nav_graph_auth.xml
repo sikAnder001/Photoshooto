@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_navigation"
+    app:startDestination="@id/fragmentRouting">
+
+    <fragment
+        android:id="@+id/fragmentRouting"
+        android:name="com.photoshooto.ui.photographersScreens.photographerAuth.fragments.FragmentRouting"
+        tools:layout="@layout/fragment_routing">
+        <action
+            android:id="@+id/action_fragmentRouting_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_fragmentRouting_to_signupFragment"
+            app:destination="@id/signupFragment"
+            app:popUpTo="@id/fragmentRouting"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_fragmentRouting_to_navigation_QrCode"
+            app:destination="@id/navigation_QrCode" />
+        <action
+            android:id="@+id/action_fragmentRouting_to_navigation_Terms"
+            app:destination="@id/navigation_Terms" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.photoshooto.ui.photographersScreens.photographerAuth.fragments.LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_fragmentMobileVerify"
+            app:destination="@id/fragmentMobileVerify"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.photoshooto.ui.photographersScreens.photographerAuth.fragments.FragmentPhotographerSignup"
+        android:label="fragment_forgot"
+        tools:layout="@layout/fragment_photo_signup">
+        <action
+            android:id="@+id/action_signupFragment_to_navigation_Terms"
+            app:destination="@id/navigation_Terms" />
+        <action
+            android:id="@+id/action_signupFragment_to_PhotographerMobileVerify"
+            app:destination="@id/fragmentPhotographerMobileVerify"
+            app:popUpTo="@id/signupFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentThanksRegister"
+        android:name="com.photoshooto.ui.signup.FragmentThanksRegister"
+        android:label="fragment_thanks_register"
+        tools:layout="@layout/fragment_thanks_register" />
+
+    <fragment
+        android:id="@+id/fragmentPhotographerMobileVerify"
+        android:name="com.photoshooto.ui.photographersScreens.photographerAuth.fragments.FragmentPhotographerMobileVerify"
+        android:label="fragment_photographer_mobile_verify"
+        tools:layout="@layout/fragment_photographer_mobile_verify">
+        <action
+            android:id="@+id/action_fragmentPhotographerMobileVerify_to_fragmentThanksRegister"
+            app:destination="@id/fragmentThanksRegister" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_Terms"
+        android:name="com.photoshooto.ui.terms.FragmentTermsPrivacy"
+        tools:layout="@layout/fragment_termsprivacy" />
+    <fragment
+        android:id="@+id/fragmentResetPwd"
+        android:name="com.photoshooto.ui.photographersScreens.photographerAuth.fragments.FragmentResetPwd"
+        android:label="FragmentResetPwd">
+        <action
+            android:id="@+id/action_fragmentResetPwd_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentMobileVerify"
+        android:name="com.photoshooto.ui.photographersScreens.photographerAuth.fragments.FragmentMobileVerify"
+        android:label="FragmentMobileVerify">
+        <action
+            android:id="@+id/action_fragmentMobileVerify_to_fragmentResetPwd"
+            app:destination="@id/fragmentResetPwd" />
+    </fragment>
+
+
+    <!--FragmentQrCode-->
+    <fragment
+        android:id="@+id/navigation_QrCode"
+        android:name="com.photoshooto.ui.general.FragmentQrCode"
+        tools:layout="@layout/fragment_barcode">
+
+        <action
+            android:id="@+id/action_FragmentQrCode_to_FragmentSignup"
+            app:destination="@id/navigation_user_signup"
+            app:popUpTo="@+id/auth_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_user_signup"
+        android:name="com.photoshooto.ui.signup.FragmentSignup"
+        tools:layout="@layout/fragment_signup">
+
+        <action
+            android:id="@+id/action_FragmentSignup_to_LoginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@+id/navigation_user_signup"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_FragmentSignup_to_HomeFragment"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+
+</navigation>

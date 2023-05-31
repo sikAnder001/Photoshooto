@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/dp20">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/dp20" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/dp20" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivStandee"
+            android:layout_width="@dimen/dp200"
+            android:layout_height="@dimen/dp200"
+            android:layout_marginTop="@dimen/dp20"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_standee_elite"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStandeeType"
+            style="@style/black_text_medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp16"
+            android:text="@string/elite_standee"
+            android:textColor="@color/grey27"
+            android:textSize="@dimen/sp20"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toEndOf="@+id/ivStandee"
+            app:layout_constraintTop_toTopOf="@+id/ivStandee" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLabelQty"
+            style="@style/black_text_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16"
+            android:text="@string/quantity"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintStart_toStartOf="@+id/tvStandeeType"
+            app:layout_constraintTop_toBottomOf="@id/tvStandeeType" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/viewQty"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp40"
+            android:layout_marginTop="@dimen/dp8"
+            android:background="@drawable/bg_cart_product_size"
+            android:paddingHorizontal="@dimen/dp15"
+            app:layout_constraintStart_toStartOf="@+id/tvStandeeType"
+            app:layout_constraintTop_toBottomOf="@+id/tvLabelQty">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cartMinus"
+                android:layout_width="@dimen/dp23"
+                android:layout_height="@dimen/dp23"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/dp5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeWidth="0dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/dp12"
+                    android:layout_height="@dimen/dp12"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_round_remove" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cartQty"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp23"
+                android:layout_marginStart="@dimen/dp10"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/dp5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cartMinus"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeWidth="0dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvQty"
+                    style="@style/black_text_medium"
+                    android:layout_width="@dimen/dp42"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/orange_clr"
+                    android:textSize="@dimen/sp12" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cartAdd"
+                android:layout_width="@dimen/dp23"
+                android:layout_height="@dimen/dp23"
+                android:layout_marginStart="@dimen/dp10"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/dp5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cartQty"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeWidth="0dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/dp12"
+                    android:layout_height="@dimen/dp12"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_round_add" />
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAmount"
+            style="@style/black_text_semi_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/price_amount"
+            android:textColor="@color/orange_clr"
+            android:textSize="@dimen/sp24"
+            app:layout_constraintBottom_toTopOf="@+id/tvLabelExlusiveTax"
+            app:layout_constraintStart_toStartOf="@+id/tvStandeeType" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLabelExlusiveTax"
+            style="@style/black_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/exclusive_all_taxes"
+            android:textColor="@color/grey_clr"
+            android:textSize="@dimen/sp10"
+            app:layout_constraintBottom_toBottomOf="@+id/ivStandee"
+            app:layout_constraintStart_toStartOf="@+id/tvStandeeType" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLabelStandeeSummary"
+            style="@style/black_text_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp30"
+            android:text="@string/standee_summary"
+            android:textSize="@dimen/sp16"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/ivStandee" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/viewStudioInformation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16"
+            app:cardCornerRadius="@dimen/dp10"
+            app:cardElevation="@dimen/dp3"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/tvLabelStandeeSummary"
+            app:strokeWidth="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp16">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_edit_pencil1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitleStudioName"
+                    style="@style/black_text_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/studio_name_photographer_name"
+                    android:textColor="@color/grey27"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_studio_name"
+                    style="@style/black_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:text="-"
+                    android:textColor="@color/grey28"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitleStudioName" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_studio_tagline_title"
+                    style="@style/black_text_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp20"
+                    android:text="@string/label_studio_tagline"
+                    android:textColor="@color/grey27"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_studio_name" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_studio_tagline"
+                    style="@style/black_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:text="-"
+                    android:textColor="@color/grey28"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_studio_tagline_title" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_photographer_id_title"
+                    style="@style/black_text_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp20"
+                    android:text="@string/photographer_id"
+                    android:textColor="@color/grey27"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_studio_tagline" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_photographer_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:text="-"
+                    android:textColor="@color/grey28"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_photographer_id_title" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_contact_number_title"
+                    style="@style/black_text_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp20"
+                    android:text="@string/contact_number"
+                    android:textColor="@color/grey27"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_photographer_id" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_contact_number"
+                    style="@style/black_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:text="-"
+                    android:textColor="@color/grey28"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_contact_number_title" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_alternative_number_title"
+                    style="@style/black_text_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp40"
+                    android:layout_marginTop="@dimen/dp20"
+                    android:text="@string/alternative_number"
+                    android:textColor="@color/grey27"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toEndOf="@id/txt_contact_number_title"
+                    app:layout_constraintTop_toBottomOf="@id/txt_photographer_id" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_alternative_number"
+                    style="@style/black_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:text="-"
+                    android:textColor="@color/grey28"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="@id/txt_alternative_number_title"
+                    app:layout_constraintTop_toBottomOf="@id/txt_alternative_number_title" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_studio_address_title"
+                    style="@style/black_text_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp20"
+                    android:text="@string/studio_address"
+                    android:textColor="@color/grey27"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_contact_number" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_studio_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:text="-"
+                    android:textColor="@color/grey28"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_studio_address_title" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_standee_1"
+                    android:layout_width="@dimen/dp40"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_marginTop="@dimen/dp20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_studio_address" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_standee_2"
+                    android:layout_width="@dimen/dp40"
+                    android:layout_height="@dimen/dp40"
+                    android:layout_marginStart="@dimen/dp20"
+                    app:layout_constraintStart_toEndOf="@id/img_standee_1"
+                    app:layout_constraintTop_toTopOf="@id/img_standee_1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnAddToCart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:layout_marginEnd="@dimen/dp8"
+            android:background="@drawable/orange_button_ripple"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/dp20"
+            android:paddingVertical="@dimen/dp15"
+            android:text="@string/btn_add_to_cart"
+            android:textAppearance="@style/sp14_white_txt"
+            android:textSize="@dimen/sp16"
+            app:layout_constraintEnd_toStartOf="@+id/btnBuyNow"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/viewStudioInformation" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnBuyNow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_marginTop="@dimen/dp20"
+            android:background="@drawable/orange_borderbutton_ripple"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/dp20"
+            android:paddingVertical="@dimen/dp15"
+            android:text="@string/btn_buy_now"
+            android:textAppearance="@style/sp14_white_txt"
+            android:textColor="@color/orange_clr"
+            android:textSize="@dimen/sp16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnAddToCart"
+            app:layout_constraintTop_toBottomOf="@+id/viewStudioInformation" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

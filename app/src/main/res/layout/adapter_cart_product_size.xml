@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvQtyLabel"
+        style="@style/black_text_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dp10"
+        android:text="@string/label_quantity"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSizeLabel"
+        style="@style/black_text_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dp10"
+        android:text="@string/label_size"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintStart_toStartOf="@+id/spinnerSize"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp40"
+        android:layout_marginTop="@dimen/dp8"
+        android:background="@drawable/bg_cart_product_size"
+        android:paddingHorizontal="@dimen/dp15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvQtyLabel">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cartMinus"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp23"
+            android:maxWidth="@dimen/dp23"
+            android:minWidth="@dimen/dp14"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/dp5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeWidth="0dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dp12"
+                android:layout_height="@dimen/dp12"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_round_remove" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cartQty"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp23"
+            android:layout_marginStart="@dimen/dp10"
+            android:maxWidth="@dimen/dp42"
+            android:minWidth="@dimen/dp20"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/dp5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cartMinus"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeWidth="0dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvQty"
+                style="@style/black_text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/orange_clr"
+                android:textSize="@dimen/sp12" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cartAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp23"
+            android:layout_marginStart="@dimen/dp10"
+            android:maxWidth="@dimen/dp23"
+            android:minWidth="@dimen/dp14"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/dp5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cartQty"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeWidth="0dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dp12"
+                android:layout_height="@dimen/dp12"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_round_add" />
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinnerSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp10"
+        android:background="@drawable/bg_cart_product_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/constraintLayout"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout" />
+</androidx.constraintlayout.widget.ConstraintLayout>

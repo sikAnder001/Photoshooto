@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_20sdp"
+            app:cardCornerRadius="@dimen/_7sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintProgrss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:padding="@dimen/_6sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/circularProgressbar"
+                        app:layout_constraintEnd_toEndOf="@id/circularProgressbar"
+                        app:layout_constraintStart_toStartOf="@id/circularProgressbar"
+                        app:layout_constraintTop_toTopOf="@id/circularProgressbar"
+                        app:srcCompat="@drawable/circle_dash" />
+
+                    <com.photoshoots.customCircleTimer.CircularSeekBar
+                        android:id="@+id/circularProgressbar"
+                        android:layout_width="@dimen/_120sdp"
+                        android:layout_height="@dimen/_120sdp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        app:cs_circle_color="@android:color/transparent"
+                        app:cs_circle_progress_color="@color/text_054871"
+                        app:cs_circle_stroke_width="6dp"
+                        app:cs_circle_style="round"
+                        app:cs_disable_progress_glow="true"
+                        app:cs_pointer_color="@color/text_F0481B"
+                        app:cs_pointer_halo_width="1dp"
+                        app:cs_pointer_stroke_width="15dp"
+                        app:cs_progress="100"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvBSTimeRemain"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="00:00:00"
+                        android:textColor="@color/text_054871"
+                        android:textSize="@dimen/_16ssp"
+                        app:fontFamily="@font/poppins_medium"
+                        app:layout_constraintBottom_toBottomOf="@id/circularProgressbar"
+                        app:layout_constraintEnd_toEndOf="@id/circularProgressbar"
+                        app:layout_constraintStart_toStartOf="@id/circularProgressbar"
+                        app:layout_constraintTop_toTopOf="@id/circularProgressbar" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewDurationReminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_20sdp"
+                    app:cardCornerRadius="@dimen/_7sdp"
+                    app:cardElevation="@dimen/_5sdp"
+                    app:layout_constraintBottom_toTopOf="@id/linearTotalScanned"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/constraintProgrss">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/linearRemindMe"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/_10sdp"
+                            android:paddingVertical="@dimen/_7sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/viewCenter"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvBSRemindMe"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:includeFontPadding="false"
+                                android:text="@string/remind_me"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_9ssp"
+                                app:fontFamily="@font/poppins_medium"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvBSRemindMeTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:includeFontPadding="false"
+                                android:text="0h:12m"
+                                android:textColor="@color/text_054871"
+                                android:textSize="@dimen/_16ssp"
+                                app:fontFamily="@font/poppins_medium"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tvBSRemindMe" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imageAddTime"
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:background="@drawable/circle_dash_add"
+                                android:padding="@dimen/_1sdp"
+                                app:layout_constraintBottom_toBottomOf="@id/tvBSRemindMeTime"
+                                app:layout_constraintStart_toEndOf="@id/tvBSRemindMeTime"
+                                app:layout_constraintTop_toTopOf="@id/tvBSRemindMeTime"
+                                app:srcCompat="@drawable/ic_set_timer_add" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <View
+                            android:id="@+id/viewCenter"
+                            android:layout_width="1dp"
+                            android:layout_height="0dp"
+                            android:background="#E9E4E4"
+                            app:layout_constraintBottom_toBottomOf="@id/linearRemindMe"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/linearRemindMe" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/linearDuration"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/_10sdp"
+                            android:paddingVertical="@dimen/_7sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/viewCenter">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvBSDuration"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="@string/duration"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_9ssp"
+                                app:fontFamily="@font/poppins_medium"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvBSDurationTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:includeFontPadding="false"
+                                android:text="5h:45m"
+                                android:textColor="@color/text_054871"
+                                android:textSize="@dimen/_16ssp"
+                                app:fontFamily="@font/poppins_medium"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tvBSDuration" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/linearTotalScanned"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvBSTotalQrScanned"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="@string/plople_scanned_qr_codes"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        app:fontFamily="@font/poppins_medium" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvBSTotalCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        android:includeFontPadding="false"
+                        android:text="75"
+                        android:textColor="@color/text_054871"
+                        android:textSize="@dimen/_16ssp"
+                        app:fontFamily="@font/poppins_medium" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageEdit"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_margin="@dimen/_15sdp"
+                    android:padding="@dimen/_3sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_edit" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.qrorderhistory.AllEventFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:visibility="visible">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/search_badge"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_margin="@dimen/dp10"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/recycler_event_list">
+
+            <androidx.appcompat.widget.SearchView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp42"
+                android:layout_marginRight="@dimen/dp5"
+                android:layout_weight=".45"
+                android:background="@drawable/ic_edittext_bg"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14"
+                app:queryHint="Search" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivFilter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp42"
+                android:layout_marginLeft="@dimen/dp5"
+                android:layout_weight="1.3"
+                android:background="@drawable/edittext_bg"
+                android:padding="@dimen/dp10"
+                android:src="@drawable/ic_filter"
+                android:textColor="@color/blue_tv"
+                android:textSize="12sp" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_event_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            app:layout_constraintBottom_toBottomOf="@id/search_badge" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

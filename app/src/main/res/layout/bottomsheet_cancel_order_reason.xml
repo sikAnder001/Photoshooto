@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/half_curve_top_white"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_10sdp">
+
+        <View
+            android:id="@+id/viewDivider"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_3sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bottomsheet_divider_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="Report"
+                android:textColor="@color/blue_tv"
+                android:textSize="@dimen/_14ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvClear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:fontFamily="@font/poppins_medium"
+                android:text="Clear"
+                android:textColor="@color/grey3"
+                android:textSize="@dimen/_10ssp" />
+
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/chkOrderMistake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/_10sdp"
+            android:buttonTint="@color/blue_tv"
+            android:checked="false"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="@dimen/_5sdp"
+            android:text="Order created by mistake"
+            android:textColor="@color/blue_tv" />
+
+        <CheckBox
+            android:id="@+id/chkArrivalTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:buttonTint="@color/blue_tv"
+
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="@dimen/_5sdp"
+            android:text="Items(s) would not arrive on time"
+            android:textColor="@color/blue_tv" />
+
+
+        <CheckBox
+            android:id="@+id/chkFoundCheaper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/blue_tv"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="@dimen/_5sdp"
+            android:text="Found Cheaper somewhere else"
+            android:textColor="@color/blue_tv" />
+
+        <CheckBox
+            android:id="@+id/chkDoNotNeedProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/blue_tv"
+
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="@dimen/_5sdp"
+            android:text="Don't need product anymore"
+            android:textColor="@color/blue_tv" />
+
+        <CheckBox
+            android:id="@+id/chkChangeShippingAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:buttonTint="@color/blue_tv"
+
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="@dimen/_5sdp"
+            android:text="Need to change the Shipping Address"
+            android:textColor="@color/blue_tv" />
+
+        <CheckBox
+            android:id="@+id/chkChangeMyMind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:buttonTint="@color/blue_tv"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="@dimen/_5sdp"
+            android:text="Changed my mind"
+            android:textColor="@color/blue_tv" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnApply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/btn_back_red"
+            android:paddingVertical="@dimen/_12ssp"
+            android:text="Apply"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            app:cornerRadius="10dp"
+            app:fontFamily="@font/poppins_regular" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "841682559343",
+    "project_id": "photoshooto-9d1cd",
+    "storage_bucket": "photoshooto-9d1cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841682559343:android:ec046058a5434131f7c89a",
+        "android_client_info": {
+          "package_name": "com.photoshooto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841682559343-01k982aq0r3gf8v6j7dqosppt2cijhho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4KQhqG8m_4TFMLHkDXpoMRDiZvNmMd2U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "841682559343-01k982aq0r3gf8v6j7dqosppt2cijhho.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toast_layout_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:layout_marginBottom="@dimen/_20sdp"
+    android:background="@drawable/light_green_back"
+    android:orientation="horizontal"
+    android:paddingHorizontal="@dimen/_15sdp"
+    android:paddingVertical="10dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/ic_green_tick_circle" />
+
+    <TextView
+        android:id="@+id/approveOrDeclineTv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:gravity="center_vertical"
+        android:text="@string/job_approved"
+        android:textAppearance="@style/sp12_black_clr_txt" />
+
+    <TextView
+        android:id="@+id/toastId"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" whilte"
+        android:textAppearance="@style/sp12_green_style" />
+</LinearLayout>

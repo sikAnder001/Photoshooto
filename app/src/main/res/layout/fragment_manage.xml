@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.admin_screen.manage_admin.ManageFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/viewActionBar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingHorizontal="@dimen/dp24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSideMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_side_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/black_text_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp20"
+            android:text="@string/label_manage_admins"
+            android:textColor="@color/blue_clr"
+            android:textSize="@dimen/sp24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivSideMenu"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivNotification"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_notification_bell"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewActionBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/dp16" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/dp16" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitleSuperAdmins"
+                style="@style/black_text_medium"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp72"
+                android:layout_marginTop="@dimen/dp20"
+                android:background="@drawable/bg_manage_admin_title"
+                android:gravity="center|start"
+                android:paddingHorizontal="@dimen/dp20"
+                android:text="@string/label_super_admins"
+                android:textColor="@color/blue_clr"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnSuperAdminViewAll"
+                style="@style/black_text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp10"
+                android:text="@string/label_view_all"
+                android:textColor="@color/orange_clr"
+                android:textSize="@dimen/sp12"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/tvTitleSuperAdmins"
+                app:layout_constraintEnd_toEndOf="@+id/tvTitleSuperAdmins"
+                app:layout_constraintTop_toTopOf="@+id/tvTitleSuperAdmins" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewSuperAdmins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:padding="@dimen/dp8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleSuperAdmins" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitleAdmins"
+                style="@style/black_text_medium"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp72"
+                android:layout_marginTop="@dimen/dp20"
+                android:background="@drawable/bg_manage_admin_title"
+                android:gravity="center|start"
+                android:paddingHorizontal="@dimen/dp20"
+                android:text="@string/label_admins"
+                android:textColor="@color/blue_clr"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewSuperAdmins" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivAddNewAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp10"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_blue_round_plus"
+                app:layout_constraintBottom_toBottomOf="@+id/tvTitleAdmins"
+                app:layout_constraintEnd_toStartOf="@+id/btnAdminViewAll"
+                app:layout_constraintTop_toTopOf="@+id/tvTitleAdmins" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnAdminViewAll"
+                style="@style/black_text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp10"
+                android:text="@string/label_view_all"
+                android:textColor="@color/orange_clr"
+                android:textSize="@dimen/sp12"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/tvTitleAdmins"
+                app:layout_constraintEnd_toEndOf="@+id/tvTitleAdmins"
+                app:layout_constraintTop_toTopOf="@+id/tvTitleAdmins" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewAdmins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:padding="@dimen/dp8"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleAdmins"
+                app:spanCount="3" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitleInactiveAdmins"
+                style="@style/black_text_medium"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp72"
+                android:layout_marginTop="@dimen/dp20"
+                android:background="@drawable/bg_grey_manage_admin_title"
+                android:gravity="center|start"
+                android:paddingHorizontal="@dimen/dp20"
+                android:text="@string/label_inactive_admins"
+                android:textColor="@color/grey15"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewAdmins" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnInactiveAdminViewAll"
+                style="@style/black_text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp10"
+                android:text="@string/label_view_all"
+                android:textColor="@color/orange_clr"
+                android:textSize="@dimen/sp12"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/tvTitleInactiveAdmins"
+                app:layout_constraintEnd_toEndOf="@+id/tvTitleInactiveAdmins"
+                app:layout_constraintTop_toTopOf="@+id/tvTitleInactiveAdmins" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewInactiveAdmins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:padding="@dimen/dp8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleInactiveAdmins" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

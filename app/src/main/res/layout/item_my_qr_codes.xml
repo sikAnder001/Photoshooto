@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_12sdp"
+    android:layout_marginVertical="@dimen/_7sdp"
+    android:background="@drawable/gray_bg_border"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/_10sdp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearItemMyQrDownload"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/bg_qr_download"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@id/tvItemQrViewOrder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageItemQrMain"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:src="@drawable/image_my_qr_code" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemQrDownload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/back_date_time_fill_five"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:paddingVertical="@dimen/_5sdp"
+            android:text="@string/label_download"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9ssp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="@id/linearItemMyQrDownload"
+        app:layout_constraintEnd_toStartOf="@+id/imageItemQrOption"
+        app:layout_constraintStart_toEndOf="@id/linearItemMyQrDownload"
+        app:layout_constraintTop_toTopOf="@id/linearItemMyQrDownload">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemQrTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:includeFontPadding="false"
+            android:paddingVertical="@dimen/_2sdp"
+            android:text="@string/elite_qr_code"
+            android:textColor="@color/color_202020"
+            android:textSize="@dimen/_13ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemQrId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:includeFontPadding="false"
+            android:paddingVertical="@dimen/_1sdp"
+            android:text="QR ID : PS13829876"
+            android:textColor="@color/text_8B8B8B"
+            android:textSize="@dimen/_8ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemQrQty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:includeFontPadding="false"
+            android:paddingVertical="@dimen/_1sdp"
+            android:text="Quantity : 2"
+            android:textColor="@color/text_8B8B8B"
+            android:textSize="@dimen/_8ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemQrType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:includeFontPadding="false"
+            android:paddingVertical="@dimen/_1sdp"
+            android:text="Standee Type : Elite "
+            android:textColor="@color/text_8B8B8B"
+            android:textSize="@dimen/_8ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemQrDateGenerated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:includeFontPadding="false"
+            android:paddingVertical="@dimen/_1sdp"
+            android:text="Date Generated : 22/09/2022    03:33 PM"
+            android:textColor="@color/text_8B8B8B"
+            android:textSize="@dimen/_8ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemQrOrderDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:includeFontPadding="false"
+            android:paddingVertical="@dimen/_1sdp"
+            android:text="Ordered Date : 23/09/2022"
+            android:textColor="@color/text_8B8B8B"
+            android:textSize="@dimen/_8ssp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageItemQrOption"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:padding="@dimen/_2sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_three_dot" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvItemQrViewOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back_my_qr_view_order"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="@dimen/_7sdp"
+        android:text="@string/view_orders"
+        android:textColor="@color/text_054871"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

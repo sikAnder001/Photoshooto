@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivProductImage"
+        android:layout_width="@dimen/dp100"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp30"
+        android:adjustViewBounds="true"
+        android:src="@drawable/img_temp_product_tshirt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTotalUnits"
+        style="@style/black_text_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:paddingBottom="@dimen/dp16"
+        android:text="Total Unit: 8"
+        android:textColor="@color/blue_clr"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintEnd_toEndOf="@+id/ivProductImage"
+        app:layout_constraintStart_toStartOf="@+id/ivProductImage"
+        app:layout_constraintTop_toBottomOf="@+id/ivProductImage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvProductName"
+        style="@style/black_text_semi_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp20"
+        android:text="Name"
+        android:textColor="@color/blue_clr"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintStart_toEndOf="@+id/ivProductImage"
+        app:layout_constraintTop_toTopOf="@+id/ivProductImage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSortDescription"
+        style="@style/black_text_medium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp3"
+        android:layout_marginEnd="@dimen/dp16"
+        android:text="Sort Description"
+        android:textColor="@color/grey5"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvProductName"
+        app:layout_constraintTop_toBottomOf="@+id/tvProductName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvOrderId"
+        style="@style/black_text_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp3"
+        android:text="Order ID"
+        android:textColor="@color/grey5"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintStart_toStartOf="@+id/tvProductName"
+        app:layout_constraintTop_toBottomOf="@+id/tvSortDescription" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewSize"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp20"
+        android:nestedScrollingEnabled="false"
+        android:paddingBottom="@dimen/dp30"
+        app:layout_constraintEnd_toStartOf="@id/ivAddNewSize"
+        app:layout_constraintStart_toStartOf="@+id/tvProductName"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderId"
+        tools:itemCount="2"
+        tools:listitem="@layout/adapter_cart_product_size" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivAddNewSize"
+        android:layout_width="@dimen/dp20"
+        android:layout_height="@dimen/dp20"
+        android:layout_marginStart="@dimen/dp5"
+        android:layout_marginEnd="@dimen/dp17"
+        android:layout_marginBottom="@dimen/dp40"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_round_add"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerViewSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/recyclerViewSize"
+        app:tint="@color/orange_clr" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp1"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"
+        android:background="@color/grey4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

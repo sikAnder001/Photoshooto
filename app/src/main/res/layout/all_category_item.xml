@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="126dp"
+    android:layout_marginStart="6dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginEnd="6dp"
+    android:layout_marginBottom="6dp"
+    android:background="@drawable/ic_all_category"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:paddingBottom="5dp">
+
+
+    <ImageView
+        android:id="@+id/imgCategory"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/temp_category_1" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvSearchCount"
+        android:layout_gravity="center"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="3dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Cameras"
+        android:textColor="@color/text_054871"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvSearchCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10sp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Search over 5000+ products"
+        android:textColor="@color/text_054871"
+        android:textSize="10sp" />
+
+</RelativeLayout>
+

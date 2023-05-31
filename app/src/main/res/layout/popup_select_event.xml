@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_280sdp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selected_tab_bg"
+    android:paddingBottom="@dimen/_10sdp"
+    app:cardCornerRadius="@dimen/_8sdp"
+    app:cardElevation="0dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+
+    <ImageView
+        android:id="@+id/img_logo_menu"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:src="@drawable/alert_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/What_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:text="What would you like to prefer ?"
+        android:textColor="@color/blue_text"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_logo_menu" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_qrEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_60sdp"
+        android:background="@drawable/custom_btn"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="QR Event"
+        android:textAllCaps="false"
+        android:textColor="@color/blue_clr"
+        android:textSize="@dimen/_10ssp"
+
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/What_tv"
+
+
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_nEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginStart="@dimen/_60sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@drawable/blue_btn_bg"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:paddingHorizontal="@dimen/_8sdp"
+        android:text="Normal Event"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/What_tv"
+
+
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

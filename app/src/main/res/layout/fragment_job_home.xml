@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar_job_posting_home"
+        layout="@layout/toolbar_with_back_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <include
+        android:id="@+id/searchLayout"
+        layout="@layout/search_by_loc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_job_posting_home" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:paddingTop="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp">
+
+            <include layout="@layout/layout_guideline" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/view_pager_banner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewActionBar" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/dots_indicator"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:background="@color/screen_bg_clr"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@+id/view_pager_banner"
+                app:tabBackground="@drawable/bg_tab_selector_orange"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="0dp"
+                app:tabPaddingEnd="@dimen/dp8"
+                app:tabPaddingStart="@dimen/dp8"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/label"
+                style="@style/tvFontBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/latest_jobs"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintEnd_toStartOf="@id/viewAll1"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/dots_indicator" />
+
+            <TextView
+                android:id="@+id/viewAll1"
+                style="@style/tvFontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@string/label_view_all"
+                android:textColor="@color/colorOrange"
+                android:textSize="@dimen/sp14"
+                app:drawableEndCompat="@drawable/ic_arrow_right"
+                app:layout_constraintBottom_toBottomOf="@id/label"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintTop_toTopOf="@id/label" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerJob"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dp16"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:paddingBottom="5dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label"
+                tools:listitem="@layout/list_job_home_row" />
+
+            <TextView
+                android:id="@+id/label2"
+                style="@style/tvFontBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/available_photographers_near_you"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintEnd_toStartOf="@id/viewAll2"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/recyclerJob" />
+
+            <TextView
+                android:id="@+id/viewAll2"
+                style="@style/tvFontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@string/label_view_all"
+                android:textColor="@color/colorOrange"
+                android:textSize="@dimen/sp14"
+                app:drawableEndCompat="@drawable/ic_arrow_right"
+                app:layout_constraintBottom_toBottomOf="@id/label2"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintTop_toTopOf="@id/label2" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerPhotographers"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dp16"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:paddingBottom="5dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label2"
+                tools:listitem="@layout/list_photographer_home_row" />
+
+            <TextView
+                android:id="@+id/label3"
+                style="@style/tvFontBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/used_photography_products"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintEnd_toStartOf="@id/viewAll2"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/recyclerPhotographers" />
+
+            <TextView
+                android:id="@+id/viewAll3"
+                style="@style/tvFontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@string/label_view_all"
+                android:textColor="@color/colorOrange"
+                android:textSize="@dimen/sp14"
+                app:drawableEndCompat="@drawable/ic_arrow_right"
+                app:layout_constraintBottom_toBottomOf="@id/label3"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintTop_toTopOf="@id/label3" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerCamera"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dp16"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:paddingStart="15dp"
+                android:paddingBottom="5dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label3"
+                tools:listitem="@layout/used_products_list_item" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

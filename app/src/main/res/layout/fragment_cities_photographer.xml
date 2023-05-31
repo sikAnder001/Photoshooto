@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.userhomepage.CitiesPhotographerFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.dashboard.ui.notifications.NotificationsFragment">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp10"
+            android:background="@drawable/edittext_bg"
+            android:ems="10"
+            android:iconifiedByDefault="false"
+            android:inputType="textPersonName"
+            android:queryBackground="@color/white"
+            android:textColorHint="@color/black"
+            app:iconifiedByDefault="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryBackground="@android:color/transparent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp5"
+            android:fontFamily="serif"
+            android:padding="2dp"
+            android:text="Top Photographers in Mumbai"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp12"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/searchView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp5"
+            android:scrollbars="vertical"
+            app:layout_constraintTop_toBottomOf="@id/tvWelcome"
+            tools:itemCount="5"
+            tools:listitem="@layout/top_items" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

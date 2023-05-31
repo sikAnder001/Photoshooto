@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.photographer.FragmentPhotographerPersonal">
+
+    <include
+        android:id="@+id/toolbar_edit_professional_details"
+        layout="@layout/toolbar_with_back_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp48"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        android:paddingBottom="@dimen/dp80"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_edit_professional_details">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="-218dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appCompatImageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_50sdp"
+                android:src="@drawable/profile_update"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/professiontext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp27"
+                android:drawableStart="@drawable/ic_suitcase"
+                android:drawablePadding="@dimen/dp10"
+                android:includeFontPadding="false"
+                android:text="@string/profession"
+                android:textAppearance="@style/sp16_blue_style"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appCompatImageView2" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edit_profession"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp50"
+                android:layout_marginHorizontal="@dimen/dp27"
+                android:layout_marginTop="@dimen/dp8"
+                android:background="@drawable/ic_edittext_bg"
+                android:hint="@string/select_profession"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/dp10"
+                android:textAppearance="@style/sp14_grey_clr2_txt"
+                app:layout_constraintStart_toStartOf="@id/professiontext"
+                app:layout_constraintTop_toBottomOf="@id/professiontext" />
+
+            <TextView
+                android:id="@+id/errorprofession"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp5"
+                android:text="@string/enter_select_profession"
+                android:textColor="@color/primaryRedColor"
+                android:textSize="@dimen/sp14"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/professiontext"
+                app:layout_constraintTop_toBottomOf="@id/edit_profession" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/studiotext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp12"
+                android:drawableStart="@drawable/ic_suitcase"
+                android:drawablePadding="@dimen/dp10"
+                android:includeFontPadding="false"
+                android:text="@string/studio_name"
+                android:textAppearance="@style/sp16_blue_style"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/errorprofession"
+                app:layout_constraintTop_toBottomOf="@id/errorprofession" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edit_stusio"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp50"
+                android:layout_marginHorizontal="@dimen/dp27"
+                android:layout_marginTop="@dimen/dp8"
+                android:background="@drawable/ic_edittext_bg"
+                android:hint="@string/enter_studio_name"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/dp10"
+                android:textAppearance="@style/sp14_grey_clr2_txt"
+                app:layout_constraintStart_toStartOf="@id/studiotext"
+                app:layout_constraintTop_toBottomOf="@id/studiotext" />
+
+            <TextView
+                android:id="@+id/errorstudio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp5"
+                android:text="@string/enter_studio_name"
+                android:textColor="@color/primaryRedColor"
+                android:textSize="@dimen/sp14"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/studiotext"
+                app:layout_constraintTop_toBottomOf="@id/edit_stusio" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/experiencetext"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp25"
+                android:layout_marginTop="@dimen/dp12"
+                android:drawableStart="@drawable/ic_experience_blue"
+                android:drawablePadding="@dimen/dp10"
+                android:includeFontPadding="false"
+                android:text="@string/experience"
+                android:textAppearance="@style/sp16_blue_style"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/errorstudio"
+                app:layout_constraintTop_toBottomOf="@id/errorstudio" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/experience"
+                android:layout_width="@dimen/dp190"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp1"
+                android:layout_marginTop="@dimen/dp8"
+                android:background="@drawable/ic_edittext_bg"
+                android:paddingHorizontal="@dimen/dp10"
+                android:paddingTop="@dimen/dp5"
+                app:layout_constraintStart_toStartOf="@id/experiencetext"
+                app:layout_constraintTop_toBottomOf="@id/experiencetext">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/minus_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_subtract"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/experience_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp5"
+                    android:background="@null"
+                    android:text="0 Year"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/plus_img"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@id/minus_img"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/plus_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_plus"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/error_experience"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp5"
+                android:text="@string/select_experience"
+                android:textColor="@color/primaryRedColor"
+                android:textSize="@dimen/sp14"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/experience"
+                app:layout_constraintTop_toBottomOf="@id/experience" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp80"
+                android:layout_marginTop="@dimen/dp5"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/experience"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/green_loading" />
+
+            <RadioGroup
+                android:id="@+id/rg_card_selection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp27"
+                android:layout_marginTop="@dimen/dp12"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/error_experience"
+                app:layout_constraintTop_toBottomOf="@id/error_experience">
+
+                <RadioButton
+                    android:id="@+id/rb_visiting_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:includeFontPadding="false"
+                    android:text="@string/visiting_card"
+                    android:textAppearance="@style/sp16_blue_style"
+                    android:textColor="@color/blue_clr"
+                    android:textSize="@dimen/sp16" />
+
+                <RadioButton
+                    android:id="@+id/rb_association_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@string/association_card"
+                    android:textAppearance="@style/sp16_blue_style"
+                    android:textColor="@color/blue_clr"
+                    android:textSize="@dimen/sp16" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/card_preview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp27"
+                android:drawablePadding="@dimen/dp5"
+                android:text="@string/preview"
+                android:textAppearance="@style/sp12_orange_txt"
+                android:visibility="gone"
+                app:drawableLeftCompat="@drawable/ic_eye_small"
+                app:layout_constraintBottom_toTopOf="@id/layout_card"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.99"
+                app:layout_constraintTop_toBottomOf="@id/rg_card_selection"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layout_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp27"
+                android:layout_marginTop="@dimen/dp12"
+                android:background="@drawable/ic_edittext_bg"
+                android:gravity="center|start"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_preview">
+
+                <ImageView
+                    android:id="@+id/card_status"
+                    android:layout_width="@dimen/dp20"
+                    android:layout_height="@dimen/dp20"
+                    android:layout_marginStart="@dimen/dp12"
+                    android:src="@drawable/ic_exclamatory"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/edit_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp50"
+                    android:gravity="center|start"
+                    android:inputType="text"
+                    android:paddingHorizontal="@dimen/dp10"
+                    android:text="@string/upload_your_visiting_card"
+                    android:textAppearance="@style/sp14_grey_clr2_txt"
+                    android:textSize="@dimen/sp12"
+                    app:drawableEndCompat="@drawable/ic_upload_txt" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:id="@+id/errorCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp5"
+                android:text="@string/enter_visiting_card"
+                android:textColor="@color/primaryRedColor"
+                android:textSize="@dimen/sp14"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/layout_card"
+                app:layout_constraintTop_toBottomOf="@id/layout_card" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_equipment_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp27"
+                android:layout_marginTop="@dimen/dp12"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/layout_card"
+                app:layout_constraintTop_toBottomOf="@id/errorCard">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_equipment_use"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_equipments"
+                    android:drawablePadding="@dimen/dp10"
+                    android:includeFontPadding="false"
+                    android:text="@string/equipments_you_use"
+                    android:textAppearance="@style/sp16_blue_style"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/appCompatImageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add_plus"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.99"
+                    app:layout_constraintStart_toEndOf="@+id/txt_equipment_use"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edit_equipment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp27"
+                android:layout_marginTop="@dimen/dp8"
+                android:background="@drawable/ic_edittext_bg"
+                android:gravity="top|start"
+                android:hint="@string/enter_equipment_details"
+                android:maxLength="1000"
+                android:maxLines="4"
+                android:minHeight="@dimen/dp100"
+                android:padding="@dimen/dp8"
+                android:textAppearance="@style/sp14_grey_clr2_txt"
+                app:layout_constraintStart_toStartOf="@id/layout_equipment_title"
+                app:layout_constraintTop_toBottomOf="@id/layout_equipment_title" />
+
+            <TextView
+                android:id="@+id/error_equipment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp27"
+                android:layout_marginTop="@dimen/dp5"
+                android:text="@string/enter_your_name"
+                android:textColor="@color/primaryRedColor"
+                android:textSize="@dimen/sp14"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_equipment" />
+
+            <TextView
+                android:id="@+id/btnProfessionUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp42"
+                android:layout_marginHorizontal="@dimen/dp30"
+                android:layout_marginTop="@dimen/dp30"
+                android:layout_marginBottom="@dimen/dp20"
+                android:background="@drawable/orange_button_ripple"
+                android:gravity="center"
+                android:text="@string/update"
+                android:textAppearance="@style/sp18_white_txt"
+                app:layout_constraintStart_toStartOf="@+id/error_equipment"
+                app:layout_constraintTop_toBottomOf="@+id/error_equipment" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

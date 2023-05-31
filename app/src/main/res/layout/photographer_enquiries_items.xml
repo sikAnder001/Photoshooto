@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_enquiry"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="10dp"
+    tools:ignore="MissingDefaultResource">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_enquiry_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingVertical="@dimen/dp20">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_profile_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp16"
+            android:minWidth="@dimen/dp55"
+            android:minHeight="@dimen/dp55"
+            android:src="@drawable/ic_temp_user_profile"
+            app:layout_constraintEnd_toStartOf="@id/user_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp16"
+            android:text="Prashant Trivedi"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:fontFamily="@font/poppins_regular"
+            app:layout_constraintEnd_toStartOf="@id/user_profile_id"
+            app:layout_constraintStart_toEndOf="@id/user_profile_img"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/user_profile_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp12"
+            android:text="987612"
+            android:textColor="@color/grey_clr_light"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            app:fontFamily="@font/poppins_light"
+            app:layout_constraintEnd_toStartOf="@+id/date"
+            app:layout_constraintStart_toEndOf="@id/user_name"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp16"
+            android:text=" 23 Aug"
+            android:textColor="@color/grey_clr_light"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            app:fontFamily="@font/poppins_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/event_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Wedding Photographer"
+            android:textColor="@color/grey_clr_light"
+            android:textSize="12dp"
+            app:fontFamily="@font/poppins_light"
+            app:layout_constraintStart_toStartOf="@id/user_name"
+            app:layout_constraintTop_toBottomOf="@id/user_name" />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/contact_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="@dimen/dp16"
+            android:minWidth="@dimen/dp55"
+            android:minHeight="@dimen/dp55"
+            android:src="@drawable/whatsapp_messanger_icon"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/date" />
+
+        <TextView
+            android:id="@+id/event_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Bangalore"
+            android:textColor="@color/grey_clr_light"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            app:fontFamily="@font/poppins_light"
+            app:layout_constraintStart_toStartOf="@id/event_type"
+            app:layout_constraintTop_toBottomOf="@id/event_type" />
+
+        <TextView
+            android:id="@+id/event_date_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginTop="@dimen/dp20"
+            android:text="Event Date:- 2/02/2023"
+            android:textColor="@color/grey_clr_light"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            app:fontFamily="@font/poppins_light"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/event_location" />
+
+        <TextView
+            android:id="@+id/tvViewMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/dp20"
+            android:layout_marginEnd="@dimen/dp16"
+            android:drawableEnd="@drawable/ic_down_arrow"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/blue_clr"
+            android:text="@string/view_enquiry"
+            android:textColor="@color/blue_clr"
+            android:textSize="10dp"
+            app:fontFamily="@font/poppins_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/event_location"
+            app:layout_constraintVertical_bias="0" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/llMore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:orientation="vertical"
+            android:paddingBottom="6dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/tvViewMore">
+
+            <View
+                android:id="@+id/view_separator"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/grey_clr_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/event_date_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp16"
+                android:text="Event Date:- 2/02/2023"
+                android:textColor="@color/grey_clr_light"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:fontFamily="@font/poppins_light"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_separator" />
+
+            <TextView
+                android:id="@+id/event_type_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp10"
+                android:text="Event Type :- Wedding"
+                android:textColor="@color/grey_clr_light"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:fontFamily="@font/poppins_light"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/event_date_2" />
+
+            <TextView
+                android:id="@+id/no_of_quest_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp10"
+                android:text="No. Of Guest :- 500"
+                android:textColor="@color/grey_clr_light"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:fontFamily="@font/poppins_light"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/event_type_data" />
+
+            <TextView
+                android:id="@+id/budget_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp10"
+                android:text="Budget :- Rs. 2-3 Lakhs"
+                android:textColor="@color/grey_clr_light"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:fontFamily="@font/poppins_light"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/no_of_quest_data" />
+
+            <TextView
+                android:id="@+id/preferred_date_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp10"
+                android:text="Preferred Date :- 02/01/2023 10:15 AM - 05/01/2023 12:30 PM"
+                android:textColor="@color/grey_clr_light"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:fontFamily="@font/poppins_light"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/budget_data" />
+
+            <TextView
+                android:id="@+id/btnContact"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp36"
+                android:layout_marginTop="@dimen/dp24"
+                android:layout_marginEnd="@dimen/dp18"
+                android:background="@drawable/border_selected"
+                android:drawableStart="@drawable/ic_contact"
+                android:drawableTint="@color/green_color"
+                android:gravity="center"
+                android:minHeight="40dp"
+                android:paddingHorizontal="8dp"
+                android:text="Contact"
+                android:textAllCaps="false"
+                android:textColor="@color/green_color"
+                android:textSize="@dimen/sp12"
+                android:textStyle="bold"
+                app:cornerRadius="@dimen/dp12"
+                app:fontFamily="@font/poppins_light"
+                app:layout_constraintEnd_toStartOf="@id/btnSendMessage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/preferred_date_data" />
+
+            <TextView
+                android:id="@+id/btnSendMessage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp18"
+                android:layout_marginTop="@dimen/dp24"
+                android:layout_marginEnd="@dimen/dp36"
+                android:background="@drawable/border_selected"
+                android:backgroundTint="@color/green_color"
+                android:drawableStart="@drawable/ic_send_message"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:minHeight="40dp"
+                android:paddingHorizontal="8dp"
+                android:text="Send Message"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp12"
+                android:textStyle="bold"
+                app:fontFamily="@font/poppins_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnContact"
+                app:layout_constraintTop_toBottomOf="@id/preferred_date_data" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

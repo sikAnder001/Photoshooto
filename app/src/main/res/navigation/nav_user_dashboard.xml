@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_user_dashboard"
+    app:startDestination="@id/homePageFragment">
+
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.photoshooto.ui.userhomepage.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page">
+        <action
+            android:id="@+id/action_homePageFragment_to_topPhotographersFragment"
+            app:destination="@id/topPhotographersFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_topPhotographerServiceFragment"
+            app:destination="@id/topPhotographerServiceFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_searchPhotographersByCityFragment"
+            app:destination="@id/searchPhotographersByCityFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_filterPhotographsFragment"
+            app:destination="@id/filterPhotographsFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_photographerTypeFragment"
+            app:destination="@id/photographerTypeFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_photographerDetailFragment"
+            app:destination="@id/photographerDetailFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_navigation_Terms"
+            app:destination="@id/navigation_Terms" />
+        <action
+            android:id="@+id/action_homePageFragment_to_recyclerViewFragment"
+            app:destination="@id/fragmentRecyclerView" />
+        <action
+            android:id="@+id/action_homePageFragment_to_fragmentThanksRegister"
+            app:destination="@id/fragmentThanksRegister" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/fragmentThanksRegister"
+        android:name="com.photoshooto.ui.signup.FragmentThanksRegister"
+        android:label="fragment_thanks_register"
+        tools:layout="@layout/fragment_thanks_register">
+        <action
+            android:id="@+id/action_FragmentThanksRegister_to_FragmentEditProfile"
+            app:destination="@id/userEditProfileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/topPhotographersFragment"
+        android:name="com.photoshooto.ui.userhomepage.TopPhotographersFragment"
+        android:label="TopPhotographersFragment">
+        <action
+            android:id="@+id/action_topPhotographersFragment_to_photographerDetailFragment"
+            app:destination="@id/photographerDetailFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/topPhotographerServiceFragment"
+        android:name="com.photoshooto.ui.userhomepage.TopPhotographerServiceFragment"
+        android:label="TopPhotographerServiceFragment">
+
+        <action
+            android:id="@+id/action_topPhotographerServiceFragment_to_photographerTypeFragment"
+            app:destination="@id/photographerTypeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchPhotographersByCityFragment"
+        android:name="com.photoshooto.ui.userhomepage.SearchPhotographersByPopularCityFragment"
+        android:label="SearchPhotographersByCityFragment">
+        <action
+            android:id="@+id/action_searchPhotographersByCityFragment_to_filterPhotographsFragment"
+            app:destination="@id/filterPhotographsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photographerDetailFragment"
+        android:name="com.photoshooto.ui.userhomepage.PhotographerDetailFragment"
+        android:label="PhotographerDetailFragment"
+        tools:layout="@layout/fragment_photographer_detail" />
+    <fragment
+        android:id="@+id/photographerTypeFragment"
+        android:name="com.photoshooto.ui.userhomepage.PhotographerTypeFragment"
+        android:label="PhotographerTypeFragment"
+        tools:layout="@layout/fragment_photographer_type">
+        <action
+            android:id="@+id/action_photographerTypeFragment_to_photographerDetailFragment"
+            app:destination="@id/photographerDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userEnquiriesFragment"
+        android:name="com.photoshooto.ui.userhomepage.UserEnquiriesFragment"
+        android:label="fragment_user_enquiries"
+        tools:layout="@layout/fragment_user_enquiries" />
+    <fragment
+        android:id="@+id/navigation_Terms"
+        android:name="com.photoshooto.ui.terms.FragmentTermsPrivacy"
+        tools:layout="@layout/fragment_termsprivacy" />
+
+    <fragment
+        android:id="@+id/fragmentUserFeedback"
+        android:name="com.photoshooto.ui.feedback.FeedbackFragment"
+        android:label="FragmentFeedback"
+        tools:layout="@layout/feedback_fragment" />
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.photoshooto.ui.userhomepage.UserProfileFragment"
+        android:label="UserProfileFragment"
+        tools:layout="@layout/fragment_user_profile">
+        <action
+            android:id="@+id/action_userProfileFragment_to_userEnquiriesFragment"
+            app:destination="@id/userEnquiriesFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_userEditProfileFragment"
+            app:destination="@id/userEditProfileFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_favouritePhotographerFragment"
+            app:destination="@id/favouritePhotographerFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_userNotificationsFragment"
+            app:destination="@id/userNotificationsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userEditProfileFragment"
+        android:name="com.photoshooto.ui.userhomepage.UserEditProfileFragment"
+        android:label="UserEditProfileFragment"
+        tools:layout="@layout/fragment_user_edit_profile">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/userNotificationsFragment"
+        android:name="com.photoshooto.ui.userhomepage.UserNotificationsFragment"
+        android:label="UserNotificationsFragment" />
+    <fragment
+        android:id="@+id/filterPhotographsFragment"
+        android:name="com.photoshooto.ui.userhomepage.FilterPhotographsFragment"
+        android:label="FilterPhotographsFragment"
+        tools:layout="@layout/fragment_filter_photographs">
+
+        <action
+            android:id="@+id/action_filterPhotographsFragment_to_photographerDetailFragment"
+            app:destination="@id/photographerDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouritePhotographerFragment"
+        android:name="com.photoshooto.ui.userhomepage.FavouritePhotographerFragment"
+        android:label="FavouritePhotographerFragment"
+        tools:layout="@layout/fragment_favourite_photographer" />
+
+    <fragment
+        android:id="@+id/fragmentMyCart"
+        android:name="com.photoshooto.ui.qrcodegenration.FragmentMyCart"
+        android:label="FragmentMyCart"
+        tools:layout="@layout/fragment_my_cart">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentRecyclerView"
+        android:name="com.photoshooto.ui.recycler_view.FragmentRecyclerView"
+        android:label="fragmentRecyclerView"
+        tools:layout="@layout/fragment_recycler_view" />
+
+</navigation>

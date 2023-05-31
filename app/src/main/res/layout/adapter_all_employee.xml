@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:paddingStart="@dimen/_10sdp"
+
+    android:paddingBottom="10dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/grey20"
+        app:strokeWidth="@dimen/dp1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivUserProfile"
+                android:layout_width="@dimen/dp35"
+                android:layout_height="@dimen/dp35"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp16"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_temp_user_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvName"
+                style="@style/black_text_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:text="Name"
+                android:textColor="@color/blue_clr"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toEndOf="@+id/ivUserProfile"
+                app:layout_constraintTop_toTopOf="@+id/ivUserProfile" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUsername"
+                style="@style/black_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Admin 01"
+                android:textColor="@color/grey2"
+                android:textSize="@dimen/_6ssp"
+                app:layout_constraintStart_toStartOf="@+id/tvName"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvtype"
+                style="@style/black_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(PS Employee)"
+                android:textColor="@color/grey2"
+                android:textSize="@dimen/_6ssp"
+                android:layout_marginStart="@dimen/_2sdp"
+                app:layout_constraintStart_toEndOf="@id/tvUsername"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvEmpCode"
+                style="@style/black_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Employee ID :"
+                android:textColor="@color/grey2"
+                android:textSize="@dimen/_6ssp"
+                app:layout_constraintStart_toStartOf="@+id/tvName"
+                app:layout_constraintTop_toBottomOf="@+id/tvUsername" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCode"
+                style="@style/black_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PS22ADM012"
+                android:textColor="@color/grey2"
+                android:textSize="@dimen/_6ssp"
+                android:layout_marginStart="@dimen/_2sdp"
+                app:layout_constraintStart_toEndOf="@id/tvEmpCode"
+                app:layout_constraintTop_toBottomOf="@+id/tvUsername" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDetails"
+                style="@style/black_text_medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp12"
+                android:background="@color/new_reuqest_blue"
+                android:gravity="center"
+                android:paddingVertical="@dimen/dp5"
+                android:text="@string/label_view_details"
+                android:textColor="@color/blue_clr"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEmpCode" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

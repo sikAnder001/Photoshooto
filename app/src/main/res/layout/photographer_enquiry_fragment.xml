@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/_16sdp">
+
+    <include
+        android:id="@+id/toolbar_my_enquiry"
+        layout="@layout/toolbar_with_back_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtSearch"
+        style="@style/black_text_medium"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp48"
+        android:layout_marginHorizontal="@dimen/dp24"
+        android:layout_marginTop="@dimen/dp10"
+        android:background="@drawable/ic_edittext_bg"
+        android:drawableEnd="@drawable/ic_grey_search"
+        android:drawableTint="@color/grey4"
+        android:hint="@string/search_hint"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:textAppearance="@style/sp14_grey_clr2_txt"
+        android:textColorHint="@color/grey_clr"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_my_enquiry"
+        tools:targetApi="m" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:layout_marginHorizontal="@dimen/dp24"
+        android:layout_marginTop="@dimen/dp28"
+        android:background="@drawable/light_bluebg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/edtSearch">
+
+        <TextView
+            android:id="@+id/all"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp2"
+            android:layout_weight="0.33"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:text="@string/All"
+            android:textAppearance="@style/sp12_blue_style" />
+
+        <TextView
+            android:id="@+id/read"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp2"
+            android:layout_weight="0.33"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:text="@string/read"
+            android:textAppearance="@style/sp12_blue_style" />
+
+        <TextView
+            android:id="@+id/unread"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp2"
+            android:layout_weight="0.33"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:text="@string/unread"
+            android:textAppearance="@style/sp12_blue_style" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_enquiry"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp32"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout"
+        tools:listitem="@layout/photographer_enquiries_items" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/notificationImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp10"
+        android:src="@drawable/ic_my_enquires"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/tab_layout"
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tv_notify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp10"
+        android:gravity="center"
+        android:text="@string/no_queries_found"
+        android:textColor="@color/grey1"
+        android:textSize="@dimen/sp14"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/notificationImage"
+        app:layout_constraintTop_toBottomOf="@+id/notificationImage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_toolbar_sort" />
+
+    <EditText
+        android:id="@+id/search"
+        style="@style/tvFontRegular"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border"
+        android:drawablePadding="10dp"
+        android:hint="@string/search_by_event"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="5dp"
+        android:textColorHint="@color/textColorHint"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <TextView
+        android:id="@+id/label"
+        style="@style/tvFontBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:paddingStart="16dp"
+        android:text="Total available job"
+        android:textColor="@color/textColorHint"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/search"
+        app:layout_constraintTop_toBottomOf="@id/search" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideStart16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideEnd16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <include
+        android:id="@+id/tabJobPosted"
+        layout="@layout/commom_tab_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@id/tabReportedJob"
+        app:layout_constraintStart_toStartOf="@id/guideStart16"
+        app:layout_constraintTop_toBottomOf="@id/label" />
+
+    <include
+        android:id="@+id/tabReportedJob"
+        layout="@layout/commom_tab_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/guideEnd16"
+        app:layout_constraintStart_toEndOf="@id/tabJobPosted"
+        app:layout_constraintTop_toTopOf="@id/tabJobPosted" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/colorTransparent"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabJobPosted" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

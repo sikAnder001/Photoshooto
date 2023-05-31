@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginVertical="@dimen/dp8">
+
+    <com.photoshooto.ui.job.utility.CircleImageView
+        android:id="@+id/imageViewProfile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp8"
+        android:layout_marginTop="@dimen/dp12"
+        android:src="@drawable/icn_placeholder_user"
+        app:civ_border_color="@color/grey_dc"
+        app:civ_border_width="1dp"
+        app:layout_constraintBottom_toBottomOf="@id/city"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/dot"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/ic_dot"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewProfile"
+        app:layout_constraintEnd_toEndOf="@id/imageViewProfile" />
+
+    <TextView
+        android:id="@+id/userName"
+        style="@style/tvFontSemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp8"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintBottom_toTopOf="@id/userId"
+        app:layout_constraintStart_toEndOf="@id/imageViewProfile"
+        app:layout_constraintTop_toTopOf="@id/imageViewProfile"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Name Name" />
+
+    <TextView
+        android:id="@+id/userId"
+        style="@style/tvFontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp2"
+        android:textColor="@color/grey_6B"
+        app:layout_constraintStart_toStartOf="@id/userName"
+        app:layout_constraintTop_toBottomOf="@id/userName"
+        tools:text="ID: 0000000" />
+
+    <TextView
+        android:id="@+id/city"
+        style="@style/tvFontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp2"
+        android:drawablePadding="@dimen/dp8"
+        android:textColor="@color/grey_6B"
+        app:drawableStartCompat="@drawable/ic_location_filled"
+        app:layout_constraintStart_toStartOf="@id/userName"
+        app:layout_constraintTop_toBottomOf="@id/userId"
+        tools:text="Ahm" />
+
+    <ImageView
+        android:id="@+id/check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp8"
+        android:src="@drawable/ic_shield"
+        app:layout_constraintStart_toEndOf="@id/userName"
+        app:layout_constraintTop_toTopOf="@id/userName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

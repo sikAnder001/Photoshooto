@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_10sdp"
+            tools:context=".ui.photographersScreens.photographerDashboard.TopPhotographersListActivity">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtSearch"
+                sstyle="@style/black_text_medium"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp48"
+                android:layout_marginTop="@dimen/dp10"
+                android:background="@drawable/ic_edittext_bg"
+                android:drawableEnd="@drawable/ic_grey_search"
+                android:drawableTint="@color/grey4"
+                android:hint="@string/search_hint"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:singleLine="true"
+                android:textAppearance="@style/sp14_grey_clr2_txt"
+                android:textColorHint="@color/grey_clr"
+                android:textSize="@dimen/sp12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Top Photographers in India"
+                android:textColor="@color/blue_clr"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:fontFamily="@font/poppins_regular" />
+
+            <include
+                android:id="@+id/filterView"
+                layout="@layout/photographer_filter_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:id="@+id/llBudget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/round_btn_bg"
+                android:backgroundTint="@color/unread_notification_bg"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Choose your budget"
+                        android:textColor="@color/blue_clr"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imgBudgetClose"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_close" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_bg"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="0-30 k"
+                        android:textColor="@color/blue_clr"
+                        android:textSize="12dp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_bg"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="30-90 k"
+                        android:textColor="@color/blue_clr"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_bg"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="90K-2 Lakh"
+                        android:textColor="@color/blue_clr"
+                        android:textSize="12dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_bg"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="2-3 Lakh"
+                        android:textColor="@color/blue_clr"
+                        android:textSize="12dp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_bg"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="3-5 Lakh"
+                        android:textColor="@color/blue_clr"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_bg"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Above-5 Lakh"
+                        android:textColor="@color/blue_clr"
+                        android:textSize="12dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewPhotographerList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/adapter_top_photographer_list_items" />
+
+        </LinearLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp80"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp40"
+            android:visibility="visible"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/green_loading" />
+
+
+    </RelativeLayout>
+</layout>
